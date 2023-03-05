@@ -1,0 +1,28 @@
+$color-key: 'base' !default;
+$colors: (
+  primary: (
+    'base': #ffffff,
+  ),
+  secondary: (
+    'base': #263238,
+  ),
+  accent: (
+    'base': #23b123,
+  ),
+  background: (
+    'base': #263238,
+    'secondary': #ffffff,
+    'accent': #23b123,
+  ),
+);
+
+$u-opacity: (
+  'light': 0.06,
+  'lighter': 0.11,
+  'normal': 0.15,
+  'dark': 0.84,
+);
+
+$fontFamily: '';
+$fontSize: 18px;
+$mainColor: color(primary);
