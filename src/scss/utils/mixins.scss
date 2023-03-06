@@ -1,7 +1,9 @@
+@use 'sass:math';
+
 @mixin fontProperties($fontWeight: $fontWeight, $fontSize, $lineHeight, $fontFamily: $fontFamily) {
   font-family: $fontFamily;
   font-weight: $fontWeight;
-  font-size: calc($fontSize/16) + rem;
+  font-size: $fontSize + px;
   line-height: math.div($lineHeight, $fontSize);
 }
 
