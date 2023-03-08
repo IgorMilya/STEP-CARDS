@@ -1,1 +1,1 @@
-console.log("run")
+export { dashBord } from './dashBord'

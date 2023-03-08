@@ -1,0 +1,126 @@
+.aside {
+  width: 262px;
+  display: none;
+  background-color: white;
+  box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+  clip-path: inset(-1px -48.8px -18.23px 0px);
+}
+
+.aside-content {
+  @include flexProperties(normal, flex-start, column);
+  height: 100%;
+}
+
+.menu-title {
+  @include fontProperties(400, 14, 20, Montserrat);
+  color: color(text, 'grey');
+  padding-left: 24px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.support-line {
+  border: 1px solid #a0a4a8;
+  margin: 20px 0 16px 0;
+  opacity: 0.3;
+}
+
+.menu-support {
+  @include fontProperties(400, 14, 20, Montserrat);
+  color: color(text, 'grey');
+  margin-bottom: 20px;
+  padding-left: 24px;
+}
+
+.aside-list {
+  @include flexProperties(normal, flex-start, column);
+  gap: 20px;
+  fill: color(text, 'grey');
+  padding-left: 24px;
+}
+
+.aside-item {
+  @include fontProperties(500, 14, 20, Montserrat);
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    margin-right: 8px;
+  }
+
+  &:hover {
+    color: color(text, 'accent');
+    fill: color(text, 'accent');
+    transition: all 0.2s;
+  }
+}
+
+// =========== COVID =============== //
+
+.aside-covid {
+  flex: 1 1 auto;
+  @include flexProperties(normal, center, column);
+}
+
+.covid-body {
+  height: 220px;
+  width: 200px;
+
+  // background-image: url('../../assets/images/covid/insurance.png');
+  background: linear-gradient(
+    10deg,
+    rgba(32, 165, 182, 0.7) 0%,
+    rgba(32, 165, 182, 0.2) 85%,
+    rgba(32, 165, 182, 0.2) 100%
+  );
+
+  border-radius: 10px;
+  margin: 0 24px;
+  padding: 0 20px;
+  @include flexProperties(normal, flex-start, column);
+  gap: 14px;
+}
+
+.covid-title {
+  @include fontProperties(600, 16, 20, Montserrat);
+  position: relative;
+  margin-top: 18px;
+}
+
+.covid-icon {
+  color: color(text, 'accent');
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.covid-info {
+  @include flexProperties(normal, flex-start, column);
+  gap: 10px;
+
+  .covid-button {
+    text-align: center;
+    padding-top: 5px;
+    cursor: pointer;
+  }
+}
+
+// =========== FOOTER =============== //
+
+.aside-footer {
+  margin: 0 24px 20px 24px;
+}
+
+.asite-footer-title {
+  @include fontProperties(500, 18, 20, Montserrat);
+  margin-bottom: 6px;
+}
+
+.aside-footer-text {
+  @include fontProperties(400, 12, 20, Montserrat);
+  color: color(text, 'grey');
+}
