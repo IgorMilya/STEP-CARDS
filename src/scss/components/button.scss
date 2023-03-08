@@ -1,7 +1,18 @@
 .button {
+  padding: 15px;
+  border-radius: 4px;
+  color: color(text, 'white');
+  background-color: color(background, 'accent');
+  transition: background-color 0.3s;
+  @include fontProperties(600, 13, 16);
+
+  &:hover {
+    background-color: #348a96;
+  }
 }
 
-.login-main {
+.log-in {
+  min-width: 369px;
 }
 
 .login-header {

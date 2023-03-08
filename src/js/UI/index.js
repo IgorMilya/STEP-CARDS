@@ -1,1 +1,2 @@
-export { Button } from './Button'
+export { logInButton } from './Button'
+export { textInput, passwordInput, checkboxInput } from './Input'
