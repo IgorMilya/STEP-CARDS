@@ -1,5 +1,4 @@
-export const API_URL = ''
-
+export const API_URL = 'https://ajax.test-danit.com/api/v2/cards'
 export const department = [
   {
     department: 'Cardiology',
@@ -14,3 +13,10 @@ export const department = [
     doctor: ['Stephanie Cook', 'Marion James', 'Teresa Holland'],
   },
 ]
+
+export const DEFAULT_HEADERS = {
+  headers: {
+    'Content-Type': 'application/json',
+  },
+}
+
