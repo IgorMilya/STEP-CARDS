@@ -4,17 +4,13 @@ import iconInput from '../../assets/asideIcons/search-input.svg'
 
 export const PageMain = () => {
   const PageMain = document.createElement('main')
-  PageMain.classList.add('page')
+  PageMain.classList.add('main')
 
-  const pageContent = document.createElement('div')
-  pageContent.classList.add('page-content')
-
-  pageContent.innerHTML = `
+  PageMain.innerHTML = `
   <div class="page-body"></div>
   `
 
-  pageContent.prepend(Aside())
-  PageMain.append(pageContent)
+  PageMain.prepend(Aside())
 
   return PageMain
 }

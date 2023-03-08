@@ -7,8 +7,9 @@
 }
 
 .aside-content {
-  @include flexProperties(normal, flex-start, column);
   height: 100%;
+  width: 262px;
+  @include flexProperties(normal, flex-start, column);
 }
 
 .menu-title {
@@ -20,7 +21,7 @@
 }
 
 .support-line {
-  border: 1px solid #a0a4a8;
+  border-top: 1px solid #a0a4a8;
   margin: 20px 0 16px 0;
   opacity: 0.3;
 }

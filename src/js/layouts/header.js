@@ -2,6 +2,7 @@ import logoImg from '../../assets/images/logo/logo-img.svg'
 import logoText from '../../assets/images/logo/logo-text.svg'
 import imgAvatar from '../../assets/images/avatar/circle.png'
 import iconInput from '../../assets/asideIcons/search-input.svg'
+import { headerLogInButton } from '../UI'
 
 export const Header = () => {
   const Header = document.createElement('header')
@@ -30,7 +31,7 @@ export const Header = () => {
     </div>
 
     <div class="header-actions">
-    <div class="header-button">Button here</div>
+    <div class="header-button">${headerLogInButton}</div>
     <div class="header-avatar">
     <img src="${imgAvatar}"/>
     </div>
@@ -39,14 +40,3 @@ export const Header = () => {
 
   return Header
 }
-
-/*<div class="header-search">
-<img class="icon-input" src="${iconInput}"/>
-<input class="search" type="text" placeholder="Search"</div>
-</div>
-</div>
-<div class="header-log-in">
-<div class="header-button">Button here</div>
-<div class="header-account">
-<img src="${imgAccount}"/>
-</div>*/

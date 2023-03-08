@@ -1,4 +1,4 @@
-import { Button } from '../UI/index.js'
+import { cancelButton, saveButton } from '../UI'
 
 export class Visit {
   constructor(name, phone, surname, priority, department) {
@@ -13,9 +13,9 @@ export class Visit {
     const modalVisit = document.createElement('div')
     modalVisit.className = 'modal-visit opened'
     modalVisit.innerHTML = `
-<div class='visit-container'>
- <h1 class='modal-visit__title'>Add card</h1>
-    <form class='modal-visit__form'>
+  <div class='visit-container'>
+  <h1 class='modal-visit__title'>Add card</h1>
+  <form class='modal-visit__form'>
         <label class='modal-visit__wrapper'>
             <input class='modal-visit__gap placeholder' type='text' required placeholder='Enter name'>
         </label>
@@ -26,24 +26,24 @@ export class Visit {
         
      
         
-            <div class='modal-visit__wrapper dropdown' data-name='Department'>            
+            <div class='modal-visit__wrapper dropdown' data-name='Department'>
                 <div class='modal-visit__gap modal-visit__dropdown '>
-                    <span class='modal-visit__dropdown-title department-title'> Department</span>                  
+                    <span class='modal-visit__dropdown-title department-title'> Department</span>
                 </div>
            
                 <ul class='modal-visit__dropdown-list department' > </ul>
-            </div> 
+            </div>
             
             <div class='modal-visit__wrapper dropdown'>
                 <div class='modal-visit__gap modal-visit__dropdown'>
-                    <span class='modal-visit__dropdown-title doctor-title' > Doctor</span>       
+                    <span class='modal-visit__dropdown-title doctor-title' > Doctor</span>
                 </div>
                 
                 <ul class='modal-visit__dropdown-list doctor-list'> </ul>
-            </div>      
+            </div>
             
 <!--            <div id='additional'> </div>-->
-            
+         
          <label class='modal-visit__extra All hide'>
             <input class='modal-visit__gap placeholder' type='text' pattern='[0-9]' required placeholder='Goal'>
         </label>
@@ -62,10 +62,10 @@ export class Visit {
                     <li class='modal-visit__dropdown-item'>Normal</li>
                     <li class='modal-visit__dropdown-item'>Low</li>
                 </ul>
-        </div> 
+        </div>
        
-            ${Button('modal-visit__button-cancel', 'Cancel').outerHTML}
-            ${Button('modal-visit__button-save', 'Save').outerHTML}
+            ${cancelButton}
+            ${saveButton}
        
        
 </form>

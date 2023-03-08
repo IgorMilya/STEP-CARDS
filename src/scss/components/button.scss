@@ -1,7 +1,5 @@
 .button {
-
   // background-color: color(background, 'accent');
-
 
   padding: 15px;
   border-radius: 4px;
@@ -13,14 +11,15 @@
   &:hover {
     background-color: #348a96;
   }
-
 }
 
 .log-in {
   min-width: 369px;
 }
 
-.login-header {
+.header-login {
+  height: 46px;
+  width: 162px;
 }
 
 .register {
