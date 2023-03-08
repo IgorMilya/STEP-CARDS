@@ -35,12 +35,13 @@ export class Visit {
             </div> 
             
             <div class='modal-visit__wrapper dropdown'>
-            <div class='modal-visit__gap modal-visit__dropdown'>
+                <div class='modal-visit__gap modal-visit__dropdown'>
                     <span class='modal-visit__dropdown-title doctor-title' > Doctor</span>       
                 </div>
                 
                 <ul class='modal-visit__dropdown-list doctor-list'> </ul>
             </div>      
+            
 <!--            <div id='additional'> </div>-->
             
          <label class='modal-visit__extra All hide'>
@@ -61,8 +62,7 @@ export class Visit {
                     <li class='modal-visit__dropdown-item'>Normal</li>
                     <li class='modal-visit__dropdown-item'>Low</li>
                 </ul>
-            </div> 
-        
+        </div> 
        
             ${Button('modal-visit__button-cancel', 'Cancel').outerHTML}
             ${Button('modal-visit__button-save', 'Save').outerHTML}
@@ -72,7 +72,6 @@ export class Visit {
 
 
 </div>
-   
     `
 
     return modalVisit
