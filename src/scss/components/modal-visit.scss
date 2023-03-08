@@ -4,8 +4,9 @@
 }
 
 .modal-visit {
+  display: none;
   width: 663px;
-  height: 530px;
+  padding-bottom: 31px;
   background-color: color(background, 'secondary');
   box-shadow: 0 7px 20px rgba(40, 41, 61, 0.08);
   border-radius: 8px;
@@ -27,6 +28,11 @@
 
   &__wrapper {
     width: 270px;
+    position: relative;
+  }
+
+  &__wrapper:nth-child(7) {
+    width: 562px;
     position: relative;
   }
 
@@ -96,23 +102,32 @@
     border-left: 2px solid color(text, 'accent');
     background: white;
   }
+
   &__button-box {
     position: absolute;
     bottom: 21px;
     right: 24px;
   }
+
   &__button-save {
     @include fontProperties(500, 14, 18);
     color: color(text, 'white');
     padding: 8px 16px;
     border-radius: 4px;
   }
+
   &__button-cancel {
     @include fontProperties(500, 14, 18);
     color: color(text, 'white');
     padding: 8px;
     border-radius: 4px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #ffffff;
+  }
+
+  &__extra {
+    display: block;
+    width: 562px;
+    position: relative;
   }
 }
 
@@ -124,6 +139,36 @@
 .menu-open {
   display: block;
 }
+
 .doctor-item {
   display: none;
+}
+
+.calendar {
+  @include fontProperties(500, 14, 18);
+  color: color(text, 'grey');
+}
+
+.calendar::-webkit-calendar-picker-indicator {
+  font-size: 22px;
+  //background: color(background, 'secondary');
+  background: red;
+}
+
+.hide {
+  display: none;
+}
+.small {
+  width: 270px;
+}
+.opened {
+  display: block;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+textarea {
+  resize: none;
 }

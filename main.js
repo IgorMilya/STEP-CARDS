@@ -1,8 +1,11 @@
 import './src/scss/style.scss'
-import { Visit } from './src/js/classes'
-import { dropdown } from './src/js/tools'
+import { allDepartments, Visit } from './src/js/classes'
+import { dropdown } from './src/js/components'
+import { closeModalVisit } from './src/js/tools'
 
-const attendDoctor = new Visit();
+const attendDoctor = new Visit()
 
-document.querySelector("#app").append(attendDoctor.drawModal())
-dropdown();
+document.querySelector('#app').append(attendDoctor.drawModal())
+allDepartments()
+dropdown()
+closeModalVisit()
