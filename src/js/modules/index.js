@@ -1,1 +1,2 @@
-console.log("run")
+export { showBasicLayout } from './showBasicLayout'
+export { renderPageMain } from './renderPageMain'
