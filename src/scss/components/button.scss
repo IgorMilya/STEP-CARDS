@@ -1,4 +1,8 @@
 .button {
+
+  // background-color: color(background, 'accent');
+
+
   padding: 15px;
   border-radius: 4px;
   color: color(text, 'white');
@@ -9,6 +13,7 @@
   &:hover {
     background-color: #348a96;
   }
+
 }
 
 .log-in {
