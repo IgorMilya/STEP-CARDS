@@ -1,8 +1,3 @@
-.header {
-  @include flexProperties(normal);
-  height: 88px;
-}
-
 .header-logo-link {
   @include flexProperties(center);
   gap: 5px;
@@ -42,11 +37,12 @@
 .header-content {
   width: 100%;
   height: 100%;
-  @include flexProperties(center, space-between);
   padding: 0px 30px;
+  background-color: color(background, 'secondary');
+  @include flexProperties(center, space-between);
 
   &.active {
-    background-color: color(background, 'base');
+    background-color: color(background);
   }
 }
 

@@ -9,3 +9,9 @@ const Button = (selector, text) => {
 }
 
 export const logInButton = Button('log-in', 'Log In')
+
+export const headerLogInButton = Button('header-login', 'Log In')
+
+export const cancelButton = Button('modal-visit__button-cancel', 'Cancel')
+
+export const saveButton = Button('modal-visit__button-save', 'Save')

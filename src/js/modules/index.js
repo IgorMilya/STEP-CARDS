@@ -1,2 +1,4 @@
 export { showBasicLayout } from './showBasicLayout'
-export { renderPageMain } from './renderPageMain'
+export { renderComponent } from './renderComponent.js'
+export { renderLoginPage } from './renderLoginPage'
+export { showLoginForm } from '../components/Login/showLoginForm.js'

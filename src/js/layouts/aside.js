@@ -49,8 +49,8 @@ export const Aside = () => {
   </div>
   </div>
   <div class="aside-footer">
-  <div class="asite-footer-title"> &copy; Poli Clinic. 2023</div>
-  <div class="aside-footer-text">Poli Clinic is medical management for all doctors, patient & Staff</div>
+  <div class="asite-footer-title"> &copy; HandyHealth 2023</div>
+  <div class="aside-footer-text">HandyHealth is medical management for all doctors, patient & Staff</div>
   </div>
 </div>
 `

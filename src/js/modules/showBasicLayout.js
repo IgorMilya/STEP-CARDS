@@ -1,24 +1,17 @@
 // Тут міняємо стилі Саша
 
 export const showBasicLayout = () => {
-  const button = document.querySelector('.header-button')
+  const main = document.querySelector('.page-body')
+  const headerLogo = document.querySelector('.header-logo-wrapp')
+  const sideBar = document.querySelector('.aside')
+  const headerContent = document.querySelector('.header-content')
+  const headerSearchInput = document.querySelector('.header-search-wrap')
+  const headerAvatar = document.querySelector('.header-avatar')
 
-  button.addEventListener('click', e => {
-    const headerLogo = document.querySelector('.header-logo-wrapp')
-    console.log('headerLogo:', headerLogo)
-    headerLogo.classList.add('active')
-
-    const headerContent = document.querySelector('.header-content')
-    headerContent.classList.add('active')
-
-    const headerSearchInput = document.querySelector('.header-search-wrap')
-    headerSearchInput.classList.add('fade-out')
-
-    const sideBar = document.querySelector('.aside')
-    console.log('sideBar:', sideBar)
-    sideBar.classList.add('fade-out')
-
-    const headerAvatar = document.querySelector('.header-avatar')
-    headerAvatar.classList.add('fade-out')
-  })
+  main.innerHTML = ''
+  sideBar.classList.add('fade-out')
+  headerLogo.classList.add('active')
+  headerContent.classList.add('active')
+  headerSearchInput.classList.add('fade-out')
+  headerAvatar.classList.add('fade-out')
 }
