@@ -1,1 +1,1 @@
-console.log("run")
+export { VisitPage } from './VistPage'
