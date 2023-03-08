@@ -1,0 +1,49 @@
+.page-body {
+  // padding-left: 31px;
+}
+
+.body-cards-info {
+  display: flex;
+  gap: 30px;
+  margin-top: 36px;
+  margin-bottom: 31px;
+}
+
+.info-card {
+  // width: 251px;
+  // height: 88px;
+  background: #ffffff;
+  box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+  border-radius: 8px;
+}
+
+.body-content {
+  display: flex;
+}
+
+.body-bord {
+  // width: 818px;
+  // height: 532px;
+  background: #ffffff;
+  box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+  border-radius: 8px;
+  margin-right: 30px;
+}
+
+.body-tables {
+  @include flexProperties(center, center, column);
+  gap: 10px;
+}
+
+.body-table {
+  // width: 245px;
+  // height: 261px;
+  background: #ffffff;
+  box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+  border-radius: 8px;
+  margin-right: 30px;
+}
+
+.fade-out {
+  display: block;
+}
