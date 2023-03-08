@@ -1,12 +1,20 @@
 import './src/scss/style.scss'
-
 import { Header, PageMain, Aside } from './src/js/layouts'
 import { showBasicLayout, renderPageMain } from './src/js/modules'
-import { dashBord } from './src/js/components'
+import { VisitPage } from './src/js/layouts'
 
 const app = document.getElementById('app')
-app.prepend(Header())
-app.append(PageMain())
 
-showBasicLayout()
-// renderPageMain(dashBord)
+app.append(VisitPage)
+// app.prepend(Header())
+// app.append(PageMain())
+
+// showBasicLayout()
+
+
+
+
+
+
+
+

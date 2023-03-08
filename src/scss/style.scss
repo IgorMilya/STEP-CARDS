@@ -4,13 +4,30 @@
 @import 'utils/module';
 @import 'components/module';
 
+body {
+  font-family: $fontFamily;
+  font-weight: 400;
+  font-size: $fontSize;
+  color: $mainColor;
+}
+
 #app {
   height: 100%;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  background-color: color(background);
 }
+// TODO: add 2 different classes 
+// .container {
+//   height: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 110px;
+
+//   position: relative;
+//   overflow: hidden;
+//   display: flex;
+//   flex-direction: column;
+// }
 
 .page {
   flex: 1 1 auto;
@@ -21,9 +38,4 @@
   display: flex;
   height: 100%;
   overflow: hidden;
-
-  // height: 100%;
-  // position: relative;
-  // overflow: hidden;
-  // flex-direction: column;
 }

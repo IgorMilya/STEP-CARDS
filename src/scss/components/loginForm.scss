@@ -1,0 +1,181 @@
+.login-form {
+  height: 110px;
+  width: 410px;
+  padding: 31px 18px;
+  background-color: transparent;
+  border-radius: 8px;
+  overflow: hidden;
+
+  // fade-in
+  height: 525px;
+  background-color: #fff;
+  box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
+  //
+}
+
+// ============= form-header ===============
+
+.form-head {
+  color: color(text, 'accent');
+
+  &__title {
+    margin-bottom: 30px;
+    @include fontProperties(800, 40, 49, null);
+  }
+
+  &__slogan {
+    position: relative;
+    padding-left: 83px;
+    margin-bottom: 30px;
+    @include fontProperties(600, 15, 18, null);
+
+    &:before {
+      border-radius: 5px;
+      background-color: color(background, 'accent');
+      @include position(absolute, 7px, 0, 70px, 4px);
+    }
+  }
+
+  &__actions {
+    color: $mainColor;
+    margin-bottom: 20px;
+    gap: 23px;
+    @include fontProperties(600, 16, 20);
+    @include flexProperties(center, center, null);
+
+    div {
+      padding: 11px;
+      padding-left: 4px;
+      min-width: 180px;
+      text-align: center;
+      border: 1px solid #e0e1e3;
+      box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
+      border-radius: 8px;
+      transition: box-shadow 0.3s;
+      cursor: pointer;
+
+      img {
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      &:hover {
+        background-color: #fafafa;
+        box-shadow: 0px 2px 4px rgba(40, 41, 61, 0.04), 0px 8px 16px rgba(96, 97, 112, 0.16);
+      }
+    }
+  }
+
+  &__decor {
+    position: relative;
+    text-align: center;
+    margin-bottom: 25px;
+    color: color(text, 'grey');
+
+    &::after,
+    &::before {
+      background-color: #e0e1e3;
+      @include position(absolute, 9px, null, 165px, 1px);
+    }
+
+    &::after {
+      left: 0;
+    }
+    &::before {
+      right: 0;
+    }
+  }
+}
+
+// ============= form-base ==============
+
+.form {
+  gap: 26px;
+  position: relative;
+  @include flexProperties(center, null, column);
+
+  input {
+    min-height: 43px;
+    min-width: 298px;
+    padding: 9px;
+    border: 1px solid #e0e1e3;
+    border-radius: 8px;
+    color: color(text);
+    transition: all 0.3s;
+    @include fontProperties(500, 15, 16);
+
+    &::placeholder {
+      color: color(text, 'grey');
+      @include fontProperties(500, 15, 16);
+    }
+
+    &:focus {
+      box-shadow: 0px 2px 4px rgba(40, 41, 61, 0.04), 0px 8px 16px rgba(96, 97, 112, 0.16);
+    }
+  }
+}
+
+// toggle
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 23px;
+  height: 11px;
+  align-self: start;
+  margin-left: 10px;
+
+  input {
+    display: none;
+  }
+
+  span {
+    color: color(text);
+    @include fontProperties(600, 10, 14);
+    @include position(absolute, 0, 31px, 81px, null);
+  }
+}
+
+.slider {
+  cursor: pointer;
+  background-color: #d9e4e5;
+  transition: 0.4s;
+  border-radius: 34px;
+  right: 0;
+  bottom: 0;
+  @include position(absolute, 0, 0, null, null);
+
+  &:before {
+    position: absolute;
+    content: '';
+    height: 17px;
+    width: 17px;
+    left: -3px;
+    bottom: -3px;
+    background-color: #20a4b6;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+}
+
+input:checked + .slider {
+  background-color: #9ed2d7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(13px);
+}
+
+.fade-in {
+  animation: 0.5s fadeIn forwards;
+  animation-duration: 0.7s;
+}
+
+@keyframes fadeIn {
+  to {
+    background-color: #fff;
+    height: 537px;
+    box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
+  }
+}
