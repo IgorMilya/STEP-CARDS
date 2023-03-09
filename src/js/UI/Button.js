@@ -1,4 +1,4 @@
-const Button = (selector, text) => {
+export const Button = (selector, text) => {
   const Button = document.createElement('button')
   Button.className = 'button'
   Button.type = 'submit'

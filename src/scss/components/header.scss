@@ -1,12 +1,13 @@
 .header-logo-link {
-  @include flexProperties(center);
   gap: 5px;
+  @include flexProperties(center);
 }
 
 .header-logo-wrapp {
-  @include flexProperties(center);
   gap: 100px;
   background-color: #fff;
+  border-radius: 0 5px 0 0;
+  @include flexProperties(center);
 
   &.active {
     z-index: 2;
@@ -39,6 +40,7 @@
   height: 100%;
   padding: 0px 30px;
   background-color: color(background, 'secondary');
+  transition: background-color 0.25s;
   @include flexProperties(center, space-between);
 
   &.active {
@@ -55,10 +57,19 @@
 
 .header-actions {
   @include flexProperties(center);
-  gap: 35px;
+  gap: 30px;
   cursor: pointer;
 }
 
 .header-avatar {
+  height: 48px;
+  width: 48px;
+  border: 1px solid #bbc7c7;
+  border-radius: 50%;
+  overflow: hidden;
   display: none;
+
+  img {
+    max-width: 100%;
+  }
 }

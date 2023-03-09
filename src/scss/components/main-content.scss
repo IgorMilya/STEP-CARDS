@@ -1,4 +1,4 @@
-.page-body {
+.main-content {
   height: 100%;
   width: 100%;
 }
@@ -34,8 +34,8 @@
 }
 
 .body-tables {
-  @include flexProperties(center, center, column);
   gap: 10px;
+  @include flexProperties(center, center, column);
 }
 
 .body-table {
@@ -49,4 +49,5 @@
 
 .fade-out {
   display: block;
+  //transform: translateY(0);
 }

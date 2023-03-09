@@ -1,9 +1,18 @@
-// try {
-//   const { data, status } = await fetchData()
-//
-//   return { res: data, status }
-// } catch ({ response }) {
-//   return { err: response }
-// }
+import ky from 'ky'
 
-// TODO:write universal fn for all requests
+export const request = async (method, body) => {
+  let data
+  const PREFIX_URL = 'https://ajax.test-danit.com/api/v2/cards/'
+  const DAFAULT_HEADERS = ''
+
+  if (method === 'LOGIN') {
+    const options = { method: 'POST', prefixUrl: PREFIX_URL, json: body }
+
+    data = await ky('login', options).text()
+  } else {
+    const options = { method: method, prefixUrl: PREFIX_URL, json: body }
+    data = await ky('login', options).json()
+  }
+
+  return data
+}

@@ -1,4 +1,3 @@
 export { dropdown } from '../components/dropdown'
-export { LoginForm } from './Login/loginForm'
-export { dashBord } from './dashBord'
-
+export { Registration, LoginForm } from './Registration'
+export { dashBord } from './Dashbord/dashBord'
