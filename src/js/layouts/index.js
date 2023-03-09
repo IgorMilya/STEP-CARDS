@@ -1,4 +1,3 @@
-export { LoginPage } from './LoginPage'
-export { Header } from './header'
-export { PageMain } from './pageMain'
-export { Aside } from './aside'
+export { Header } from './Header.js'
+export { Main } from './Main.js'
+export { Sidebar } from './Sidebar.js'

@@ -1,5 +1,5 @@
 import { cancelButton, saveButton } from '../UI'
-
+import modalImg from '../../assets/modal-visit/modalImg.svg'
 export class Visit {
   constructor(name, phone, surname, priority, department) {
     this.name = name
@@ -42,7 +42,7 @@ export class Visit {
                 <ul class='modal-visit__dropdown-list doctor-list'> </ul>
             </div>
             
-<!--            <div id='additional'> </div>-->
+<!--            <div id='additional'><img src="${modalImg}" alt="Image"></div>-->
          
          <label class='modal-visit__extra All hide'>
             <input class='modal-visit__gap placeholder' type='text' pattern='[0-9]' required placeholder='Goal'>

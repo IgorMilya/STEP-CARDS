@@ -14,9 +14,4 @@ export const department = [
   },
 ]
 
-export const DEFAULT_HEADERS = {
-  headers: {
-    'Content-Type': 'application/json',
-  },
-}
 
