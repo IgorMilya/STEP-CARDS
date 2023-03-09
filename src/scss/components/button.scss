@@ -1,6 +1,4 @@
 .button {
-  // background-color: color(background, 'accent');
-
   padding: 15px;
   border-radius: 4px;
   color: color(text, 'white');
@@ -23,10 +21,17 @@
 }
 
 .register {
+  height: 46px;
+  width: 162px;
 }
 
 .save {
+  width: 66px;
+  height: 34px;
 }
 
 .cancel {
+  width: 66px;
+  height: 34px;
+  background-color: #cccccc;
 }

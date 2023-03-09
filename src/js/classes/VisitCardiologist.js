@@ -25,8 +25,7 @@ export class VisitCardiologist extends Visit {
           </label> 
           <label class='modal-visit__extra hide Cardiology small' >
             <input class='modal-visit__gap placeholder' type='number' required placeholder='Age'>
-          </label>
-`
+          </label>`
     )
   }
 }

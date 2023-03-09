@@ -1,6 +1,5 @@
-import axios from 'axios'
-import { API_URL, DEFAULT_HEADERS } from '../../utils'
 import { showBasicLayout } from '../../modules'
+import { request } from '../../tools'
 
 export const validateUser = async e => {
   e.preventDefault()
@@ -20,11 +19,13 @@ export const validateUser = async e => {
       password: dataFromForm.get('password'),
     }
   }
+  const data = await request('LOGIN', userData)
 
-  axios.defaults.baseURL = API_URL
-  const { data, status } = await axios.post('/login', userData, DEFAULT_HEADERS)
+  if (!!data) {
+    window.localStorage.setItem('token', data)
+    window.localStorage.setItem('userData', JSON.stringify(userData))
+    const localData = JSON.parse(localStorage.getItem('userData'))
 
-  if (status === 200) {
     showBasicLayout()
   }
 }

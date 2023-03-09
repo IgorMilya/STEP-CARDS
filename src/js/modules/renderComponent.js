@@ -1,4 +1,4 @@
 export const renderComponent = component => {
-  const pageBody = document.querySelector('.page-body')
+  const pageBody = document.querySelector('.main-content')
   pageBody.append(component)
 }

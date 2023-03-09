@@ -1,23 +1,25 @@
-.aside {
-  width: 262px;
+.sidebar {
   display: none;
+  //transform: translateY(-110%);
   background-color: white;
   box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+  border-radius: 0 0 5px 0;
   clip-path: inset(-1px -48.8px -18.23px 0px);
+  transition: all 1s;
 }
 
-.aside-content {
+.sidebar-content {
   height: 100%;
   width: 262px;
   @include flexProperties(normal, flex-start, column);
 }
 
 .menu-title {
-  @include fontProperties(400, 14, 20, Montserrat);
   color: color(text, 'grey');
   padding-left: 24px;
   margin-top: 10px;
   margin-bottom: 20px;
+  @include fontProperties(400, 14, 20, Montserrat);
 }
 
 .support-line {
@@ -33,14 +35,14 @@
   padding-left: 24px;
 }
 
-.aside-list {
+.sidebar-list {
   @include flexProperties(normal, flex-start, column);
   gap: 20px;
   fill: color(text, 'grey');
   padding-left: 24px;
 }
 
-.aside-item {
+.sidebar-item {
   @include fontProperties(500, 14, 20, Montserrat);
 
   display: flex;
@@ -60,7 +62,7 @@
 
 // =========== COVID =============== //
 
-.aside-covid {
+.sidebar-covid {
   flex: 1 1 auto;
   @include flexProperties(normal, center, column);
 }
@@ -112,16 +114,16 @@
 
 // =========== FOOTER =============== //
 
-.aside-footer {
-  margin: 0 24px 20px 24px;
+.sidebar-footer {
+  margin: 0px 15px 12px 15px;
 }
 
-.asite-footer-title {
+.sidebar-footer-title {
   @include fontProperties(500, 18, 20, Montserrat);
   margin-bottom: 6px;
 }
 
-.aside-footer-text {
+.sidebar-footer-text {
   @include fontProperties(400, 12, 20, Montserrat);
   color: color(text, 'grey');
 }
