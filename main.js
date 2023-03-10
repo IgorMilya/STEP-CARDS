@@ -2,6 +2,7 @@ import './src/scss/style.scss'
 import { LoginPage } from './src/js/layouts'
 import { renderLoginPage, showBasicLayout, renderComponent } from './src/js/modules'
 import { validateUser } from './src/js/components/Login'
+import { renderVisitModal } from './src/js/modules'
 
 renderLoginPage()
 renderComponent(LoginPage)
@@ -12,17 +13,9 @@ loginButton.addEventListener('submit', validateUser)
 // showBasicLayout()
 // import { VisitPage } from './src/js/layouts'
 //
-// import { allDepartments, Visit } from './src/js/classes'
-// import { dropdown } from './src/js/components'
-// import { closeModalVisit } from './src/js/tools'
-//
-// const attendDoctor = new Visit()
-//
-//
-// app.append(attendDoctor.drawModal())
-// allDepartments()
-// dropdown()
-// closeModalVisit()
+const pageBody = document.querySelector('.main')
+renderVisitModal(pageBody)
+
 // app.append(VisitPage)
 // // app.prepend(Header())
 // // app.append(PageMain())

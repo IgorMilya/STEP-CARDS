@@ -1,11 +1,12 @@
-import { department } from '../utils/constants'
-import { drawDoctorsNames, drawDepartment } from '../tools/index'
-import { showDepDrop } from './departmentDrop'
+import { department } from '../../utils/constants.js'
+import { renderDepartment } from './renderDepartment.js'
+import { renderDoctorsNames } from './renderDocotrName.js'
+import { showInputs } from './showInputs.js'
 
-export const dropdown = () => {
+export const Dropdown = () => {
   const dropdown = document.querySelectorAll('.dropdown')
-
-  drawDoctorsNames(department)
+  const doctorTitle = document.querySelector('.doctor-title')
+  renderDoctorsNames(department)
 
   dropdown.forEach(item => {
     const select = item.querySelector('.modal-visit__dropdown')
@@ -13,17 +14,18 @@ export const dropdown = () => {
     const title = item.querySelector('.modal-visit__dropdown-title')
     const tab = item.getAttribute('data-name')
 
-    drawDepartment(department, tab, list)
+    renderDepartment(department, tab, list)
 
     select.addEventListener('click', () => {
       list.classList.toggle('menu-open')
     })
 
     list.addEventListener('click', e => {
+      doctorTitle.innerHTML = 'Doctor'
       title.innerHTML = e.target.textContent
       list.classList.remove('menu-open')
     })
   })
 
-  showDepDrop()
+  showInputs()
 }

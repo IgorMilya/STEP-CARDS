@@ -79,12 +79,12 @@
   }
 
   &__dropdown-list {
+    @include fontProperties(500, 14, 18);
     display: none;
     position: absolute;
     width: 100%;
     top: 35px;
     box-shadow: 0 7px 20px rgb(40 41 61 / 15%);
-    @include fontProperties(500, 14, 18);
     color: color(text, 'grey');
     background: aliceblue;
     z-index: 1;

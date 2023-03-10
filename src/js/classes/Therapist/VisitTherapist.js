@@ -1,4 +1,5 @@
-import { Visit } from './Visit.js'
+import { Visit } from '../Visit/Visit.js'
+import { createInput } from '../../components'
 
 export class VisitTherapist extends Visit {
   constructor(name, phone, surname, priority, department, date) {
@@ -6,13 +7,14 @@ export class VisitTherapist extends Visit {
     this.date = date
   }
 
-  drawAge() {
+  showAge() {
     const extra = document.querySelector('.modal-visit__extra')
     extra.insertAdjacentHTML(
       'beforebegin',
-      ` <label class='modal-visit__extra hide Therapist'>
-            <input class='modal-visit__gap calendar placeholder' type='number' required placeholder='Age' >
-    </label>`
+      ` 
+ ${createInput('modal-visit__extra hide Therapist', 'modal-visit__gap calendar placeholder', 'number', 'Age')}
+
+`
     )
   }
 }
