@@ -21,7 +21,10 @@ export const Dropdown = () => {
     })
 
     list.addEventListener('click', e => {
-      doctorTitle.innerHTML = 'Doctor'
+      !!e.target.getAttribute('data-post') && (doctorTitle.innerHTML = 'Doctor')
+      title.style.fontWeight = '600'
+      title.style.color = 'black'
+
       title.innerHTML = e.target.textContent
       list.classList.remove('menu-open')
     })

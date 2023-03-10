@@ -15,7 +15,8 @@ export class Visit {
     visitContainer.insertAdjacentHTML(
       'beforeend',
       `
-      <form class='modal-visit__form'>     
+      <form class='modal-visit__form'> 
+      <div class='modal-visit__label-wrapper'> 
          ${createInput('modal-visit__wrapper', 'modal-visit__gap placeholder', 'text', 'Enter name')}
          ${createInput('modal-visit__wrapper', 'modal-visit__gap placeholder', 'text', 'Enter surname')}
         
@@ -45,8 +46,11 @@ export class Visit {
                    <li class='modal-visit__dropdown-item'>Low</li>
               </ul>
           </div>
+          </div>
+          <div class='modal-visit__box-button'>
           ${cancelButton}
           ${saveButton}
+          </div>
     </form>
       `
     )

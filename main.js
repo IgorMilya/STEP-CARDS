@@ -19,8 +19,3 @@ renderVisitModal(pageBody)
 // app.append(VisitPage)
 // // app.prepend(Header())
 // // app.append(PageMain())
-//
-//
-//
-//
-//

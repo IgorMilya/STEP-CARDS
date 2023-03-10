@@ -16,14 +16,17 @@
   transform: translate(-50%, -50%);
 
   &__title {
-    @include fontProperties(500, 20, 26);
+    @include fontProperties(800, 20, 26);
     color: color(text, 'accent');
     margin: 17px 0 23px;
   }
-
-  &__form {
+  &__label-wrapper {
     @include flexProperties(center, space-between);
     flex-wrap: wrap;
+  }
+
+  &__form {
+    @include flexProperties(end, center, column);
   }
 
   &__wrapper {
@@ -37,8 +40,9 @@
   }
 
   &__gap {
+    @include fontProperties(600, 14, 18);
     width: 100%;
-    padding-bottom: 16px;
+    padding-bottom: 12px;
     border-bottom: 1px solid color(text, 'grey');
     margin-bottom: 24px;
   }
@@ -129,6 +133,14 @@
     width: 562px;
     position: relative;
   }
+  &__calendar-logo {
+    position: absolute;
+    top: 1px;
+    right: 3px;
+    cursor: pointer;
+  }
+  &__box-button {
+  }
 }
 
 .placeholder::placeholder {
@@ -151,8 +163,7 @@
 
 .calendar::-webkit-calendar-picker-indicator {
   font-size: 22px;
-  //background: color(background, 'secondary');
-  background: red;
+  background: color(background, 'secondary');
 }
 
 .hide {

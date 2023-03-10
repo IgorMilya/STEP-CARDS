@@ -12,7 +12,7 @@ export class VisitTherapist extends Visit {
     extra.insertAdjacentHTML(
       'beforebegin',
       ` 
- ${createInput('modal-visit__extra hide Therapist', 'modal-visit__gap calendar placeholder', 'number', 'Age')}
+ ${createInput('modal-visit__extra hide Therapist', 'modal-visit__gap placeholder', 'number', 'Age')}
 
 `
     )
