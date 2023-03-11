@@ -1,5 +1,5 @@
-export const createInput = (labelSelector, inputSelectors, type, placeholder, pattern) => `
+export const createInput = (labelSelector, inputSelectors, type, placeholder, pattern, name) => `
 <label class='${labelSelector}'>
-     <input class='${inputSelectors}' type='${type}' pattern='${pattern}' placeholder='${placeholder}' required>
+     <input class='${inputSelectors}' name='${name}' type='${type}' pattern='${pattern}' placeholder='${placeholder}' required>
 </label>
 `

@@ -8,18 +8,26 @@ export const commonGapForm = (div, pattern) => {
       'modal-visit__gap placeholder',
       'text',
       'Goal',
-      `^[${pattern} 0-9]+$`
+      `^[${pattern} 0-9]+$`,
+      'goal'
     )}
 
     <label class='modal-visit__extra'>
-       <textarea class='modal-visit__gap placeholder' id='w3review' name='w3review' rows='1' cols='50' placeholder='Description'></textarea>
+       <textarea class='modal-visit__gap placeholder' name='description' id='w3review' name='w3review' rows='1' cols='50' placeholder='Description'></textarea>
     </label>
        
-    ${createInput('modal-visit__extra small', 'modal-visit__gap placeholder', 'number', 'Tel.', '^[ 0-9]+$')}
+    ${createInput(
+      'modal-visit__extra small',
+      'modal-visit__gap placeholder',
+      'number',
+      'Tel.',
+      '^[ 0-9]+$',
+      'phone'
+    )}
             
     <div class='modal-visit__extra dropdown small'>
      
-        <input class='modal-visit__gap modal-visit__dropdown placeholder' type='text' placeholder='Priority' disabled>
+        <input class='modal-visit__gap modal-visit__dropdown placeholder' name='priority' type='text' placeholder='Priority' disabled>
         <ul class='modal-visit__dropdown-list ' >
              <li class='modal-visit__dropdown-item'>High</li>
              <li class='modal-visit__dropdown-item'>Normal</li>

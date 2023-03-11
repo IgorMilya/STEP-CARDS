@@ -3,11 +3,14 @@ import { createInput, createDropdown, Dropdown } from '../../components/'
 import modalImg from '../../../assets/modal-visit/modal-visit.svg'
 
 export class Visit {
-  constructor(name, phone, surname, priority, department) {
+  constructor({ name, surname, priority, goal, description, phone, doctor, department }) {
     this.name = name
-    this.phone = phone
     this.surname = surname
     this.priority = priority
+    this.goal = goal
+    this.description = description
+    this.phone = phone
+    this.doctor = doctor
     this.department = department
   }
 
@@ -23,18 +26,20 @@ export class Visit {
            'modal-visit__gap placeholder',
            'text',
            'Enter name',
-           `^[${pattern}]+$`
+           `^[${pattern}]+$`,
+           'name'
          )}
          ${createInput(
            'modal-visit__wrapper',
            'modal-visit__gap placeholder',
            'text',
            'Enter surname',
-           `^[${pattern}]+$`
+           `^[${pattern}]+$`,
+           'surname'
          )}
         
-         ${createDropdown('', 'Department', 'department', 'Department')}
-         ${createDropdown('doctor-title', 'Doctor', 'doctor-list')}
+         ${createDropdown('', 'Department', 'department', 'department', 'Department')}
+         ${createDropdown('doctor-title', 'Doctor', 'doctor-list', 'doctor')}
          <div class='modal-visit__img'>
              <img src='${modalImg}' alt='Form'>
          </div>
