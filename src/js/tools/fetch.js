@@ -1,18 +1,25 @@
 import ky from 'ky'
 
-export const request = async (method, body) => {
-  let data
-  const PREFIX_URL = 'https://ajax.test-danit.com/api/v2/cards/'
-  const DAFAULT_HEADERS = ''
+const headers = { Authorization: `Bearer 988ad7c6-ffba-4ec6-8646-4b22af25b1f0` }
+const prefixUrl = 'https://ajax.test-danit.com/api/v2/cards/'
+export const request = async (url, method, body) => {
+  const logOptions = { method: 'POST', prefixUrl, json: body }
+  const OPTIONS = { method, prefixUrl, json: body, headers }
 
-  if (method === 'LOGIN') {
-    const options = { method: 'POST', prefixUrl: PREFIX_URL, json: body }
-
-    data = await ky('login', options).text()
-  } else {
-    const options = { method: method, prefixUrl: PREFIX_URL, json: body }
-    data = await ky('login', options).json()
+  try {
+    return await (method === 'LOGIN' ? ky(url, logOptions).text() : ky(url, OPTIONS).json())
+  } catch (err) {
+    console.log(err.message)
   }
+}
 
-  return data
+const getCovidData = async () => {
+  const { Countries, Global } = await ky.get('https://api.covid19api.com/summary').json()
+
+  const [{ TotalConfirmed, TotalDeaths }] = Countries.filter(elem => elem.Country === 'Ukraine')
+
+  return {
+    UAtotalConfirmed: TotalConfirmed,
+    UAtotalCDeaths: TotalDeaths,
+  }
 }

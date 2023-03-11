@@ -1,16 +1,18 @@
 import { Button } from '../UI'
+import { find } from '../tools'
 
 export const showBasicLayout = () => {
-  const main = document.querySelector('.main-content')
-  const headerLogo = document.querySelector('.header-logo-wrapp')
-  const sideBar = document.querySelector('.sidebar')
-  const headerContent = document.querySelector('.header-content')
-  const headerSearchInput = document.querySelector('.header-search-wrap')
-  const headerAvatar = document.querySelector('.header-avatar')
-  const headerBtnWrapper = document.querySelector('.header-button')
+  const main = find('.main-content')
+  const headerLogo = find('.header-logo-wrapp')
+  const headerSearchInput = find('.header-search-wrap')
+  const sideBar = find('.sidebar')
+  const headerContent = find('.header-content')
+  const headerBtnWrapper = find('.header-button')
+  const headerAvatar = find('.header-avatar')
   const newPatientBtn = Button('register', 'New Patient')
 
   main.innerHTML = ''
+
   sideBar.classList.add('fade-out')
   headerLogo.classList.add('active')
   headerContent.classList.add('active')

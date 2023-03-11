@@ -19,7 +19,8 @@ export const validateUser = async e => {
       password: dataFromForm.get('password'),
     }
   }
-  const data = await request('LOGIN', userData)
+
+  const data = await request('login', 'LOGIN', userData)
 
   if (!!data) {
     window.localStorage.setItem('token', data)

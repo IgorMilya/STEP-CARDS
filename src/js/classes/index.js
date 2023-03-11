@@ -1,4 +1,5 @@
 export { Visit } from './Visit'
+export { Appointment } from './Appointment/Appointment'
 import { VisitDentist } from './VisitDentist'
 import { VisitCardiologist } from './VisitCardiologist'
 import { VisitTherapist } from './VisitTherapist'
