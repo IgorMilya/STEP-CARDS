@@ -8,17 +8,13 @@ export class VisitDentist extends Visit {
     this.date = date
   }
 
-  showCalendar() {
-    const extra = document.querySelector('.modal-visit__extra')
-    extra.insertAdjacentHTML(
-      'beforebegin',
-      ` <label class='modal-visit__extra hide Dentist '>
-                <input class='modal-visit__gap calendar' type='date' required >
+  showCalendar(div) {
+    div.innerHTML = ` <label class='modal-visit__extra'>
+                <input class='modal-visit__gap calendar' type='date'  >
                 <div class='modal-visit__calendar-logo'> <img src='${url}' alt='calendar'></div>
             </label>
             
 <!-- ${createInput('modal-visit__extra hide Dentist', 'modal-visit__gap calendar', 'date')}-->
 `
-    )
   }
 }

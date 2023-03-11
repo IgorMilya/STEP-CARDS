@@ -1,16 +1,14 @@
-import { Modal, Visit, VisitCardiologist, VisitDentist, VisitTherapist } from '../classes'
+import { Modal, Visit} from '../classes'
 
 export const renderVisitModal = parent => {
+  // prettier-ignore
+  const pattern = 'A-Za-zА-Яа-яЁё\\s'
+
   const modal = new Modal()
   const visit = new Visit()
-  const dentist = new VisitDentist()
-  const therapist = new VisitTherapist()
-  const cardiology = new VisitCardiologist()
 
   modal.showModal(parent)
   modal.closeModal()
-  visit.showForm()
-  dentist.showCalendar()
-  therapist.showAge()
-  cardiology.showHealthInfo()
+  visit.showForm(pattern)
+  modal.closeModalButton()
 }

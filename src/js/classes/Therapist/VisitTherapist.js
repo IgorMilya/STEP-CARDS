@@ -7,14 +7,9 @@ export class VisitTherapist extends Visit {
     this.date = date
   }
 
-  showAge() {
-    const extra = document.querySelector('.modal-visit__extra')
-    extra.insertAdjacentHTML(
-      'beforebegin',
-      ` 
- ${createInput('modal-visit__extra hide Therapist', 'modal-visit__gap placeholder', 'number', 'Age')}
-
+  showAge(div) {
+    div.innerHTML = ` 
+ ${createInput('modal-visit__extra', 'modal-visit__gap placeholder', 'number', 'Age', `^[ 0-9]+$`)}
 `
-    )
   }
 }

@@ -6,6 +6,7 @@ export const validateUser = async e => {
   e.preventDefault()
 
   const dataFromForm = new FormData(e.target)
+
   const isRemember = !!dataFromForm.get('checkbox')
   let userData
 

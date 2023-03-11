@@ -16,4 +16,17 @@ export class Modal {
       }
     })
   }
+
+  closeModalButton() {
+    const modalVisit = document.querySelector('.modal-visit')
+    const cancelBtn = document.querySelector('.modal-visit__button-cancel')
+    cancelBtn.addEventListener('click', e => {
+      e.preventDefault()
+      modalVisit.classList.remove('opened')
+    })
+  }
+  openModal() {
+    const modalVisit = document.querySelector('.modal-visit')
+    modalVisit.classList.add('opened')
+  }
 }

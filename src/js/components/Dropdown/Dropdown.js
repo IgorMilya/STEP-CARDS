@@ -1,34 +1,36 @@
 import { department } from '../../utils/constants.js'
 import { renderDepartment } from './renderDepartment.js'
 import { renderDoctorsNames } from './renderDocotrName.js'
-import { showInputs } from './showInputs.js'
+import { showDoctor } from './showDoctor.js'
+import { modifyTitle } from './modifyTitle.js'
+import { checkValue } from './checkValue.js'
 
-export const Dropdown = () => {
+export const Dropdown = pattern => {
   const dropdown = document.querySelectorAll('.dropdown')
   const doctorTitle = document.querySelector('.doctor-title')
+  const modalImg = document.querySelector('.modal-visit__img')
+  const newForm = document.querySelector('.new-form')
+
   renderDoctorsNames(department)
 
   dropdown.forEach(item => {
     const select = item.querySelector('.modal-visit__dropdown')
     const list = item.querySelector('.modal-visit__dropdown-list')
-    const title = item.querySelector('.modal-visit__dropdown-title')
     const tab = item.getAttribute('data-name')
 
     renderDepartment(department, tab, list)
 
-    select.addEventListener('click', () => {
+    item.addEventListener('click', e => {
       list.classList.toggle('menu-open')
+      if (!!e.target.querySelector('.modal-visit__dropdown-item')) {
+        list.classList.remove('menu-open')
+      }
     })
 
     list.addEventListener('click', e => {
-      !!e.target.getAttribute('data-post') && (doctorTitle.innerHTML = 'Doctor')
-      title.style.fontWeight = '600'
-      title.style.color = 'black'
-
-      title.innerHTML = e.target.textContent
-      list.classList.remove('menu-open')
+      modifyTitle(modalImg, e.target, select, doctorTitle)
+      checkValue(select.value, newForm, pattern)
     })
   })
-
-  showInputs()
+  showDoctor()
 }

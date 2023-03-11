@@ -10,33 +10,32 @@ export class VisitCardiologist extends Visit {
     this.age = age
   }
 
-  showHealthInfo() {
-    const extra = document.querySelector('.modal-visit__extra')
-    extra.insertAdjacentHTML(
-      'beforebegin',
-      ` 
+  showHealthInfo(div, pattern) {
+    div.innerHTML = ` 
  ${createInput(
-   'modal-visit__extra hide Cardiology small',
+   'modal-visit__extra small',
    'modal-visit__gap placeholder',
    'text',
-   'Typical pressure'
+   'Typical pressure',
+   `^[${pattern} 0-9]+$`
  )}
  ${createInput(
-   'modal-visit__extra hide Cardiology small',
+   'modal-visit__extra small',
    'modal-visit__gap placeholder',
    'number',
-   'Body mass index'
+   'Body mass index',
+   `[0-9]{3}`
  )}
 
  ${createInput(
-   'modal-visit__extra hide Cardiology small',
+   'modal-visit__extra small',
    'modal-visit__gap placeholder',
    'text',
-   'Diseases of cardiovascular'
+   'Diseases of cardiovascular',
+   `^[${pattern} 0-9]+$`
  )}
- ${createInput('modal-visit__extra hide Cardiology small', 'modal-visit__gap placeholder', 'number', 'Age')}
+ ${createInput('modal-visit__extra small', 'modal-visit__gap placeholder', 'number', 'Age', `[0-9]{3}`)}
 
 `
-    )
   }
 }

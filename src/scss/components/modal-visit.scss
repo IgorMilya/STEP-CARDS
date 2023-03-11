@@ -20,6 +20,7 @@
     color: color(text, 'accent');
     margin: 17px 0 23px;
   }
+
   &__label-wrapper {
     @include flexProperties(center, space-between);
     flex-wrap: wrap;
@@ -59,29 +60,6 @@
     cursor: pointer;
   }
 
-  &__dropdown:after {
-    position: absolute;
-    right: 10px;
-    content: '';
-    height: 8px;
-    width: 8px;
-    transform: rotate(-45deg);
-    border-left: 2px solid color(text, 'grey');
-    border-bottom: 2px solid color(text, 'grey');
-  }
-
-  &__dropdown:before {
-    display: none;
-    position: absolute;
-    right: 10px;
-    content: '';
-    height: 8px;
-    width: 8px;
-    transform: rotate(45deg);
-    border-left: 2px solid color(text, 'grey');
-    border-top: 2px solid color(text, 'grey');
-  }
-
   &__dropdown-list {
     @include fontProperties(500, 14, 18);
     display: none;
@@ -105,6 +83,10 @@
     color: color(text, 'accent');
     border-left: 2px solid color(text, 'accent');
     background: white;
+  }
+
+  &__img {
+    margin: 30px auto;
   }
 
   &__button-box {
@@ -133,14 +115,41 @@
     width: 562px;
     position: relative;
   }
+
   &__calendar-logo {
     position: absolute;
     top: 1px;
     right: 3px;
     cursor: pointer;
   }
+
   &__box-button {
   }
+}
+
+.dropdown:after {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  content: '';
+  height: 8px;
+  width: 8px;
+  transform: rotate(-45deg);
+  border-left: 2px solid color(text, 'grey');
+  border-bottom: 2px solid color(text, 'grey');
+}
+
+.dropdown:before {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  content: '';
+  height: 8px;
+  width: 8px;
+  transform: rotate(45deg);
+  border-left: 2px solid color(text, 'grey');
+  border-top: 2px solid color(text, 'grey');
 }
 
 .placeholder::placeholder {
@@ -163,18 +172,23 @@
 
 .calendar::-webkit-calendar-picker-indicator {
   font-size: 22px;
-  background: color(background, 'secondary');
+  opacity: 0;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .hide {
   display: none;
 }
+
 .small {
   width: 270px;
 }
+
 .opened {
   display: block;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

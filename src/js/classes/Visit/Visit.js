@@ -1,5 +1,6 @@
 import { cancelButton, saveButton } from '../../UI/index.js'
 import { createInput, createDropdown, Dropdown } from '../../components/'
+import modalImg from '../../../assets/modal-visit/modal-visit.svg'
 
 export class Visit {
   constructor(name, phone, surname, priority, department) {
@@ -10,42 +11,36 @@ export class Visit {
     this.department = department
   }
 
-  showForm() {
+  showForm(pattern) {
     const visitContainer = document.querySelector('.visit-container')
     visitContainer.insertAdjacentHTML(
       'beforeend',
       `
       <form class='modal-visit__form'> 
       <div class='modal-visit__label-wrapper'> 
-         ${createInput('modal-visit__wrapper', 'modal-visit__gap placeholder', 'text', 'Enter name')}
-         ${createInput('modal-visit__wrapper', 'modal-visit__gap placeholder', 'text', 'Enter surname')}
+         ${createInput(
+           'modal-visit__wrapper',
+           'modal-visit__gap placeholder',
+           'text',
+           'Enter name',
+           `^[${pattern}]+$`
+         )}
+         ${createInput(
+           'modal-visit__wrapper',
+           'modal-visit__gap placeholder',
+           'text',
+           'Enter surname',
+           `^[${pattern}]+$`
+         )}
         
          ${createDropdown('', 'Department', 'department', 'Department')}
          ${createDropdown('doctor-title', 'Doctor', 'doctor-list')}
-         ${createInput('modal-visit__extra All hide', 'modal-visit__gap placeholder', 'text', 'Goal')}
-
-         <label class='modal-visit__extra All hide'>
-            <textarea class='modal-visit__gap placeholder' id='w3review' name='w3review' rows='1' cols='50' placeholder='Description'></textarea>
-         </label>
-            
-         ${createInput(
-           'modal-visit__extra All hide small',
-           'modal-visit__gap placeholder',
-           'number',
-           'Tel.',
-           '[0-9]'
-         )}
-            
-          <div class='modal-visit__extra dropdown All hide small'>
-              <div class='modal-visit__gap modal-visit__dropdown'>
-                   <span class='modal-visit__dropdown-title'> Priority</span>
-              </div>
-              <ul class='modal-visit__dropdown-list ' >
-                   <li class='modal-visit__dropdown-item'>High</li>
-                   <li class='modal-visit__dropdown-item'>Normal</li>
-                   <li class='modal-visit__dropdown-item'>Low</li>
-              </ul>
-          </div>
+         <div class='modal-visit__img'>
+             <img src='${modalImg}' alt='Form'>
+         </div>
+         
+         <div class='modal-visit__label-wrapper new-form'> </div>     
+           
           </div>
           <div class='modal-visit__box-button'>
           ${cancelButton}
@@ -54,7 +49,8 @@ export class Visit {
     </form>
       `
     )
-    Dropdown()
+    Dropdown(pattern)
+
     return visitContainer
   }
 }
