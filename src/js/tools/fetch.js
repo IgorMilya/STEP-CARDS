@@ -1,8 +1,11 @@
 import ky from 'ky'
+import { renderBasicLayout } from '../modules/index.js'
 
-const headers = { Authorization: `Bearer 988ad7c6-ffba-4ec6-8646-4b22af25b1f0` }
-const prefixUrl = 'https://ajax.test-danit.com/api/v2/cards/'
-export const request = async (url, method, body) => {
+// const headers = { Authorization: `Bearer 5f0ff1a4-6ffe-4191-9ec3-0de5b9a33dc9` }
+
+export const request = async ({ url, method, token, body }) => {
+  const prefixUrl = 'https://ajax.test-danit.com/api/v2/cards/'
+  const headers = { Authorization: `Bearer ${token}` }
   const logOptions = { method: 'POST', prefixUrl, json: body }
   const OPTIONS = { method, prefixUrl, json: body, headers }
 

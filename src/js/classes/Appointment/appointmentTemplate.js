@@ -1,29 +1,31 @@
-import { createElement } from '../../tools'
-
+import { create } from '../../tools'
+import { tableActionsIcons } from './appointment.utils'
 export const appointmentTemplate = props => {
-  const { element, avatar, name, surname, department, doctor, tel, priority, status } = props
+  const { htmlElement, avatar, name, surname, department, doctor, tel, priority, status } = props
+  const actions = create('div', 'actions')
+  const clientName = create('div', 'name', `${name} ${surname}`)
+  const imgWrap = create('div', 'avatar')
 
-  const appointment = element
-  element.classList.add('appointment')
-
-  const imgWrap = createElement('div', 'avatar')
-  const clientName = createElement('div', 'name', `${name} ${surname}`)
   imgWrap.innerHTML = `<img src = '${avatar}' alt = 'Client avatar' />`
 
-  clientName.prepend(imgWrap)
-
   const appointmentContent = [
-    createElement('div', 'name', `${name} ${surname}`),
-    createElement('div', 'department', `${department}`),
-    createElement('div', 'doctor', `${doctor}`),
-    createElement('div', 'tel', `${tel}`),
-    createElement('div', 'priority', `${priority}`),
-    createElement('div', 'status', `${status}`),
+    create('div', 'department', `${department}`),
+    create('div', 'doctor', `${doctor}`),
+    create('div', 'tel', `${tel}`),
+    create('div', 'priority', `${priority}`),
+    create('div', 'status', `${status}`),
   ]
 
-  const actions = createElement('div', 'actions')
+  const tableIcons = tableActionsIcons.map(({ title, path }) => {
+    const container = create('div', 'icon-container')
+    container.innerHTML = `<img src ='${path}' alt ='${title} icon' title ='${title}'/>`
 
-  appointment.append(clientName, ...appointmentContent, actions)
+    return container
+  })
 
-  return appointment
+  clientName.prepend(imgWrap)
+  actions.append(...tableIcons)
+  htmlElement.append(clientName, ...appointmentContent, actions)
+
+  return htmlElement
 }

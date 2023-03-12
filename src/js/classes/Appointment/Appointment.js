@@ -1,11 +1,7 @@
-import { createElement, find } from '../../tools'
+import { create, random, find, request } from '../../tools'
 import { appointmentTemplate } from './appointmentTemplate'
 import avatar1 from '../../../assets/images/dashboard/pacAv1.svg'
-import avatar2 from '../../../assets/images/dashboard/pacAv1.svg'
-const random = (a, b) => {
-  const randomIndex = Math.round(Math.random())
-  return randomIndex === 0 ? a : b
-}
+import avatar2 from '../../../assets/images/dashboard/pacAv2.svg'
 
 export class Appointment {
   parentElement = find('.table-list')
@@ -19,10 +15,8 @@ export class Appointment {
     this.tel = tel
     this.priority = priority
     this.status = status
-    this.element = createElement('div')
+    this.htmlElement = create('div', 'appointment')
   }
-
-  _renderNewAppointment() {}
 
   addNewAppointment() {
     const appointment = appointmentTemplate(this)

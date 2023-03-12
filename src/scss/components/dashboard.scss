@@ -19,7 +19,7 @@
     padding: 20px 24px;
     border-radius: 8px;
     background-color: color(background, 'secondary');
-    box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
   }
 
   .card-image {
@@ -51,9 +51,8 @@
   padding: 3px;
   flex: 1 1 auto;
   border-radius: 8px;
-  display: flex;
-  flex-direction: column;
   background-color: color(background, 'secondary');
+  @include flexProperties(null, null, column);
 }
 
 .table-title {
@@ -66,19 +65,121 @@
   background-color: #fafafa;
   border-bottom: 1px solid #dbdde0;
   @include fontProperties(600, 14, 20);
-  @include flexProperties(center, space-between);
 
-  div:last-child {
-    margin-right: 80px;
+  div:nth-child(1) {
+    width: 22%;
+  }
+
+  div:nth-child(2) {
+    width: 15%;
+  }
+
+  div:nth-child(3) {
+    width: 18%;
+  }
+
+  div:nth-child(4) {
+    width: 15%;
+  }
+
+  div:nth-child(5) {
+    width: 9%;
+  }
+
+  div:nth-child(6) {
+    width: 9%;
+  }
+
+  div:nth-child(7) {
+    width: 9%;
   }
 
   .text {
-    width: 20%;
+    text-align: left;
+    display: inline-block;
   }
 }
 
 .table-list {
   height: 100%;
+}
+
+.appointment {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #dbdde0;
+  @include flexProperties(center);
+  @include fontProperties(400, 14, 20);
+
+  div {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .name {
+    gap: 5px;
+    width: 22%;
+    @include flexProperties(center);
+  }
+
+  .avatar {
+    height: 40px;
+    width: 40px;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .department {
+    width: 15%;
+  }
+
+  .doctor {
+    width: 18%;
+  }
+
+  .tel {
+    width: 15%;
+  }
+
+  .priority {
+    width: 9%;
+  }
+
+  .status {
+    width: 9%;
+  }
+
+  .actions {
+    width: 9%;
+    display: flex;
+    gap: 15px;
+
+    .icon-container {
+      padding-top: 5px;
+      width: 14px;
+      height: 24px;
+      cursor: pointer;
+
+      img {
+        min-width: 100%;
+      }
+
+      &:hover {
+        filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
+      }
+    }
+
+    .icon-container:nth-child(3) {
+      &:hover {
+        filter: invert(62%) sepia(82%) saturate(2543%) hue-rotate(306deg) brightness(102%) contrast(101%);
+      }
+    }
+  }
+
+  &:hover {
+    background-color: rgba(246, 246, 246, 0.34);
+  }
 }
 
 .table-pagination {
@@ -89,46 +190,4 @@
 .board-actions {
   width: 298px;
   height: 100%;
-}
-
-.appointment {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  @include fontProperties(400, 14, 20);
-
-  .name {
-    display: flex;
-    margin-left: 8px;
-    align-items: center;
-  }
-  .avatar {
-    height: 40px;
-    width: 40px;
-    img {
-      max-width: 100%;
-    }
-  }
-  div {
-    width: 30%;
-  }
-
-  .department {
-    margin-left: 8px;
-  }
-  .doctor {
-    margin-left: 8px;
-  }
-  .tel {
-    margin-left: 8px;
-  }
-  .priority {
-    margin-left: 8px;
-  }
-  .status {
-    margin-left: 8px;
-  }
-  .actions {
-    width: 50px;
-  }
 }

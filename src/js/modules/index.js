@@ -1,4 +1,4 @@
-export { showBasicLayout } from './showBasicLayout'
+export { userLoggedIn } from './userLoggedIn.js'
 export { renderComponent } from './renderComponent.js'
-export { renderLoginPage } from './renderLoginPage'
-export { showLoginForm } from '../components/Registration/showLoginForm.js'
+export { renderBasicLayout } from './renderBasicLayout.js'
+export { loginFormHandler } from '../components/Registration/loginFormHandler.js'

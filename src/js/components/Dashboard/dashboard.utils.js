@@ -9,4 +9,4 @@ export const boardHeaderContent = [
   { text: 'Hospital Earnings', path: clinic, value: '$ 12,174' },
 ]
 
-export const tableHeaders = ['Name', 'Department', 'Doctor', 'Tel', 'Priority', 'Status']
+export const tableHeaders = ['Name', 'Department', 'Doctor', 'Tel', 'Priority', 'Status', "Actions"]

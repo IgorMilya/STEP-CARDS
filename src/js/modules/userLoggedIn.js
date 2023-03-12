@@ -1,7 +1,11 @@
 import { Button } from '../UI'
 import { find } from '../tools'
+import { renderComponent } from './renderComponent'
+import { Dashboard } from '../components'
+import { getAllAppointments } from './getAllAppointments'
+import { Appointment } from '../classes/index.js'
 
-export const showBasicLayout = () => {
+export const userLoggedIn = async () => {
   const main = find('.main-content')
   const headerLogo = find('.header-logo-wrapp')
   const headerSearchInput = find('.header-search-wrap')
@@ -19,4 +23,12 @@ export const showBasicLayout = () => {
   headerSearchInput.classList.add('fade-out')
   headerAvatar.classList.add('fade-out')
   headerBtnWrapper.innerHTML = newPatientBtn
+
+  renderComponent(Dashboard)
+  // ВАЖЛИВА ХУЙНЯ
+  const allAppointments = await getAllAppointments()
+  allAppointments.forEach(item => {
+    const appointment = new Appointment(item)
+    appointment.addNewAppointment()
+  })
 }

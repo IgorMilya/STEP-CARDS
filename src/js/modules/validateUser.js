@@ -1,0 +1,22 @@
+import { userLoggedIn } from './index.js'
+import { request } from '../tools/index.js'
+export const validateUser = async e => {
+  e.preventDefault()
+
+  const dataFrom = new FormData(e.target)
+  const isRemember = !!dataFrom.get('checkbox')
+  const userData = { email: dataFrom.get('text'), password: dataFrom.get('password') }
+  const response = await request({ url: 'login', method: 'LOGIN', body: userData })
+
+  if (!!response && isRemember) {
+    window.localStorage.setItem('token', response)
+    window.localStorage.setItem('userData', JSON.stringify(userData))
+    await userLoggedIn()
+  }
+  if (!!response && !isRemember) {
+    window.localStorage.setItem('token', response)
+    await userLoggedIn()
+  }
+}
+
+// const userData = { email: 'hendyHealth@gmail.com', password: 123456 }

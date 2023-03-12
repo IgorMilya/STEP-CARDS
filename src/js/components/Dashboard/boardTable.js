@@ -1,13 +1,13 @@
-import { createElement } from '../../tools'
+import { create } from '../../tools'
 import { tableHeaders } from './dashboard.utils'
 
-export const boardTable = createElement('div', 'board-table')
-const tableTitle = createElement('div', 'table-title', 'Appointment Activity')
-const tableHead = createElement('div', 'table-head')
-const tableList = createElement('div', 'table-list')
-const tablePagination = createElement('div', 'table-pagination')
+export const boardTable = create('div', 'board-table')
+const tableTitle = create('div', 'table-title', 'Appointment Activity')
+const tableHead = create('div', 'table-head')
+const tableList = create('div', 'table-list')
+const tablePagination = create('div', 'table-pagination')
 
-const headers = tableHeaders.map(text => createElement('div', 'text', `${text}`))
+const headers = tableHeaders.map(text => create('div', 'text', `${text}`))
 tableHead.append(...headers)
 
 // let num = Math.ceil(100 / 8)
