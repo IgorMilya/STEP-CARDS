@@ -24,13 +24,6 @@ body {
   gap: 110px;
 }
 
-//.container {
-//  position: relative;
-//  overflow: hidden;
-//  display: flex;
-//  flex-direction: column;
-//}
-
 .header {
   height: 72px;
   @include flexProperties(normal);
