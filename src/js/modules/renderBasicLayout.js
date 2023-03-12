@@ -1,12 +1,14 @@
 import { Header, Main, Sidebar } from '../layouts'
-import { loginFormHandler } from '../components/Registration/loginFormHandler.js'
+import { loginFormHandler } from '../components/Registration'
 import { renderComponent } from './renderComponent'
-import { Registration } from '../components/index'
+import { Registration } from '../components'
+import { changeValueCovid } from './changeValueCovid'
 
 export const renderBasicLayout = () => {
   const app = document.getElementById('app')
   app.innerHTML = ''
   app.append(Header(), Main(), Sidebar())
   renderComponent(Registration)
+  changeValueCovid()
   loginFormHandler()
 }

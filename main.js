@@ -1,5 +1,5 @@
 import './src/scss/style.scss'
 
-// import { renderBasicLayout } from './src/js/modules'
-//
-// renderBasicLayout()
+import { renderBasicLayout } from './src/js/modules'
+
+renderBasicLayout()

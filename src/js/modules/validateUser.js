@@ -1,5 +1,5 @@
 import { userLoggedIn } from './index.js'
-import { request } from '../tools/index.js'
+import { request } from '../tools'
 export const validateUser = async e => {
   e.preventDefault()
 
