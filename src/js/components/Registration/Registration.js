@@ -1,5 +1,5 @@
-import { LoginForm, registrationImg } from './index'
+import { loginForm, registrationImg } from './index'
+import { create } from '../../tools'
 
-export const Registration = document.createElement('div')
-Registration.classList.add('registration')
-Registration.append(LoginForm, registrationImg)
+export const Registration = create('div', 'registration')
+Registration.append(loginForm, registrationImg)
