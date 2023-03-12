@@ -1,12 +1,4 @@
-export { drawDoctorsNames } from './docotrName'
-export { drawDepartment } from './department'
-export { showElements } from './showElement'
-export { closeModalVisit } from './visitClosed'
 export { request } from './fetch'
 export { find, findAll } from './find'
 export { create } from './create.js'
 export { random } from './random.js'
-
-// export { drawDoctorsNames } from '../components/Dropdown/renderDocotrName.js'
-// export { drawDepartment } from '../components/Dropdown/renderDepartment.js'
-// export { showElements } from '../components/Dropdown/showElement.js'

@@ -1,6 +1,6 @@
 import { cancelButton, saveButton } from '../../UI/index.js'
 import { createInput, createDropdown, Dropdown } from '../../components/'
-import modalImg from '../../../assets/modal-visit/modal-visit.svg'
+import modalImg from '../../../assets/modal-visit/modalImg.svg'
 
 export class Visit {
   constructor({ name, surname, priority, goal, description, phone, doctor, department }) {
