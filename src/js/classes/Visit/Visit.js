@@ -38,8 +38,9 @@ export class Visit {
            'surname'
          )}
         
-         ${createDropdown('', 'Department', 'department', 'department', 'Department')}
+         ${createDropdown('department-title', 'Department', 'department', 'department', 'Department')}
          ${createDropdown('doctor-title', 'Doctor', 'doctor-list', 'doctor')}
+         
          <div class='modal-visit__img'>
              <img src='${modalImg}' alt='Form'>
          </div>

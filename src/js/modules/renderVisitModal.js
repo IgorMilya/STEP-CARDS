@@ -1,4 +1,5 @@
 import { Modal, Visit } from '../classes'
+import { handleForm } from '../components'
 
 export const renderVisitModal = parent => {
   // prettier-ignore
@@ -11,4 +12,6 @@ export const renderVisitModal = parent => {
   modal.closeModal()
   visit.showForm(pattern)
   modal.closeModalButton()
+
+  handleForm()
 }

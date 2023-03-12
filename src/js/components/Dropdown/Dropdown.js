@@ -28,7 +28,7 @@ export const Dropdown = pattern => {
     })
 
     list.addEventListener('click', e => {
-      modifyTitle(modalImg, e.target, select, doctorTitle)
+      modifyTitle({ img: modalImg, target: e.target, select: select, title: doctorTitle })
       checkValue(select.value, newForm, pattern)
     })
   })
