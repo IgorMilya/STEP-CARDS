@@ -1,6 +1,5 @@
-export { LoginForm } from './Login/loginForm'
-export { dashBord } from './dashBord'
-
+export { Registration, loginForm } from './Registration'
+export { Dashboard } from './Dashboard'
 export { Dropdown, createDropdown } from './Dropdown/_index.js'
 export { createInput } from './Input/createInput'
 export { handleForm } from './handleForm'

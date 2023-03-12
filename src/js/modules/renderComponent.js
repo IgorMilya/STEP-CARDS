@@ -1,4 +1,7 @@
+import { find } from '../tools'
+
 export const renderComponent = component => {
-  const pageBody = document.querySelector('.page-body')
-  pageBody.append(component)
+  const mainContent = find('.main-content')
+
+  mainContent.append(component)
 }

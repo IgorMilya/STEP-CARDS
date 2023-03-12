@@ -13,10 +13,3 @@ export const department = [
     doctor: ['Stephanie Cook', 'Marion James', 'Teresa Holland'],
   },
 ]
-
-export const DEFAULT_HEADERS = {
-  headers: {
-    'Content-Type': 'application/json',
-  },
-}
-

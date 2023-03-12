@@ -16,12 +16,12 @@
   transform: translate(-50%, -50%);
 
   &__title {
-    @include fontProperties(800, 20, 26);
+    @include fontProperties(500, 20, 26);
     color: color(text, 'accent');
     margin: 17px 0 23px;
   }
 
-  &__label-wrapper {
+  &__form {
     @include flexProperties(center, space-between);
     flex-wrap: wrap;
   }
@@ -67,6 +67,7 @@
     width: 100%;
     top: 35px;
     box-shadow: 0 7px 20px rgb(40 41 61 / 15%);
+    @include fontProperties(500, 14, 18);
     color: color(text, 'grey');
     background: aliceblue;
     z-index: 1;

@@ -16,7 +16,7 @@ body {
   background-color: color(background);
 }
 
-.visit-page-container {
+.registration {
   height: 100%;
   display: flex;
   align-items: center;
@@ -24,19 +24,12 @@ body {
   gap: 110px;
 }
 
-//.container {
-//  position: relative;
-//  overflow: hidden;
-//  display: flex;
-//  flex-direction: column;
-//}
-
 .header {
-  height: 88px;
+  height: 72px;
   @include flexProperties(normal);
 }
 
 .main {
   display: flex;
-  height: calc(100vh - 88px);
+  height: calc(100vh - 72px);
 }
