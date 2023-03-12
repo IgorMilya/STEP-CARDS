@@ -20,7 +20,7 @@ const getCovidData = async () => {
     const drobNumWorldTodayConf = newConfirmedWorld.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
     const drobNumWorldAllConf = allWorldConfirmed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
     const drobNumWorldAllDeaths = allWorldDeaths.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
-
+// TODO: change naming for this section adn create single function for this logic const readyStr = greateFinishStr(allConfirmed)
     return {
       UAnewConfirmed: newConfirmed,
       UAallConfirmed: drobNumUaAllConf,
