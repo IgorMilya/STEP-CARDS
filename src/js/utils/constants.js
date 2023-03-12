@@ -13,5 +13,3 @@ export const department = [
     doctor: ['Stephanie Cook', 'Marion James', 'Teresa Holland'],
   },
 ]
-
-
