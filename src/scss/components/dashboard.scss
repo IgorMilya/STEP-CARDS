@@ -1,0 +1,193 @@
+.dashboard {
+  height: 100%;
+  padding: 0 31px 15px;
+  gap: 5px;
+  @include flexProperties(null, null, column);
+}
+
+//============== DASHBOARD-HEADER ===============
+
+.board-header {
+  margin: 11px 0;
+  gap: 30px;
+  @include flexProperties(center, space-between);
+
+  .header-card {
+    width: 30%;
+    gap: 24px;
+    display: flex;
+    padding: 20px 24px;
+    border-radius: 8px;
+    background-color: color(background, 'secondary');
+    box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
+  }
+
+  .card-image {
+  }
+
+  .card-content {
+    @include flexProperties(null, null, column);
+  }
+
+  .card-title {
+    @include fontProperties(700, 14, 20);
+  }
+
+  .card-value {
+    color: color(text, 'accent');
+    @include fontProperties(null, 18, 24);
+  }
+}
+
+.board-content {
+  display: flex;
+  height: 100%;
+}
+
+//==================== DASHBOARD-TABLE ===================
+
+.board-table {
+  height: 100%;
+  padding: 3px;
+  flex: 1 1 auto;
+  border-radius: 8px;
+  background-color: color(background, 'secondary');
+  @include flexProperties(null, null, column);
+}
+
+.table-title {
+  padding: 20px 8px 18px;
+  @include fontProperties(700, 20, 26);
+}
+
+.table-head {
+  padding: 16px 8px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #dbdde0;
+  @include fontProperties(600, 14, 20);
+
+  div:nth-child(1) {
+    width: 22%;
+  }
+
+  div:nth-child(2) {
+    width: 15%;
+  }
+
+  div:nth-child(3) {
+    width: 18%;
+  }
+
+  div:nth-child(4) {
+    width: 15%;
+  }
+
+  div:nth-child(5) {
+    width: 9%;
+  }
+
+  div:nth-child(6) {
+    width: 9%;
+  }
+
+  div:nth-child(7) {
+    width: 9%;
+  }
+
+  .text {
+    text-align: left;
+    display: inline-block;
+  }
+}
+
+.table-list {
+  height: 100%;
+}
+
+.appointment {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #dbdde0;
+  @include flexProperties(center);
+  @include fontProperties(400, 14, 20);
+
+  div {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .name {
+    gap: 5px;
+    width: 22%;
+    @include flexProperties(center);
+  }
+
+  .avatar {
+    height: 40px;
+    width: 40px;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .department {
+    width: 15%;
+  }
+
+  .doctor {
+    width: 18%;
+  }
+
+  .tel {
+    width: 15%;
+  }
+
+  .priority {
+    width: 9%;
+  }
+
+  .status {
+    width: 9%;
+  }
+
+  .actions {
+    width: 9%;
+    display: flex;
+    gap: 15px;
+
+    .icon-container {
+      padding-top: 5px;
+      width: 14px;
+      height: 24px;
+      cursor: pointer;
+
+      img {
+        min-width: 100%;
+      }
+
+      &:hover {
+        filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
+      }
+    }
+
+    .icon-container:nth-child(3) {
+      &:hover {
+        filter: invert(62%) sepia(82%) saturate(2543%) hue-rotate(306deg) brightness(102%) contrast(101%);
+      }
+    }
+  }
+
+  &:hover {
+    background-color: rgba(246, 246, 246, 0.34);
+  }
+}
+
+.table-pagination {
+}
+
+//==================== DASHBOARD-ACTIONS ===================
+
+.board-actions {
+  width: 298px;
+  height: 100%;
+}
