@@ -32,6 +32,7 @@ export class Appointment {
       const status = this.htmlElement.querySelector('.status')
 
       if (isDelete) {
+        console.log(this.id)
         const response = await request({ url: `${this.id}`, method: 'DELETE', token: token })
         response === '' && this.htmlElement.remove()
       }

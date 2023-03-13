@@ -1,6 +1,6 @@
-import { createInput } from '../components'
-import { modifyTitle } from '../components/Dropdown/_index'
-import { openDropdown } from '../components/Dropdown/_index'
+import { createInput } from '../../components/index.js'
+import { modifyTitle } from '../../components/Dropdown/_index.js'
+import { openDropdown } from '../../components/Dropdown/_index.js'
 
 export const commonGapForm = (div, pattern) => {
   div.insertAdjacentHTML(

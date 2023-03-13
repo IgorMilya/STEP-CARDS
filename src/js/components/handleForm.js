@@ -22,18 +22,18 @@ export const handleForm = () => {
       case 'Cardiology':
         const cardiologist = new VisitCardiologist(obj)
         const data1 = await cardiologist.postRequest()
-        console.log(data1)
+        console.log(cardiologist)
         break
       case 'Dentist':
         const dentist = new VisitDentist(obj)
         const data2 = await dentist.postRequest()
-        console.log(data2)
+        console.log(dentist)
 
         break
       case 'Therapist':
         const therapist = new VisitTherapist(obj)
         const data3 = await therapist.postRequest()
-        console.log(data3)
+        console.log(therapist)
     }
 
     // dropdown.forEach(item => item.setAttribute('disabled', true))

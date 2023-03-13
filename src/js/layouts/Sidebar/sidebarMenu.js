@@ -1,4 +1,4 @@
-import { asideList, asideListSupport } from '../../layouts/layoutUtils'
+import { asideList, asideListSupport } from '../layoutUtils.js'
 
 export const sidebarMenu = () => {
   const sidebarMenu = document.createElement('div')

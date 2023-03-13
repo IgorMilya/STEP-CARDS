@@ -23,15 +23,13 @@ export const userLoggedIn = async () => {
   headerSearchInput.classList.add('fade-out')
   headerAvatar.classList.add('fade-out')
   headerBtnWrapper.innerHTML = newPatientBtn
-  
+
   const openModalButton = find('.register')
 
   await openModalButton.addEventListener('click', () => {
     const modal = new Modal()
     modal.openModal()
-    // modal.closeModal()
   })
-
 
   // ========================== //
 

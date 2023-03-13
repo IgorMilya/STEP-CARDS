@@ -1,22 +1,33 @@
 import { createTemplate } from './createTemplate.js'
 import { resetValues } from '../../components/index.js'
+import { create, find } from '../../tools/index.js'
 
 export class Modal {
+  // closeButtons = create('button', 'button modal-visit__button-cancel')
   constructor() {}
 
-  showModal(parent) {
+  renderModal(parent) {
     const modalElement = createTemplate()
     parent.append(modalElement)
   }
 
   closeModal() {
     const modalVisit = document.querySelector('.modal-visit')
-    document.addEventListener('click', e => {
-      if (!e.composedPath().includes(modalVisit)) {
-        modalVisit.classList.remove('opened-modal')
-      }
-      resetValues()
-    })
+    if (modalVisit.classList.contains('opened-modal')) {
+      modalVisit.addEventListener('click', e => {
+        console.log(e.currentTarget.classList.contains('modal-visit'))
+      })
+    }
+    // document.addEventListener('click', e => {
+    //   console.log(modalVisit, 'MODAL')
+    //   console.log(e.target, 'TARGET')
+    //   if (!e.composedPath().includes(modalVisit)) {
+    //     modalVisit.classList.remove('opened-modal')
+    //     console.log('FROM IF')
+    //   }
+    //
+    //   resetValues()
+    // })
   }
 
   closeModalButton() {
@@ -27,10 +38,12 @@ export class Modal {
       modalVisit.classList.remove('opened-modal')
       resetValues()
     })
+    // this.closeModal()
   }
 
   openModal() {
     const modalVisit = document.querySelector('.modal-visit')
     modalVisit.classList.add('opened-modal')
+    // this.closeModal()
   }
 }

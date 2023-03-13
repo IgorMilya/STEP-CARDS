@@ -1,4 +1,4 @@
-import { Sidebar } from './Sidebar.js'
+import { Sidebar } from './Sidebar/Sidebar.js'
 
 export const Main = () => {
   const Main = document.createElement('main')

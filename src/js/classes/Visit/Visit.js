@@ -2,17 +2,20 @@ import { cancelButton, saveButton } from '../../UI/index.js'
 import { createDropdown, createInput, Dropdown } from '../../components/'
 import modalImg from '../../../assets/modal-visit/modalImg.svg'
 import { request } from '../../tools'
+import { Appointment } from '../Appointment/Appointment.js'
 
 export class Visit {
   constructor({ name, surname, priority, goal, description, phone, doctor, department }) {
+    this.id = 'tesy289892'
     this.name = name
     this.surname = surname
     this.priority = priority
     this.goal = goal
     this.description = description
-    this.phone = phone
+    this.tel = phone
     this.doctor = doctor
     this.department = department
+    this.status = 'Open'
   }
 
   showForm(pattern) {
@@ -62,16 +65,16 @@ export class Visit {
   }
 
   async postRequest() {
+    const token = localStorage.getItem('token')
     const res = await request({
-      url: 'https://jsonplaceholder.typicode.com/posts',
+      url: '',
       method: 'POST',
+      token,
       body: this,
     })
-
-    if (res.ok) {
-      console.log('good')
-    } else {
-      console.log('error')
+    if (!!res) {
+      const appointment = new Appointment(this)
+      appointment.addNewAppointment()
     }
   }
 }
