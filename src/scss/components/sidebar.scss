@@ -74,25 +74,25 @@
   height: 255px;
   width: 225px;
   border-radius: 10px;
-  margin: 0 20px;
+  margin: 0 20px 0 18px;
   padding: 0 20px;
-  @include flexProperties(normal, flex-start, column);
   gap: 14px;
   background-image: url('../assets/images/covid/covid-bg.jpg');
   background-size: 240px 335px;
   font-size: 15px;
+  @include flexProperties(normal, flex-start, column);
 }
 
 .covid-title {
-  @include fontProperties(600, 18, 20, Montserrat);
   position: relative;
   margin-top: 20px;
+  @include fontProperties(600, 18, 20, Montserrat);
 }
 
 .covid-icon {
   width: 200px;
-  @include flexProperties(center, flex-start);
   gap: 5px;
+  @include flexProperties(center, flex-start);
 }
 
 .covid-icon {

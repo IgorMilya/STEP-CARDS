@@ -5,6 +5,7 @@ import { Dashboard } from '../components'
 import { getAllAppointments } from './getAllAppointments'
 import { Appointment, Modal } from '../classes'
 
+
 export const userLoggedIn = async () => {
   const main = find('.main-content')
   const headerLogo = find('.header-logo-wrapp')
@@ -23,6 +24,7 @@ export const userLoggedIn = async () => {
   headerAvatar.classList.add('fade-out')
   headerBtnWrapper.innerHTML = newPatientBtn
 
+
   const openModalButton = find('.register')
 
   await openModalButton.addEventListener('click', () => {
@@ -30,6 +32,7 @@ export const userLoggedIn = async () => {
     modal.openModal()
     // modal.closeModal()
   })
+
 
   renderComponent(Dashboard)
   // ВАЖЛИВА ХУЙНЯ
