@@ -2,10 +2,11 @@ import { create } from '../../tools'
 import { tableActionsIcons } from './appointment.utils'
 export const appointmentTemplate = props => {
   const { htmlElement, avatar, name, surname, department, doctor, tel, priority, status } = props
+
   const actions = create('div', 'actions')
   const clientName = create('div', 'name', `${name} ${surname}`)
   const imgWrap = create('div', 'avatar')
-
+  const statusColor = status === 'Close' ? 'status-close' : 'status'
   imgWrap.innerHTML = `<img src = '${avatar}' alt = 'Client avatar' />`
 
   const appointmentContent = [
@@ -13,12 +14,12 @@ export const appointmentTemplate = props => {
     create('div', 'doctor', `${doctor}`),
     create('div', 'tel', `${tel}`),
     create('div', 'priority', `${priority}`),
-    create('div', 'status', `${status}`),
+    create('div', `${statusColor}`, `${status}`),
   ]
 
   const tableIcons = tableActionsIcons.map(({ title, path }) => {
-    const container = create('div', 'icon-container')
-    container.innerHTML = `<img src ='${path}' alt ='${title} icon' title ='${title}'/>`
+    const container = create('span', `icon-container`)
+    container.innerHTML = `<img class='icon-${title.toLowerCase()}' src ='${path}' alt ='${title} icon' title ='${title}'/>`
 
     return container
   })

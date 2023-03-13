@@ -8,9 +8,8 @@ export const Sidebar = () => {
   Sidebar.classList.add('sidebar')
   sidebarContent.classList.add('sidebar-content')
 
+  sidebarContent.append(sidebarMenu(), sidebarInfo())
   Sidebar.append(sidebarContent)
-  sidebarContent.append(sidebarMenu())
-  sidebarContent.append(sidebarInfo())
 
   return Sidebar
 }

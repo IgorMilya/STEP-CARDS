@@ -1,9 +1,9 @@
 import { covidData } from '../components/Registration'
 import iconUA from '../../assets/images/covid/ukraine.png'
 import iconWorld from '../../assets/images/covid/global.png'
+
 const { UAnewConfirmed, UAallConfirmed, UAallDeaths, worldNewConfirmed, worldAllConfirmed, worldAllDeaths } =
   covidData
-
 export const changeValueCovid = () => {
   const btn = document.querySelector('.covid-button')
   const covidInfo = document.querySelector('.covid-info')

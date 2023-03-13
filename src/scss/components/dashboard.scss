@@ -67,7 +67,7 @@
   @include fontProperties(600, 14, 20);
 
   div:nth-child(1) {
-    width: 22%;
+    width: 23%;
   }
 
   div:nth-child(2) {
@@ -91,7 +91,7 @@
   }
 
   div:nth-child(7) {
-    width: 9%;
+    width: 11%;
   }
 
   .text {
@@ -118,7 +118,7 @@
 
   .name {
     gap: 5px;
-    width: 22%;
+    width: 23%;
     @include flexProperties(center);
   }
 
@@ -150,10 +150,16 @@
     width: 9%;
   }
 
-  .actions {
+  .status-close {
     width: 9%;
+    color: color(text, 'error');
+  }
+
+  .actions {
+    width: 11%;
     display: flex;
     gap: 15px;
+    justify-content: flex-start;
 
     .icon-container {
       padding-top: 5px;
@@ -164,7 +170,11 @@
       img {
         min-width: 100%;
       }
-
+      .icon-delete {
+        &:hover {
+          filter: invert(62%) sepia(82%) saturate(2543%) hue-rotate(306deg) brightness(102%) contrast(101%);
+        }
+      }
       &:hover {
         filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
       }
