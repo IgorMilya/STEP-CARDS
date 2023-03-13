@@ -4,6 +4,7 @@ import { renderDoctorsNames } from './renderDocotrName.js'
 import { showDoctor } from './showDoctor.js'
 import { modifyTitle } from './modifyTitle.js'
 import { checkValue } from './checkValue.js'
+import { openDropdown } from './openDropdown.js'
 
 export const Dropdown = pattern => {
   const dropdown = document.querySelectorAll('.dropdown')
@@ -20,12 +21,7 @@ export const Dropdown = pattern => {
 
     renderDepartment(department, tab, list)
 
-    item.addEventListener('click', e => {
-      list.classList.toggle('menu-open')
-      if (!!e.target.querySelector('.modal-visit__dropdown-item')) {
-        list.classList.remove('menu-open')
-      }
-    })
+    openDropdown(item, list)
 
     list.addEventListener('click', e => {
       modifyTitle({ img: modalImg, target: e.target, select: select, title: doctorTitle })

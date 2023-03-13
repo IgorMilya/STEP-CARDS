@@ -1,16 +1,18 @@
 import { VisitCardiologist, VisitDentist, VisitTherapist } from '../classes'
+import { resetValues } from './resetValues'
 
 export const handleForm = () => {
   const form = document.querySelector('.modal-visit__form')
+  const modalVisit = document.querySelector('.modal-visit')
 
-  form.addEventListener('submit', e => {
-    const dropdown = document.querySelectorAll('.modal-visit__dropdown')
-    e.preventDefault()
-    dropdown.forEach(item => item.removeAttribute('disabled'))
-
-    const visitData = new FormData(e.target)
+  form.addEventListener('submit', async e => {
     const departmentValue = document.querySelector('.department-title')
+    const visitData = new FormData(e.target)
     let obj = {}
+
+    e.preventDefault()
+    // const dropdown = document.querySelectorAll('.modal-visit__dropdown')
+    //  dropdown.forEach(item => item.removeAttribute('disabled'))
 
     for (let key of visitData.keys()) {
       obj[`${key}`] = `${visitData.get(key)}`
@@ -19,18 +21,23 @@ export const handleForm = () => {
     switch (departmentValue.value) {
       case 'Cardiology':
         const cardiologist = new VisitCardiologist(obj)
-        console.log(cardiologist)
+        const data1 = await cardiologist.postRequest()
+        console.log(data1)
         break
       case 'Dentist':
         const dentist = new VisitDentist(obj)
-        console.log(dentist)
+        const data2 = await dentist.postRequest()
+        console.log(data2)
 
         break
       case 'Therapist':
         const therapist = new VisitTherapist(obj)
-        console.log(therapist)
+        const data3 = await therapist.postRequest()
+        console.log(data3)
     }
 
-    dropdown.forEach(item => item.setAttribute('disabled', true))
+    // dropdown.forEach(item => item.setAttribute('disabled', true))
+    resetValues()
+    modalVisit.classList.remove('opened-modal')
   })
 }

@@ -16,18 +16,14 @@
   transform: translate(-50%, -50%);
 
   &__title {
-    @include fontProperties(500, 20, 26);
+    @include fontProperties(700, 22, 26);
     color: color(text, 'accent');
     margin: 17px 0 23px;
   }
 
   &__form {
-    @include flexProperties(center, space-between);
+    @include flexProperties(center, end);
     flex-wrap: wrap;
-  }
-
-  &__form {
-    @include flexProperties(end, center, column);
   }
 
   &__wrapper {
@@ -38,6 +34,11 @@
   &__wrapper:nth-child(7) {
     width: 562px;
     position: relative;
+  }
+  &__label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__gap {
@@ -52,14 +53,6 @@
     outline: none;
   }
 
-  &__dropdown {
-    @include fontProperties(500, 14, 18);
-    @include flexProperties(center);
-    color: color(text, 'grey');
-    position: relative;
-    cursor: pointer;
-  }
-
   &__dropdown-list {
     @include fontProperties(500, 14, 18);
     display: none;
@@ -72,7 +65,9 @@
     background: aliceblue;
     z-index: 1;
   }
-
+  &__dropdown {
+    cursor: pointer;
+  }
   &__dropdown-item {
     padding: 16px 0 16px 10px;
     cursor: pointer;
@@ -186,7 +181,7 @@
   width: 270px;
 }
 
-.opened {
+.opened-modal {
   display: block;
 }
 
