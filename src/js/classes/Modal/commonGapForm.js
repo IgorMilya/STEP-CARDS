@@ -10,7 +10,7 @@ export const commonGapForm = (div, pattern) => {
       'modal-visit__gap placeholder',
       'text',
       'Goal',
-      `^[${pattern} 0-9]+$`,
+      `^[${pattern} 0-9 .]+$`,
       'goal'
     )}
 
@@ -23,7 +23,7 @@ export const commonGapForm = (div, pattern) => {
       'modal-visit__gap placeholder',
       'number',
       'Tel.',
-      '^[ 0-9]+$',
+      '^[0-9 +]+$',
       'phone'
     )}
             

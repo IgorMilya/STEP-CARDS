@@ -16,7 +16,4 @@ export class VisitDentist extends Visit {
  ${createInput('modal-visit__extra', 'modal-visit__gap placeholder', 'number', 'Age', `[0-9]{3}`, 'age')}
 `
   }
-  postDentist() {
-    // fetch('dasd', 'Post', this)
-  }
 }
