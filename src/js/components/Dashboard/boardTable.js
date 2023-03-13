@@ -1,7 +1,7 @@
 import { create } from '../../tools'
 import { tableHeaders } from './dashboard.utils'
 
-export const boardTable = create('div', 'board-table')
+export const boardTable = create('div', 'dashboard-table')
 const tableTitle = create('div', 'table-title', 'Appointment Activity')
 const tableHead = create('div', 'table-head')
 const tableList = create('div', 'table-list')

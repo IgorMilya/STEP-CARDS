@@ -8,7 +8,7 @@ import { renderVisitModal } from './renderVisitModal.js'
 export const renderBasicLayout = () => {
   const app = document.getElementById('app')
   app.innerHTML = ''
-  app.append(Header(), Main(), Sidebar())
+  app.append(Header(), Main())
   renderComponent(Registration)
   changeValueCovid()
   loginFormHandler()

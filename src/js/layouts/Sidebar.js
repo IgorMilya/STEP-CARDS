@@ -9,8 +9,8 @@ export const Sidebar = () => {
   sidebarContent.classList.add('sidebar-content')
 
   Sidebar.append(sidebarContent)
-  sidebarContent.append(sidebarMenu())
-  sidebarContent.append(sidebarInfo())
+  sidebarContent.append(sidebarMenu(), sidebarInfo())
+  // sidebarContent.append(sidebarInfo())
 
   return Sidebar
 }

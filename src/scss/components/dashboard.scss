@@ -7,7 +7,7 @@
 
 //============== DASHBOARD-HEADER ===============
 
-.board-header {
+.dashboard-header {
   margin: 11px 0;
   gap: 30px;
   @include flexProperties(center, space-between);
@@ -39,14 +39,14 @@
   }
 }
 
-.board-content {
+.dashboard-content {
   display: flex;
   height: 100%;
 }
 
 //==================== DASHBOARD-TABLE ===================
 
-.board-table {
+.dashboard-table {
   height: 100%;
   padding: 3px;
   flex: 1 1 auto;
@@ -187,7 +187,16 @@
 
 //==================== DASHBOARD-ACTIONS ===================
 
-.board-actions {
+.dashboard-actions {
   width: 298px;
   height: 100%;
+  @include flexProperties(center, flex-start, column);
+
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.dashboard-graph {
+  width: 250px;
+  height: 265px;
 }

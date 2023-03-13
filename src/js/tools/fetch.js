@@ -1,5 +1,6 @@
 import ky from 'ky'
 import { renderBasicLayout } from '../modules/index.js'
+import { strFinishCovid } from './index'
 
 // const headers = { Authorization: `Bearer 5f0ff1a4-6ffe-4191-9ec3-0de5b9a33dc9` }
 
@@ -19,10 +20,42 @@ export const request = async ({ url, method, token, body }) => {
 const getCovidData = async () => {
   const { Countries, Global } = await ky.get('https://api.covid19api.com/summary').json()
 
-  const [{ TotalConfirmed, TotalDeaths }] = Countries.filter(elem => elem.Country === 'Ukraine')
+  if (Countries !== undefined) {
+    const [{ NewConfirmed: newConfirmed, TotalConfirmed: allConfirmed, TotalDeaths: allDeaths }] =
+      Countries.filter(elem => elem.Country === 'Ukraine')
 
-  return {
-    UAtotalConfirmed: TotalConfirmed,
-    UAtotalCDeaths: TotalDeaths,
+    const {
+      NewConfirmed: newConfirmedWorld,
+      TotalConfirmed: allWorldConfirmed,
+      TotalDeaths: allWorldDeaths,
+    } = Global
+
+    const infectedUA = strFinishCovid(allConfirmed)
+    const deathsUA = strFinishCovid(allDeaths)
+    const infectedTodayWorld = strFinishCovid(newConfirmedWorld)
+    const infectedAllWorld = strFinishCovid(allWorldConfirmed)
+    const deathWorld = strFinishCovid(allWorldDeaths)
+
+    return {
+      UAnewConfirmed: newConfirmed,
+      UAallConfirmed: infectedUA,
+      UAallDeaths: deathsUA,
+
+      worldNewConfirmed: infectedTodayWorld,
+      worldAllConfirmed: infectedAllWorld,
+      worldAllDeaths: deathWorld,
+    }
+  } else {
+    return {
+      UAnewConfirmed: '132',
+      UAallConfirmed: '212.321',
+      UAallDeaths: '332.131.212',
+
+      worldNewConfirmed: '433.21',
+      worldAllConfirmed: '432.435',
+      worldAllDeaths: '643.214.2',
+    }
   }
 }
+
+export const covidData = await getCovidData()
