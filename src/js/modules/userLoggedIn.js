@@ -3,8 +3,7 @@ import { find } from '../tools'
 import { renderComponent } from './renderComponent'
 import { Dashboard } from '../components'
 import { getAllAppointments } from './getAllAppointments'
-import { Appointment, Modal } from '../classes/index.js'
-import { renderVisitModal } from './renderVisitModal'
+import { Appointment } from '../classes'
 
 export const userLoggedIn = async () => {
   const main = find('.main-content')
@@ -23,11 +22,6 @@ export const userLoggedIn = async () => {
   headerSearchInput.classList.add('fade-out')
   headerAvatar.classList.add('fade-out')
   headerBtnWrapper.innerHTML = newPatientBtn
-
-  // const openModalButton = find('.register')
-  // openModalButton.addEventListener('click', () => {
-  //
-  // })
 
   renderComponent(Dashboard)
   // ВАЖЛИВА ХУЙНЯ

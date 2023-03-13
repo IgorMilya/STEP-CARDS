@@ -3,7 +3,6 @@ import { loginFormHandler } from '../components/Registration'
 import { renderComponent } from './renderComponent'
 import { Registration } from '../components'
 import { changeValueCovid } from './changeValueCovid'
-import { renderVisitModal } from './renderVisitModal.js'
 
 export const renderBasicLayout = () => {
   const app = document.getElementById('app')
@@ -12,6 +11,4 @@ export const renderBasicLayout = () => {
   renderComponent(Registration)
   changeValueCovid()
   loginFormHandler()
-
-  // renderVisitModal(app) //temporary solution
 }

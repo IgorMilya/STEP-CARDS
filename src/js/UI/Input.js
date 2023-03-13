@@ -1,3 +1,4 @@
+// TODO: переписати цю хуйню
 const Input = (type, placeholder) =>
   !!type && !!placeholder
     ? `<input type='${type}' placeholder='${placeholder}' name='${type}'>`
