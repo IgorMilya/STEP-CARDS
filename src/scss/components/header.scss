@@ -53,6 +53,11 @@
   height: 40px;
   border-radius: 100px;
   padding-left: 40px;
+  transition: all 0.25s;
+
+  &:focus {
+    box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.12);
+  }
 }
 
 .header-actions {

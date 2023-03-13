@@ -1,4 +1,3 @@
 export { Dashboard } from './Dashboard'
-export { boardTable } from './boardTable'
-export { boardHeader } from './boardHeader'
-export { ListItem } from './ListItem'
+export { dashboardTable } from './dashboardTable.js'
+export { dashboardHeader } from './dashboardHeader.js'

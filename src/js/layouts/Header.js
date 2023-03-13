@@ -3,21 +3,21 @@ import logoText from '../../assets/images/logo/logo-text.svg'
 import imgAvatar from '../../assets/images/avatar/avatar.svg'
 import iconInput from '../../assets/asideIcons/search-input.svg'
 import { headerLogInButton } from '../UI'
+import { create } from '../tools'
 
 export const Header = () => {
-  const Header = document.createElement('header')
+  const Header = create('header', 'header')
 
-  Header.classList.add('header')
   Header.innerHTML = `
   <div class="header-logo-wrapp">
-    <div class="header-logo">
-    <a class="header-logo-link" href="#">
-    <img src="${logoImg}"/>
-    <img src="${logoText}"/>
-    </a>
-    </div>
-  </div>
-</div>
+     <div class="header-logo">
+       <a class="header-logo-link" href="#">
+       <img src="${logoImg}"/>
+       <img src="${logoText}"/>
+       </a>
+       </div>
+        </div>
+   </div>
 
 <div class="header-content">
 <div class="header-search">
