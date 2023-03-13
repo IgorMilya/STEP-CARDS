@@ -1,7 +1,7 @@
 import { create } from '../../tools'
 import { boardHeaderContent } from './dashboard.utils.js'
 
-export const dashboardHeader = create('div', 'board-header')
+export const dashboardHeader = create('div', 'dashboard-header')
 
 const headerCards = boardHeaderContent.map(({ text, path, value }) => {
   const card = create('div', 'header-card')
