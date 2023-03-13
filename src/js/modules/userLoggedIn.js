@@ -29,6 +29,7 @@ export const userLoggedIn = async () => {
   await openModalButton.addEventListener('click', () => {
     const modal = new Modal()
     modal.openModal()
+    modal.closeModal()
   })
 
   // ========================== //

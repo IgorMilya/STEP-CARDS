@@ -3,17 +3,17 @@ import { resetValues } from './resetValues'
 
 export const handleForm = () => {
   const form = document.querySelector('.modal-visit__form')
-  const modalVisit = document.querySelector('.modal-visit')
+  const darkBlock = document.querySelector('.dark-block')
 
   form.addEventListener('submit', async e => {
     const departmentValue = document.querySelector('.department-title')
-    const visitData = new FormData(e.target)
     let obj = {}
-
     e.preventDefault()
-    // const dropdown = document.querySelectorAll('.modal-visit__dropdown')
-    //  dropdown.forEach(item => item.removeAttribute('disabled'))
 
+    const dropdown = document.querySelectorAll('.modal-visit__dropdown')
+    dropdown.forEach(item => item.removeAttribute('disabled'))
+
+    const visitData = new FormData(e.target)
     for (let key of visitData.keys()) {
       obj[`${key}`] = `${visitData.get(key)}`
     }
@@ -36,8 +36,8 @@ export const handleForm = () => {
         console.log(therapist)
     }
 
-    // dropdown.forEach(item => item.setAttribute('disabled', true))
+    dropdown.forEach(item => item.setAttribute('disabled', true))
     resetValues()
-    modalVisit.classList.remove('opened-modal')
+    darkBlock.classList.remove('opened-modal')
   })
 }

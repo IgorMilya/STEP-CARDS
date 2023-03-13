@@ -29,7 +29,7 @@ export const commonGapForm = (div, pattern) => {
             
     <div class='modal-visit__extra dropdown small priorities'>
      
-        <input class='modal-visit__gap modal-visit__dropdown placeholder priority-title' name='priority' type='text' placeholder='Priority'>
+        <input class='modal-visit__gap modal-visit__dropdown placeholder priority-title' name='priority' type='text' placeholder='Priority' disabled>
         <ul class='modal-visit__dropdown-list priority-list' >
              <li class='modal-visit__dropdown-item'>High</li>
              <li class='modal-visit__dropdown-item'>Normal</li>
