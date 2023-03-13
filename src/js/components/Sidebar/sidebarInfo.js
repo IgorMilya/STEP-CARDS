@@ -1,6 +1,6 @@
 import { doc } from 'prettier'
 import { covidButton } from '../../UI/Button'
-import { covidData } from '../Registration'
+import { covidData } from '../../tools'
 import iconUA from '../../../assets/images/covid/ukraine.png'
 
 const { UAnewConfirmed, UAallConfirmed, UAallDeaths } = covidData
