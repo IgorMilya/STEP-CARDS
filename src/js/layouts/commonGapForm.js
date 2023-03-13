@@ -1,5 +1,6 @@
 import { createInput } from '../components'
 import { modifyTitle } from '../components/Dropdown/_index'
+import { openDropdown } from '../components/Dropdown/_index'
 
 export const commonGapForm = (div, pattern) => {
   div.insertAdjacentHTML(
@@ -26,9 +27,9 @@ export const commonGapForm = (div, pattern) => {
       'phone'
     )}
             
-    <div class='modal-visit__extra dropdown small priority'>
+    <div class='modal-visit__extra dropdown small priorities'>
      
-        <input class='modal-visit__gap modal-visit__dropdown placeholder priority-title' name='priority' type='text' placeholder='Priority' disabled>
+        <input class='modal-visit__gap modal-visit__dropdown placeholder priority-title' name='priority' type='text' placeholder='Priority'>
         <ul class='modal-visit__dropdown-list priority-list' >
              <li class='modal-visit__dropdown-item'>High</li>
              <li class='modal-visit__dropdown-item'>Normal</li>
@@ -37,16 +38,12 @@ export const commonGapForm = (div, pattern) => {
     </div>`
   )
 
-  const priority = document.querySelector('.priority')
+  const priorityWrapper = document.querySelector('.priorities')
   const priorityTitle = document.querySelector('.priority-title')
   const priorityList = document.querySelector('.priority-list')
 
-  priority.addEventListener('click', e => {
-    priorityList.classList.toggle('menu-open')
-    if (!!e.target.querySelector('.modal-visit__dropdown-item')) {
-      priorityList.classList.remove('menu-open')
-    }
-  })
+  openDropdown(priorityWrapper, priorityList)
+
   priorityList.addEventListener('click', e => {
     modifyTitle({ target: e.target, select: priorityTitle })
   })
