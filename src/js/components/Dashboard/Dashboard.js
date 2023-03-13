@@ -1,11 +1,11 @@
 import { create } from '../../tools'
-import { dashboardTable } from './dashboardTable.js'
-import { dashboardHeader } from './dashboardHeader.js'
-import { boardActions } from './dashboardActions'
+import { dashboardTable } from './dashboardTable'
+import { dashboardHeader } from './dashboardHeader'
+import { dashboardActions } from './dashboardActions'
 
 export const Dashboard = create('div', 'dashboard')
 
-const boardContent = create('div', 'board-content')
+const boardContent = create('div', 'dashboard-content')
 
-boardContent.append(dashboardTable, boardActions)
+boardContent.append(dashboardTable, dashboardActions)
 Dashboard.append(dashboardHeader, boardContent)
