@@ -1,4 +1,4 @@
-import { covidData } from '../components/Registration'
+import { covidData } from '../tools'
 import iconUA from '../../assets/images/covid/ukraine.png'
 import iconWorld from '../../assets/images/covid/global.png'
 
