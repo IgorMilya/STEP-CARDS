@@ -13,5 +13,5 @@ export const renderBasicLayout = () => {
   changeValueCovid()
   loginFormHandler()
 
-  // renderVisitModal(app) //temporary solution
+  renderVisitModal(app) //temporary solution
 }

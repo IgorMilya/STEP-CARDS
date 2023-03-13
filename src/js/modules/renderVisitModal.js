@@ -9,7 +9,6 @@ export const renderVisitModal = parent => {
   const visit = new Visit({})
 
   modal.showModal(parent)
-  modal.closeModal()
   visit.showForm(pattern)
   modal.closeModalButton()
 

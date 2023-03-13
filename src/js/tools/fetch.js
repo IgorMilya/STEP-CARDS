@@ -1,5 +1,5 @@
 import ky from 'ky'
-import { renderBasicLayout } from '../modules/index.js'
+// import { renderBasicLayout } from '../modules/index.js'
 
 // const headers = { Authorization: `Bearer 5f0ff1a4-6ffe-4191-9ec3-0de5b9a33dc9` }
 
@@ -16,13 +16,13 @@ export const request = async ({ url, method, token, body }) => {
   }
 }
 
-const getCovidData = async () => {
-  const { Countries, Global } = await ky.get('https://api.covid19api.com/summary').json()
-
-  const [{ TotalConfirmed, TotalDeaths }] = Countries.filter(elem => elem.Country === 'Ukraine')
-
-  return {
-    UAtotalConfirmed: TotalConfirmed,
-    UAtotalCDeaths: TotalDeaths,
-  }
-}
+// const getCovidData = async () => {
+//   const { Countries, Global } = await ky.get('https://api.covid19api.com/summary').json()
+//
+//   const [{ TotalConfirmed, TotalDeaths }] = Countries.filter(elem => elem.Country === 'Ukraine')
+//
+//   return {
+//     UAtotalConfirmed: TotalConfirmed,
+//     UAtotalCDeaths: TotalDeaths,
+//   }
+// }

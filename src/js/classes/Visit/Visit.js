@@ -1,6 +1,7 @@
 import { cancelButton, saveButton } from '../../UI/index.js'
-import { createInput, createDropdown, Dropdown } from '../../components/'
+import { createDropdown, createInput, Dropdown } from '../../components/'
 import modalImg from '../../../assets/modal-visit/modalImg.svg'
+import { request } from '../../tools'
 
 export class Visit {
   constructor({ name, surname, priority, goal, description, phone, doctor, department }) {
@@ -58,5 +59,19 @@ export class Visit {
     Dropdown(pattern)
 
     return visitContainer
+  }
+
+  async postRequest() {
+    const res = await request({
+      url: 'https://jsonplaceholder.typicode.com/posts',
+      method: 'POST',
+      body: this,
+    })
+
+    if (res.ok) {
+      console.log('good')
+    } else {
+      console.log('error')
+    }
   }
 }
