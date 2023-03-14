@@ -1,40 +1,55 @@
 import { VisitCardiologist, VisitDentist, VisitTherapist } from '../classes'
 import { resetValues } from './resetValues'
+import { create } from '../tools/index.js'
 
 export const handleForm = () => {
   const form = document.querySelector('.modal-visit__form')
-  const modalVisit = document.querySelector('.modal-visit')
+  const darkBlock = document.querySelector('.dark-block')
 
   form.addEventListener('submit', async e => {
     const departmentValue = document.querySelector('.department-title')
-    const visitData = new FormData(e.target)
+    const dropdown = document.querySelectorAll('.modal-visit__dropdown')
     let obj = {}
-
+    let valid = true
     e.preventDefault()
-    // const dropdown = document.querySelectorAll('.modal-visit__dropdown')
-    //  dropdown.forEach(item => item.removeAttribute('disabled'))
 
-    for (let key of visitData.keys()) {
-      obj[`${key}`] = `${visitData.get(key)}`
+    dropdown.forEach(item => {
+      if (!item.value) {
+        valid = false
+        const dropdownError = create('p', 'dropdown-error', 'Enter the apt value')
+        item.after(dropdownError)
+      }
+    })
+    if (valid) {
+      dropdown.forEach(item => {
+        item.removeAttribute('disabled')
+      })
+      const visitData = new FormData(e.target)
+      for (let key of visitData.keys()) {
+        obj[`${key}`] = `${visitData.get(key)}`
+      }
+
+      switch (departmentValue.value) {
+        case 'Cardiology':
+          const cardiologist = new VisitCardiologist(obj)
+          const data1 = await cardiologist.postRequest()
+          console.log(cardiologist)
+          break
+        case 'Dentist':
+          const dentist = new VisitDentist(obj)
+          const data2 = await dentist.postRequest()
+          console.log(dentist)
+
+          break
+        case 'Therapist':
+          const therapist = new VisitTherapist(obj)
+          const data3 = await therapist.postRequest()
+          console.log(therapist)
+      }
+
+      dropdown.forEach(item => item.setAttribute('disabled', true))
+      resetValues()
+      darkBlock.classList.remove('opened-modal')
     }
-
-    switch (departmentValue.value) {
-      case 'Cardiology':
-        const cardiologist = new VisitCardiologist(obj)
-        await cardiologist.postRequest()
-
-        break
-      case 'Dentist':
-        const dentist = new VisitDentist(obj)
-        await dentist.postRequest()
-
-        break
-      case 'Therapist':
-        const therapist = new VisitTherapist(obj)
-        await therapist.postRequest()
-    }
-
-    resetValues()
-    modalVisit.classList.remove('opened-modal')
   })
 }

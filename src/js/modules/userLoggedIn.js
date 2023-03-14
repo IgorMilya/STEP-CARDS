@@ -5,8 +5,10 @@ import { Dashboard } from '../components'
 import { getAllAppointments } from './getAllAppointments'
 import { Appointment, Modal } from '../classes'
 import Chart from 'chart.js/auto'
-import { dashboardPagination } from '../components/Dashboard/dashboardPagination.js'
 import Scrollbar from 'smooth-scrollbar'
+import { renderDashboardActions } from '../components/Dashboard'
+import { finish } from '../components/Dashboard/dashboardActions'
+
 
 export const userLoggedIn = async () => {
   const main = find('.main-content')
@@ -31,11 +33,39 @@ export const userLoggedIn = async () => {
   await openModalButton.addEventListener('click', () => {
     const modal = new Modal()
     modal.openModal()
+    modal.closeModal()
   })
 
   // ========================== //
 
   renderComponent(Dashboard)
+
+  ////////////////////////////////
+  const search = document.querySelector('.search')
+
+  search.oninput = () => {
+    const appointCart = document.querySelectorAll('.appointment')
+    const value = search.value.trim()
+
+    if (value !== '') {
+      appointCart.forEach(item => {
+        const visitorName = item.querySelector('.name')
+        const doctorName = item.querySelector('.doctor')
+
+        if (visitorName.innerText.indexOf(value) === -1 && doctorName.innerText.indexOf(value) === -1) {
+          item.style.display = 'none'
+        } else {
+          item.style.display = 'flex'
+        }
+      })
+    } else {
+      appointCart.forEach(item => {
+        item.style.display = 'flex'
+      })
+    }
+  }
+  //////////////////////
+
   // ВАЖЛИВА ХУЙНЯ
   const allAppointments = await getAllAppointments()
   allAppointments.forEach(item => {
@@ -47,6 +77,7 @@ export const userLoggedIn = async () => {
   const scrollbarOptions = { damping: 0.02 }
   Scrollbar.init(dashboardList, scrollbarOptions)
   // ////////
+
 
   // //////// CHARTS: TODO: перенести в окрему функцію
   const ctx = document.getElementById('myChart')
@@ -89,4 +120,9 @@ export const userLoggedIn = async () => {
       maintainAspectRatio: false, // заборонити зберігання пропорцій
     },
   })
+
+  // ========================== //
+
+  renderDashboardActions(finish)
+
 }

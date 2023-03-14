@@ -6,6 +6,7 @@ import { Modal } from '../Modal/Modal.js'
 
 export class Appointment {
   parentElement = find('.table-list')
+
   constructor({ id, name, surname, department, doctor, tel, priority, status }) {
     this.id = id
     this.avatar = random(avatar1, avatar2)
@@ -24,6 +25,7 @@ export class Appointment {
     this.parentElement.append(appointment)
     this._addEditOptions()
   }
+
   _addEditOptions() {
     this.htmlElement.addEventListener('click', async e => {
       const token = localStorage.getItem('token')
