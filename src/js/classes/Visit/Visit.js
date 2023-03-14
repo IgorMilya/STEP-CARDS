@@ -6,7 +6,6 @@ import { Appointment } from '../Appointment/Appointment.js'
 
 export class Visit {
   constructor({ name, surname, priority, goal, description, phone, doctor, department }) {
-    this.id = 'tesy289892'
     this.name = name
     this.surname = surname
     this.priority = priority
@@ -73,7 +72,7 @@ export class Visit {
       body: this,
     })
     if (!!res) {
-      const appointment = new Appointment(this)
+      const appointment = new Appointment(res)
       appointment.addNewAppointment()
     }
   }

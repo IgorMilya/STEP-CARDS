@@ -30,15 +30,15 @@ export class VisitCardiologist extends Visit {
    'modal-visit__gap placeholder',
    'text',
    'Typical pressure',
-   `^[${pattern} 0-9]+$`,
+   `^[0-9 -.+/]+$`,
    'pressure'
  )}
  ${createInput(
    'modal-visit__extra small',
    'modal-visit__gap placeholder',
-   'number',
+   'text',
    'Body mass index',
-   `[0-9]{3}`,
+   `^[0-9 -.+/]+$`,
    'bodyIndex'
  )}
 
@@ -50,14 +50,8 @@ export class VisitCardiologist extends Visit {
    `^[${pattern} 0-9]+$`,
    'disease'
  )}
- ${createInput(
-   'modal-visit__extra small',
-   'modal-visit__gap placeholder',
-   'number',
-   'Age',
-   `[0-9]{3}`,
-   'age'
- )}
+ 
+ ${createInput('modal-visit__extra small', 'modal-visit__gap placeholder', 'number', 'Age', ``, 'age')}
 
 `
   }
