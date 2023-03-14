@@ -1,7 +1,7 @@
 import { create } from '../../tools'
 import { dashboardTable } from './dashboardTable'
 import { dashboardHeader } from './dashboardHeader'
-import { dashboardActions } from './dashboardActions'
+import { dashboardActions } from './charts'
 
 export const Dashboard = create('div', 'dashboard')
 

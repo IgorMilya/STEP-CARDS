@@ -1,8 +1,8 @@
 import { Header, Main } from '../layouts'
 import { loginFormHandler } from '../components/Registration'
-import { renderComponent } from './renderComponent'
+import { renderComponent } from '../tools/renderComponent.js'
 import { Registration } from '../components'
-import { changeValueCovid } from './changeValueCovid'
+import { changeCovidInfo } from '../layouts/Sidebar/changeCovidInfo.js'
 import { renderVisitModal } from './renderVisitModal.js'
 
 export const renderBasicLayout = () => {
@@ -10,8 +10,7 @@ export const renderBasicLayout = () => {
   app.innerHTML = ''
   app.append(Header(), Main())
   renderComponent(Registration)
-  changeValueCovid()
+  changeCovidInfo()
   loginFormHandler()
-  // await userLoggedIn() //temporary solution
   renderVisitModal(app) //temporary solution
 }

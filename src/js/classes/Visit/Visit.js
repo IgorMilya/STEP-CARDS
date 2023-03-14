@@ -3,6 +3,7 @@ import { createDropdown, createInput, Dropdown } from '../../components/'
 import modalImg from '../../../assets/modal-visit/modalImg.svg'
 import { request } from '../../tools'
 import { Appointment } from '../Appointment/Appointment.js'
+import { setLocalData } from '../../modules/localData.js'
 
 export class Visit {
   constructor({ name, surname, priority, goal, description, phone, doctor, department }) {
@@ -75,6 +76,7 @@ export class Visit {
     if (!!res) {
       const appointment = new Appointment(res)
       appointment.addNewAppointment()
+      setLocalData(res)
     }
   }
 }

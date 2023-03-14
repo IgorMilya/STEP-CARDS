@@ -1,11 +1,11 @@
-import { covidData } from '../tools'
-import iconUA from '../../assets/images/covid/ukraine.png'
-import iconWorld from '../../assets/images/covid/global.png'
+import { covidData } from '../../tools/index.js'
+import iconUA from '../../../assets/images/covid/ukraine.png'
+import iconWorld from '../../../assets/images/covid/global.png'
 
 const { UAnewConfirmed, UAallConfirmed, UAallDeaths, worldNewConfirmed, worldAllConfirmed, worldAllDeaths } =
   covidData
 
-export const changeValueCovid = () => {
+export const changeCovidInfo = () => {
   const btn = document.querySelector('.covid-button')
   const covidInfo = document.querySelector('.covid-info')
 

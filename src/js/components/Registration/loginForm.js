@@ -1,7 +1,7 @@
 import googleIcon from '../../../assets/images/google.svg' // TODO: add alias import
 import facebookIcon from '../../../assets/images/facebook.svg'
 import { logInButton, checkboxInput } from '../../UI'
-import { validateUser } from '../../modules/validateUser'
+import { validateUser } from './validateUser.js'
 import { create } from '../../tools'
 
 const isData = JSON.parse(localStorage.getItem('userData'))

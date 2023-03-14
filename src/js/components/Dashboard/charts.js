@@ -1,98 +1,19 @@
 import { create } from '../../tools/index.js'
 import Chart from 'chart.js/auto'
-const arr = [
-  {
-    age: '17',
-    bodyIndex: '2',
-    department: 'Cardiology',
-    description: 'ds',
-    disease: 'mkom',
-    doctor: 'Dr. Jacob Jones',
-    goal: 'ds',
-    id: 'tesy289892',
-    name: 'dsa',
-    pressure: 'dsa',
-    priority: 'High',
-    status: 'Open',
-    surname: 'mkl',
-    tel: '231',
-  },
-  {
-    age: '25',
-    bodyIndex: '2',
-    department: 'Cardiology',
-    description: 'ds',
-    disease: 'mkom',
-    doctor: 'Dr. Jacob Jones',
-    goal: 'ds',
-    id: 'tesy289892',
-    name: 'dsa',
-    pressure: 'dsa',
-    priority: 'High',
-    status: 'Open',
-    surname: 'mkl',
-    tel: '231',
-  },
-  {
-    age: '51',
-    bodyIndex: '2',
-    department: 'Cardiology',
-    description: 'ds',
-    disease: 'mkom',
-    doctor: 'Dr. Jacob Jones',
-    goal: 'ds',
-    id: 'tesy289892',
-    name: 'dsa',
-    pressure: 'dsa',
-    priority: 'High',
-    status: 'Open',
-    surname: 'mkl',
-    tel: '231',
-  },
-  {
-    age: '45',
-    bodyIndex: '2',
-    department: 'Cardiology',
-    description: 'ds',
-    disease: 'mkom',
-    doctor: 'Dr. Jacob Jones',
-    goal: 'ds',
-    id: 'tesy289892',
-    name: 'dsa',
-    pressure: 'dsa',
-    priority: 'High',
-    status: 'Open',
-    surname: 'mkl',
-    tel: '231',
-  },
-  {
-    age: '12',
-    bodyIndex: '2',
-    department: 'Cardiology',
-    description: 'ds',
-    disease: 'mkom',
-    doctor: 'Dr. Jacob Jones',
-    goal: 'ds',
-    id: 'tesy289892',
-    name: 'dsa',
-    pressure: 'dsa',
-    priority: 'High',
-    status: 'Open',
-    surname: 'mkl',
-    tel: '231',
-  },
-]
-const age = arr.map(elem => +elem.age)
 
-const [before18, before50, before100] = [
-  age.filter(item => item < 18),
-  age.filter(item => item >= 18 && item <= 50),
-  age.filter(item => item >= 51 && item <= 100),
-]
-export const finish = [before100.length, before50.length, before18.length]
+const filterData = data => {
+  const dataAge = data.map(elem => +elem.age)
+
+  const [before18, before50, before100] = [
+    dataAge.filter(item => item < 18),
+    dataAge.filter(item => item >= 18 && item <= 50),
+    dataAge.filter(item => item >= 51 && item <= 100),
+  ]
+
+  return [before100.length, before50.length, before18.length]
+}
 
 // ========================= //
-
 export const dashboardActions = create('div', 'dashboard-actions')
 
 const dashboardTableWrapp1 = create('div', 'dashboard-table-wrapp')
@@ -109,10 +30,11 @@ dashboardTableWrapp2.append(boardGraphSecond)
 
 // ========================= //
 
-export const renderDashboardActions = (finish, dataDepartment) => {
+export const initCharts = (data, dataDepartment) => {
+  const finish = filterData(data)
   const donut = document.getElementById('myChart-1')
   const donut2 = document.getElementById('myChart-2')
-
+  console.log('CHART')
   const myDoughnutChart = new Chart(donut, {
     type: 'doughnut',
     data: {
