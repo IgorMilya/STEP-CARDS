@@ -4,6 +4,7 @@ import iconWorld from '../../assets/images/covid/global.png'
 
 const { UAnewConfirmed, UAallConfirmed, UAallDeaths, worldNewConfirmed, worldAllConfirmed, worldAllDeaths } =
   covidData
+
 export const changeValueCovid = () => {
   const btn = document.querySelector('.covid-button')
   const covidInfo = document.querySelector('.covid-info')
@@ -25,9 +26,9 @@ export const changeValueCovid = () => {
       covidIconTitle.textContent = 'World'
       e.target.textContent = 'Show Ukraine'
     } else {
-      covidNewRecoverdet.textContent = `Today indected -${UAnewConfirmed}`
-      covidInfected.textContent = `All infected -${UAallConfirmed}`
-      covidDeaths.textContent = `All deaths -${UAallDeaths}`
+      covidNewRecoverdet.textContent = `Today indected - ${UAnewConfirmed}`
+      covidInfected.textContent = `All infected - ${UAallConfirmed}`
+      covidDeaths.textContent = `All deaths - ${UAallDeaths}`
       covidIconImg.src = iconUA
       covidIconTitle.textContent = 'Ukraine'
       e.target.textContent = 'Show World'
