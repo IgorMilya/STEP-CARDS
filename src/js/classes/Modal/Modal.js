@@ -3,7 +3,8 @@ import { resetValues } from '../../components/index.js'
 import { create, find } from '../../tools/index.js'
 
 export class Modal {
-  // closeButtons = create('button', 'button modal-visit__button-cancel')
+  darkBlock = document.querySelector('.dark-block')
+
   constructor() {}
 
   renderModal(parent) {
@@ -13,37 +14,26 @@ export class Modal {
 
   closeModal() {
     const modalVisit = document.querySelector('.modal-visit')
-    if (modalVisit.classList.contains('opened-modal')) {
-      modalVisit.addEventListener('click', e => {
-        console.log(e.currentTarget.classList.contains('modal-visit'))
-      })
-    }
-    // document.addEventListener('click', e => {
-    //   console.log(modalVisit, 'MODAL')
-    //   console.log(e.target, 'TARGET')
-    //   if (!e.composedPath().includes(modalVisit)) {
-    //     modalVisit.classList.remove('opened-modal')
-    //     console.log('FROM IF')
-    //   }
-    //
-    //   resetValues()
-    // })
+    this.darkBlock.addEventListener('click', e => {
+      if (!e.composedPath().includes(modalVisit)) {
+        this.darkBlock.classList.remove('opened-modal')
+        resetValues()
+      }
+    })
   }
 
   closeModalButton() {
-    const modalVisit = document.querySelector('.modal-visit')
+    const darkBlock = document.querySelector('.dark-block')
     const cancelBtn = document.querySelector('.modal-visit__button-cancel')
     cancelBtn.addEventListener('click', e => {
       e.preventDefault()
-      modalVisit.classList.remove('opened-modal')
+      console.log(this.darkBlock)
+      darkBlock.classList.remove('opened-modal')
       resetValues()
     })
-    // this.closeModal()
   }
 
   openModal() {
-    const modalVisit = document.querySelector('.modal-visit')
-    modalVisit.classList.add('opened-modal')
-    // this.closeModal()
+    this.darkBlock.classList.add('opened-modal')
   }
 }
