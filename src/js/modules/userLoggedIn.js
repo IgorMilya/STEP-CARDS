@@ -48,7 +48,7 @@ export const userLoggedIn = async () => {
         const visitorName = item.querySelector('.name')
         const doctorName = item.querySelector('.doctor')
 
-        if (visitorName.innerText.search(value) === -1 && doctorName.innerText.search(value) === -1) {
+        if (visitorName.innerText.indexOf(value) === -1 && doctorName.innerText.indexOf(value) === -1) {
           item.style.display = 'none'
         } else {
           item.style.display = 'flex'
