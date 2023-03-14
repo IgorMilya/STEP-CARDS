@@ -73,7 +73,7 @@ export class Visit {
       body: this,
     })
     if (!!res) {
-      const appointment = new Appointment(this)
+      const appointment = new Appointment(res)
       appointment.addNewAppointment()
     }
   }
