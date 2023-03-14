@@ -1,11 +1,14 @@
+import { create } from '../../tools/index.js'
+
 export const createTemplate = () => {
-  const modalVisit = document.createElement('div')
-  modalVisit.className = 'modal-visit'
-  modalVisit.innerHTML = `
+  const darkBlock = create('div', 'dark-block')
+  darkBlock.innerHTML = `
+<div class='modal-visit'>
   <div class='visit-container'>
-  <h1 class='modal-visit__title'>Add card</h1>
+  <h1 class='modal-visit__title'>Fill in the form</h1>
   
+  </div>
 </div>
   `
-  return modalVisit
+  return darkBlock
 }

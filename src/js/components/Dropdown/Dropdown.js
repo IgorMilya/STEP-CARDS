@@ -24,6 +24,8 @@ export const Dropdown = pattern => {
     openDropdown(item, list)
 
     list.addEventListener('click', e => {
+      const dropdownError = document.querySelectorAll('.dropdown-error')
+      dropdownError.forEach(item => item.remove())
       modifyTitle({ img: modalImg, target: e.target, select: select, title: doctorTitle })
       checkValue(select.value, newForm, pattern)
     })

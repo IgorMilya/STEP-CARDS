@@ -6,7 +6,6 @@ import { Appointment } from '../Appointment/Appointment.js'
 
 export class Visit {
   constructor({ name, surname, priority, goal, description, phone, doctor, department }) {
-    this.id = 'tesy289892'
     this.name = name
     this.surname = surname
     this.priority = priority
