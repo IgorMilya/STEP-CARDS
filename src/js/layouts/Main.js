@@ -6,7 +6,7 @@ export const Main = () => {
 
   Main.innerHTML = `<div class="main-content"></div>`
 
-  Main.prepend(Sidebar())
+  Main.prepend(Sidebar)
 
   return Main
 }
