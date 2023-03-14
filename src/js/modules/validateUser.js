@@ -1,4 +1,4 @@
-import { userLoggedIn } from './index.js'
+import { userLoggedIn } from './userLoggedIn'
 import { request } from '../tools'
 export const validateUser = async e => {
   e.preventDefault()
@@ -18,5 +18,3 @@ export const validateUser = async e => {
     await userLoggedIn()
   }
 }
-
-// const userData = { email: 'hendyHealth@gmail.com', password: 123456 }

@@ -1,4 +1,4 @@
-import { create } from '../../tools'
+import { create, find } from '../../tools'
 import { tableHeaders } from './dashboard.utils'
 
 export const dashboardTable = create('div', 'dashboard-table')
@@ -9,11 +9,5 @@ const tablePagination = create('div', 'table-pagination')
 
 const headers = tableHeaders.map(text => create('div', 'text', `${text}`))
 tableHead.append(...headers)
-
-// let num = Math.ceil(100 / 8)
-//
-// const leftArrow = createElement('div', 'leftArrow')
-// const rightArrow = createElement('div', 'rightArrow')
-// const tabs = num.map(tab => createElement('div', 'tab'))
 
 dashboardTable.append(tableTitle, tableHead, tableList, tablePagination)
