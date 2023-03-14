@@ -5,6 +5,8 @@ import { Dashboard } from '../components'
 import { getAllAppointments } from './getAllAppointments'
 import { Appointment, Modal } from '../classes'
 import Chart from 'chart.js/auto'
+import { dashboardPagination } from '../components/Dashboard/dashboardPagination.js'
+import Scrollbar from 'smooth-scrollbar'
 
 export const userLoggedIn = async () => {
   const main = find('.main-content')
@@ -40,21 +42,25 @@ export const userLoggedIn = async () => {
     const appointment = new Appointment(item)
     appointment.addNewAppointment()
   })
+  // //////// SCROLLBAR: TODO: перенести в окрему функцію
+  const dashboardList = find('.table-list')
+  const scrollbarOptions = { damping: 0.02 }
+  Scrollbar.init(dashboardList, scrollbarOptions)
+  // ////////
 
-  // ========================== //
-
+  // //////// CHARTS: TODO: перенести в окрему функцію
   const ctx = document.getElementById('myChart')
   const ctx2 = document.getElementById('myChart2')
-  console.log('ctx2:', ctx2)
-  console.log('ctx:', ctx)
+
+  const renderChart = (arrayForCart1, arrayForCart) => {}
 
   const myDoughnutChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
-      labels: ['Cardiology', 'Dentist', 'Terapevt'],
+      labels: ['Elderly', 'Adult', 'Child'],
       datasets: [
         {
-          label: 'Patient',
+          label: 'Age',
           data: [25, 2, 40],
           backgroundColor: ['rgb(32, 164, 182)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
         },
@@ -69,14 +75,14 @@ export const userLoggedIn = async () => {
   const myDoughnutChart2 = new Chart(ctx2, {
     type: 'doughnut',
     data: {
-      labels: ['Cardiology', 'Dentist', 'Terapevt'],
       datasets: [
         {
-          label: 'Patient',
-          data: [36, 2, 40],
+          label: 'Patients for Departments',
+          data: [32, 23, 23],
           backgroundColor: ['rgb(32, 164, 182)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
         },
       ],
+      labels: ['Cardiology', 'Dentist', 'Terapevt'],
     },
     options: {
       responsive: false, // заборонити автоматичну зміну розміру

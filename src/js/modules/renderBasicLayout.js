@@ -1,4 +1,4 @@
-import { Header, Main, Sidebar } from '../layouts'
+import { Header, Main } from '../layouts'
 import { loginFormHandler } from '../components/Registration'
 import { renderComponent } from './renderComponent'
 import { Registration } from '../components'
@@ -12,6 +12,6 @@ export const renderBasicLayout = () => {
   renderComponent(Registration)
   changeValueCovid()
   loginFormHandler()
-
+  // await userLoggedIn() //temporary solution
   renderVisitModal(app) //temporary solution
 }

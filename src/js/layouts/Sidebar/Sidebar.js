@@ -1,15 +1,9 @@
 import { sidebarInfo } from './sidebarInfo.js'
 import { sidebarMenu } from './sidebarMenu.js'
+import { create } from '../../tools/index.js'
 
-export const Sidebar = () => {
-  const Sidebar = document.createElement('div')
-  const sidebarContent = document.createElement('div')
+export const Sidebar = create('div', 'sidebar')
+const sidebarContent = create('div', 'sidebar-content')
+sidebarContent.append(sidebarMenu(), sidebarInfo())
 
-  Sidebar.classList.add('sidebar')
-  sidebarContent.classList.add('sidebar-content')
-
-  Sidebar.append(sidebarContent)
-  sidebarContent.append(sidebarMenu(), sidebarInfo())
-
-  return Sidebar
-}
+Sidebar.append(sidebarContent)

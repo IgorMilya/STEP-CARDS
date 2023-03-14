@@ -3,7 +3,7 @@ import { handleForm } from '../components'
 
 export const renderVisitModal = parent => {
   // prettier-ignore
-  const pattern = 'A-Za-zА-Яа-яЁё\\s'
+  const pattern = 'A-Za-zА-Яа-яЁё\\s' //TODO:перенести в constants
 
   const modal = new Modal()
   const visit = new Visit({})
