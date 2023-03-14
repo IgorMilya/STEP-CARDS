@@ -4,7 +4,8 @@ import { renderComponent } from './renderComponent'
 import { Dashboard } from '../components'
 import { getAllAppointments } from './getAllAppointments'
 import { Appointment, Modal } from '../classes'
-import Chart from 'chart.js/auto'
+import { renderDashboardActions } from '../components/Dashboard'
+import { finish } from '../components/Dashboard/dashboardActions'
 
 export const userLoggedIn = async () => {
   const main = find('.main-content')
@@ -43,44 +44,5 @@ export const userLoggedIn = async () => {
 
   // ========================== //
 
-  const ctx = document.getElementById('myChart')
-  const ctx2 = document.getElementById('myChart2')
-  console.log('ctx2:', ctx2)
-  console.log('ctx:', ctx)
-
-  const myDoughnutChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-      labels: ['Cardiology', 'Dentist', 'Terapevt'],
-      datasets: [
-        {
-          label: 'Patient',
-          data: [25, 2, 40],
-          backgroundColor: ['rgb(32, 164, 182)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
-        },
-      ],
-    },
-    options: {
-      responsive: false, // заборонити автоматичну зміну розміру
-      maintainAspectRatio: false, // заборонити зберігання пропорцій
-    },
-  })
-
-  const myDoughnutChart2 = new Chart(ctx2, {
-    type: 'doughnut',
-    data: {
-      labels: ['Cardiology', 'Dentist', 'Terapevt'],
-      datasets: [
-        {
-          label: 'Patient',
-          data: [36, 2, 40],
-          backgroundColor: ['rgb(32, 164, 182)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
-        },
-      ],
-    },
-    options: {
-      responsive: false, // заборонити автоматичну зміну розміру
-      maintainAspectRatio: false, // заборонити зберігання пропорцій
-    },
-  })
+  renderDashboardActions(finish)
 }
