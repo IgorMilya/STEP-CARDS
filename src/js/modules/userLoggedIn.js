@@ -4,8 +4,11 @@ import { renderComponent } from './renderComponent'
 import { Dashboard } from '../components'
 import { getAllAppointments } from './getAllAppointments'
 import { Appointment, Modal } from '../classes'
+import Chart from 'chart.js/auto'
+import Scrollbar from 'smooth-scrollbar'
 import { renderDashboardActions } from '../components/Dashboard'
 import { finish } from '../components/Dashboard/dashboardActions'
+
 
 export const userLoggedIn = async () => {
   const main = find('.main-content')
@@ -69,8 +72,57 @@ export const userLoggedIn = async () => {
     const appointment = new Appointment(item)
     appointment.addNewAppointment()
   })
+  // //////// SCROLLBAR: TODO: перенести в окрему функцію
+  const dashboardList = find('.table-list')
+  const scrollbarOptions = { damping: 0.02 }
+  Scrollbar.init(dashboardList, scrollbarOptions)
+  // ////////
+
+
+  // //////// CHARTS: TODO: перенести в окрему функцію
+  const ctx = document.getElementById('myChart')
+  const ctx2 = document.getElementById('myChart2')
+
+  const renderChart = (arrayForCart1, arrayForCart) => {}
+
+  const myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Elderly', 'Adult', 'Child'],
+      datasets: [
+        {
+          label: 'Age',
+          data: [25, 2, 40],
+          backgroundColor: ['rgb(32, 164, 182)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+        },
+      ],
+    },
+    options: {
+      responsive: false, // заборонити автоматичну зміну розміру
+      maintainAspectRatio: false, // заборонити зберігання пропорцій
+    },
+  })
+
+  const myDoughnutChart2 = new Chart(ctx2, {
+    type: 'doughnut',
+    data: {
+      datasets: [
+        {
+          label: 'Patients for Departments',
+          data: [32, 23, 23],
+          backgroundColor: ['rgb(32, 164, 182)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)'],
+        },
+      ],
+      labels: ['Cardiology', 'Dentist', 'Terapevt'],
+    },
+    options: {
+      responsive: false, // заборонити автоматичну зміну розміру
+      maintainAspectRatio: false, // заборонити зберігання пропорцій
+    },
+  })
 
   // ========================== //
 
   renderDashboardActions(finish)
+
 }

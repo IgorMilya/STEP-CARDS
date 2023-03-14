@@ -1,16 +1,14 @@
 .dashboard {
   height: 100%;
   padding: 0 31px 15px;
-  gap: 5px;
-  @include flexProperties(null, null, column);
+  @include flexProperties(null, null, column, 5px);
 }
 
 //============== DASHBOARD-HEADER ===============
 
 .dashboard-header {
   margin: 11px 0;
-  gap: 30px;
-  @include flexProperties(center, space-between);
+  @include flexProperties(center, space-between, null, 30px);
 
   .header-card {
     width: 30%;
@@ -21,9 +19,6 @@
     background-color: color(background, 'secondary');
     box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
     // background-color: rgb(246, 248, 251);
-  }
-
-  .card-image {
   }
 
   .card-content {
@@ -102,7 +97,13 @@
 }
 
 .table-list {
-  height: 100%;
+  height: 630px;
+  width: 100%;
+  overflow: auto;
+
+  .scrollbar-thumb {
+    background: rgba(131, 131, 131, 0.25);
+  }
 }
 
 .appointment {
@@ -194,6 +195,50 @@
 }
 
 .table-pagination {
+  padding: 8px 8px 15px 10px;
+  display: flex;
+  gap: 4px;
+
+  div {
+    height: 32px;
+    width: 32px;
+
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    transition: all 0.25s;
+    cursor: pointer;
+    @include flexProperties(center, center);
+
+    &:hover {
+      background-color: color(background, 'accent');
+      color: color(text, 'white');
+    }
+  }
+
+  .prevButton {
+    img {
+      transform: rotate(180deg);
+    }
+  }
+
+  .prevButton:hover img {
+    filter: invert(92%) sepia(100%) saturate(0%) hue-rotate(202deg) brightness(106%) contrast(106%);
+  }
+
+  .nextButton:hover img {
+    filter: invert(92%) sepia(100%) saturate(0%) hue-rotate(202deg) brightness(106%) contrast(106%);
+  }
+
+  .pagination-item {
+  }
+}
+
+.hidden-item {
+  display: none;
+}
+
+.tab-active {
+  background-color: color(background, 'accent');
 }
 
 //==================== DASHBOARD-ACTIONS ===================

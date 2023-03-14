@@ -71,6 +71,7 @@ export class Visit {
       token,
       body: this,
     })
+
     if (!!res) {
       const appointment = new Appointment(res)
       appointment.addNewAppointment()
