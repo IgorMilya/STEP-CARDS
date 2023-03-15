@@ -8,7 +8,12 @@
 
 .dashboard-header {
   margin: 5px 0 13px 0;
-  @include flexProperties(center, space-between, null, 30px);
+  @include flexProperties(center, space-between, null, 20px);
+
+  div:nth-child(4) {
+    min-width: 295px;
+    max-width: 290px;
+  }
 
   span {
     color: color(text, 'accent');
@@ -22,8 +27,13 @@
     padding: 20px 24px;
     border-radius: 8px;
     background-color: color(background, 'secondary');
-    box-shadow: 0 4px 23px rgba(0, 0, 0, 0.12);
-    // background-color: rgb(246, 248, 251);
+    box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.11);
+    transition: box-shadow 0.25s;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.19);
+    }
   }
 
   .card-content {
@@ -51,6 +61,7 @@
   flex: 1 1 auto;
   border-radius: 8px;
   background-color: color(background, 'secondary');
+  box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.11);
   @include flexProperties(null, null, column);
 }
 
@@ -246,29 +257,25 @@
 .dashboard-actions {
   width: 298px;
   height: 100%;
-  @include flexProperties(end, flex-start, column);
-
-  gap: 10px;
   margin-left: 20px;
-  // padding: 10px 0;
+  @include flexProperties(end, flex-start, column, 2%);
 }
-
-// .dashboard-graph {
-//   width: 100%;
-//   height: 100%;
-// }
 
 .dashboard-table-wrapp {
   background-color: #fff;
   border-radius: 8px;
   width: 295px;
   height: 290px;
+  box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.11);
+  transition: box-shadow 0.25s;
+
+  &:hover {
+    box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.2);
+  }
 }
 
 .nodata-image {
-  max-width: 35%;
-
-  margin: 10% auto;
-
   display: block;
+  max-width: 35%;
+  margin: 10% auto;
 }

@@ -1,6 +1,8 @@
 import { Appointment } from '../classes/index.js'
 import { find } from '../tools/index.js'
+import { renderNoDataImg } from '../tools/renderNoDataImg.js'
 import { setLabelValue } from './appo.js'
+
 
 let LOCAL_DATA = []
 
@@ -11,6 +13,11 @@ export const setLocalData = newData => {
 
 export const deleteLocalData = delItemId => {
   LOCAL_DATA = LOCAL_DATA.filter(item => item.id !== delItemId)
+  fillTableList()
+}
+
+export const updateLocalDataStatus = updatedItemID => {
+  LOCAL_DATA.find(localItem => localItem.id === updatedItemID).status = 'Close'
   fillTableList()
 }
 
@@ -25,9 +32,10 @@ const fillTableList = () => {
   if (LOCAL_DATA.length) {
     LOCAL_DATA.forEach(item => {
       const appointment = new Appointment(item)
+
       appointment.addNewAppointment()
     })
   } else {
-    console.log(tableList)
+    renderNoDataImg('.table-list')
   }
 }

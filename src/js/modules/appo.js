@@ -1,5 +1,9 @@
 import { getLocalData } from './localData'
 
+
+  const appo = document.getElementsByClassName('appointment')
+ 
+
 export const setLabelValue = () => {
   const localData = getLocalData()
   const appointments = document.querySelector('.appointments')
