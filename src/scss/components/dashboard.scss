@@ -7,7 +7,7 @@
 //============== DASHBOARD-HEADER ===============
 
 .dashboard-header {
-  margin: 11px 0;
+  margin: 5px 0 13px 0;
   @include flexProperties(center, space-between, null, 30px);
 
   .header-card {
@@ -43,7 +43,7 @@
 //==================== DASHBOARD-TABLE ===================
 
 .dashboard-table {
-  height: 100%;
+  height: calc(100vh - 190px);
   padding: 3px;
   flex: 1 1 auto;
   border-radius: 8px;
@@ -97,13 +97,10 @@
 }
 
 .table-list {
-  height: 630px;
+  height: 83%;
   width: 100%;
   overflow: auto;
-
-  .scrollbar-thumb {
-    background: rgba(131, 131, 131, 0.25);
-  }
+  overflow-x: hidden;
 }
 
 .appointment {
@@ -249,7 +246,7 @@
   @include flexProperties(end, flex-start, column);
 
   gap: 10px;
-  margin-left: 27px;
+  margin-left: 20px;
   // padding: 10px 0;
 }
 
@@ -263,4 +260,12 @@
   border-radius: 8px;
   width: 295px;
   height: 290px;
+}
+
+.nodata-image {
+  max-width: 35%;
+
+  margin: 10% auto;
+
+  display: block;
 }
