@@ -13,3 +13,9 @@ export const department = [
     doctor: ['Stephanie Cook', 'Marion James', 'Teresa Holland'],
   },
 ]
+
+// const doctors = department.reduce((acc, curr) => {
+//   return acc.concat(curr.doctor)
+// }, [])
+
+// export const doctorsLength = doctors.length

@@ -9,8 +9,6 @@ export const getAllAppointments = async () => {
   allAppointments.forEach(obj => {
     const appointment = new Appointment(obj)
     appointment.addNewAppointment()
-    console.log(obj)
     setLocalData(obj)
-    // console.log(LOCAL_DATA)
   })
 }

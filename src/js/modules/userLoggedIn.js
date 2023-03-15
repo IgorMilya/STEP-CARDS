@@ -8,6 +8,9 @@ import { initScrollbar, initCharts } from '../components/Dashboard'
 import { searchOptions } from './searchOtpions'
 import { changeBasicLayout } from './changeBasicLayout.js'
 import { getLocalData } from './localData.js'
+// import { doctorsLength } from '../utils/constants'
+import { testAppo } from './appo'
+
 export const userLoggedIn = async () => {
   changeBasicLayout()
   renderComponent(Dashboard)
@@ -19,6 +22,9 @@ export const userLoggedIn = async () => {
   const allData = getLocalData()
 
   initScrollbar()
+
   initCharts(allData)
+
   // ВАЖЛИВА ХУЙНЯ
+  const test = testAppo()
 }
