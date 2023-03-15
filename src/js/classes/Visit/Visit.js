@@ -74,6 +74,7 @@ export class Visit {
     })
 
     if (!!res) {
+      console.log(res)
       const appointment = new Appointment(res)
       appointment.addNewAppointment()
       setLocalData(res)

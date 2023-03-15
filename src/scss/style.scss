@@ -19,10 +19,7 @@ body {
 
 .registration {
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 110px;
+  @include flexProperties(center, center, null, 110px);
 }
 
 .header {
@@ -33,4 +30,21 @@ body {
 .main {
   display: flex;
   height: calc(100vh - 72px);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.38);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b0aeae;
 }

@@ -1,4 +1,4 @@
-import { create } from '../../tools/index.js'
+import { create } from '../../tools'
 import Chart from 'chart.js/auto'
 
 const filterData = data => {
@@ -13,7 +13,6 @@ const filterData = data => {
   return [before100.length, before50.length, before18.length]
 }
 
-// ========================= //
 export const dashboardActions = create('div', 'dashboard-actions')
 
 const dashboardTableWrapp1 = create('div', 'dashboard-table-wrapp')
@@ -28,13 +27,11 @@ dashboardActions.append(dashboardTableWrapp1, dashboardTableWrapp2)
 dashboardTableWrapp1.append(boardGraphFirst)
 dashboardTableWrapp2.append(boardGraphSecond)
 
-// ========================= //
-
 export const initCharts = (data, dataDepartment) => {
   const finish = filterData(data)
   const donut = document.getElementById('myChart-1')
   const donut2 = document.getElementById('myChart-2')
-  console.log('CHART')
+
   const myDoughnutChart = new Chart(donut, {
     type: 'doughnut',
     data: {
@@ -56,7 +53,7 @@ export const initCharts = (data, dataDepartment) => {
         },
         title: {
           display: true,
-          text: 'Patient by department',
+          text: 'Patients by Department',
         },
       },
     },
@@ -86,7 +83,7 @@ export const initCharts = (data, dataDepartment) => {
         },
         title: {
           display: true,
-          text: 'Patient by gender',
+          text: 'Patients by Age',
         },
       },
     },

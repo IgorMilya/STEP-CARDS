@@ -32,19 +32,17 @@ export const handleForm = () => {
       switch (departmentValue.value) {
         case 'Cardiology':
           const cardiologist = new VisitCardiologist(obj)
-          const data1 = await cardiologist.postRequest()
-          console.log(cardiologist)
+          await cardiologist.postRequest()
+
           break
         case 'Dentist':
           const dentist = new VisitDentist(obj)
-          const data2 = await dentist.postRequest()
-          console.log(dentist)
+          await dentist.postRequest()
 
           break
         case 'Therapist':
           const therapist = new VisitTherapist(obj)
-          const data3 = await therapist.postRequest()
-          console.log(therapist)
+          await therapist.postRequest()
       }
 
       dropdown.forEach(item => item.setAttribute('disabled', true))

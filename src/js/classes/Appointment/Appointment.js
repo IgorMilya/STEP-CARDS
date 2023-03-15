@@ -3,6 +3,7 @@ import { appointmentTemplate } from './appointmentTemplate'
 import avatar1 from '../../../assets/images/dashboard/pacAv1.svg'
 import avatar2 from '../../../assets/images/dashboard/pacAv2.svg'
 import { Modal } from '../Modal/Modal.js'
+import { deleteLocalData } from '../../modules/localData.js'
 
 export class Appointment {
   parentElement = find('.table-list')
@@ -36,7 +37,11 @@ export class Appointment {
 
       if (isDelete) {
         const response = await request({ url: `${this.id}`, method: 'DELETE', token: token })
-        response === '' && this.htmlElement.remove()
+
+        if (response === '') {
+          this.htmlElement.remove()
+          deleteLocalData(this.id)
+        }
       }
 
       if (isComplete && status.textContent === 'Open') {

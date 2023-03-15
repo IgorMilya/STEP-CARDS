@@ -1,17 +1,27 @@
-import { create, find } from '../tools/index.js'
-import arrowIcon from '../../assets/images/dashboard/paginationArrow.svg'
-import { dashboardPagination } from '../components/Dashboard/dashboardPagination.js'
-import { initCharts } from '../components/Dashboard/index.js'
-export let LOCAL_DATA = []
+import { Appointment } from '../classes/index.js'
+import { find } from '../tools/index.js'
 
+let LOCAL_DATA = []
+const tableList = find('.table-list')
 export const setLocalData = newData => {
-  LOCAL_DATA.push(newData)
-
-  // pushDataCharts()
+  LOCAL_DATA.unshift(newData)
+  fillTableList()
 }
-export const deleteLocalData = data => {}
+export const deleteLocalData = delItemId => {
+  LOCAL_DATA = LOCAL_DATA.filter(item => item.id !== delItemId)
+  fillTableList()
+}
 export const getLocalData = () => LOCAL_DATA
-const pushDataCharts = () => {
-  console.log(LOCAL_DATA)
-  initCharts(LOCAL_DATA)
+
+const fillTableList = () => {
+  tableList.innerHTML = ''
+
+  if (LOCAL_DATA.length) {
+    LOCAL_DATA.forEach(item => {
+      const appointment = new Appointment(item)
+      appointment.addNewAppointment()
+    })
+  } else {
+    console.log(tableList)
+  }
 }
