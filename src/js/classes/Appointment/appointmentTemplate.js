@@ -6,7 +6,7 @@ export const appointmentTemplate = props => {
   const actions = create('div', 'actions')
   const clientName = create('div', 'name', `${name} ${surname}`)
   const imgWrap = create('div', 'avatar')
-  const statusColor = status === 'Close' ? 'status-close' : 'status'
+  const statusColor = status === 'Closed' ? 'status-close' : 'status'
   imgWrap.innerHTML = `<img src = '${avatar}' alt = 'Client avatar' />`
 
   const appointmentContent = [

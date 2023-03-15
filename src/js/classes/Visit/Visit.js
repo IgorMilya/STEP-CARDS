@@ -15,7 +15,7 @@ export class Visit {
     this.tel = phone
     this.doctor = doctor
     this.department = department
-    this.status = 'Open'
+    this.status = 'Opened'
     this.age = age
   }
 
@@ -66,11 +66,9 @@ export class Visit {
   }
 
   async postRequest() {
-    const token = localStorage.getItem('token')
     const res = await request({
       url: '',
       method: 'POST',
-      token,
       body: this,
     })
 

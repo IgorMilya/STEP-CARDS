@@ -5,8 +5,7 @@ import { Appointment } from '../classes'
 import { renderNoDataImg } from '../tools/renderNoDataImg.js'
 
 export const getAllAppointments = async () => {
-  const token = localStorage.getItem('token')
-  const allAppointments = await request({ url: '', method: 'GET', token })
+  const allAppointments = await request({ url: '', method: 'GET' })
 
   !allAppointments.length && renderNoDataImg('.table-list')
 
