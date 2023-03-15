@@ -6,10 +6,8 @@ export const renderVisitModal = parent => {
 
   const modal = new Modal()
   const visit = new Visit({})
-
   modal.renderModal(parent)
   visit.showForm(pattern)
   modal.closeModalButton()
-
   handleForm()
 }

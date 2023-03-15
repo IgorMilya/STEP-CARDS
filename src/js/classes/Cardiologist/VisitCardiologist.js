@@ -9,14 +9,14 @@ export class VisitCardiologist extends Visit {
     department,
     goal,
     description,
-    phone,
+    tel,
     doctor,
-    pressure,
-    bodyIndex,
-    disease,
     age,
+    pressure = '',
+    bodyIndex = '',
+    disease = '',
   }) {
-    super({ name, surname, priority, goal, description, phone, doctor, department, age })
+    super({ name, surname, priority, goal, description, tel, doctor, department, age })
     this.pressure = pressure
     this.bodyIndex = bodyIndex
     this.disease = disease
@@ -30,7 +30,8 @@ export class VisitCardiologist extends Visit {
    'text',
    'Typical pressure',
    `^[0-9 -.+/]+$`,
-   'pressure'
+   'pressure',
+   `${this.pressure}`
  )}
  ${createInput(
    'modal-visit__extra small',
@@ -38,7 +39,8 @@ export class VisitCardiologist extends Visit {
    'text',
    'Body mass index',
    `^[0-9 -.+/]+$`,
-   'bodyIndex'
+   'bodyIndex',
+   `${this.bodyIndex}`
  )}
 
  ${createInput(
@@ -47,7 +49,8 @@ export class VisitCardiologist extends Visit {
    'text',
    'Diseases of cardiovascular',
    `^[${pattern} 0-9]+$`,
-   'disease'
+   'disease',
+   `${this.disease}`
  )}
  
 

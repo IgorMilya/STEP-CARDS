@@ -2,12 +2,12 @@ import { Visit } from '../Visit/Visit.js'
 import { createInput } from '../../components'
 
 export class VisitTherapist extends Visit {
-  constructor({ name, surname, priority, goal, description, phone, doctor, department, age, email }) {
-    super({ name, surname, priority, goal, description, phone, doctor, department, age })
+  constructor({ name, surname, priority, goal, description, tel, doctor, department, age, email = '' }) {
+    super({ name, surname, priority, goal, description, tel, doctor, department, age })
     this.email = email
   }
 
-  showAge(div) {
+  showEmail(div) {
     div.innerHTML = ` 
  ${createInput(
    'modal-visit__extra small',
@@ -15,7 +15,8 @@ export class VisitTherapist extends Visit {
    'email',
    'Email',
    `.+@gmail\\.com`,
-   'email'
+   'email',
+   `${this.email}`
  )}
 `
   }
