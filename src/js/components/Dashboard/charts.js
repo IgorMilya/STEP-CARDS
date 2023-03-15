@@ -1,4 +1,4 @@
-import { create } from '../../tools/index.js'
+import { create } from '../../tools'
 import Chart from 'chart.js/auto'
 
 const filterDataCharts = data => {
@@ -49,7 +49,7 @@ export const initCharts = data => {
         },
         title: {
           display: true,
-          text: 'Patient by department',
+          text: 'Patients by Department',
         },
       },
     },
@@ -79,7 +79,7 @@ export const initCharts = data => {
         },
         title: {
           display: true,
-          text: 'Patient by gender',
+          text: 'Patients by Age',
         },
       },
     },
