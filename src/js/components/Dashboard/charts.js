@@ -1,48 +1,41 @@
 import { create } from '../../tools/index.js'
 import Chart from 'chart.js/auto'
 
-const filterData = data => {
-  const dataAge = data.map(elem => +elem.age)
+const filterDataCharts = data => {
+  const age = data.map(elem => +elem.age)
+  const dataDepartment = data.map(elem => elem.department)
 
   const [before18, before50, before100] = [
-    dataAge.filter(item => item < 18),
-    dataAge.filter(item => item >= 18 && item <= 50),
-    dataAge.filter(item => item >= 51 && item <= 100),
+    age.filter(item => item < 18),
+    age.filter(item => item >= 18 && item <= 50),
+    age.filter(item => item >= 51),
+  ]
+  const [dentist, terapeft, cardiology] = [
+    dataDepartment.filter(item => item === 'Dentist'),
+    dataDepartment.filter(item => item === 'Therapist'),
+    dataDepartment.filter(item => item === 'Cardiology'),
   ]
 
-  return [before100.length, before50.length, before18.length]
+  const arrDataAge = [before100.length, before50.length, before18.length]
+  const arrDataDepartment = [dentist.length, terapeft.length, cardiology.length]
+
+  return [arrDataAge, arrDataDepartment]
 }
 
-// ========================= //
-export const dashboardActions = create('div', 'dashboard-actions')
+export const initCharts = data => {
+  const [ageDataCharts, departmentDataCharts] = filterDataCharts(data)
 
-const dashboardTableWrapp1 = create('div', 'dashboard-table-wrapp')
-const dashboardTableWrapp2 = create('div', 'dashboard-table-wrapp')
-const boardGraphFirst = create('canvas', 'donut')
-const boardGraphSecond = create('canvas', 'donut')
-
-boardGraphFirst.setAttribute('id', 'myChart-1')
-boardGraphSecond.setAttribute('id', 'myChart-2')
-
-dashboardActions.append(dashboardTableWrapp1, dashboardTableWrapp2)
-dashboardTableWrapp1.append(boardGraphFirst)
-dashboardTableWrapp2.append(boardGraphSecond)
-
-// ========================= //
-
-export const initCharts = (data, dataDepartment) => {
-  const finish = filterData(data)
   const donut = document.getElementById('myChart-1')
   const donut2 = document.getElementById('myChart-2')
-  console.log('CHART')
+
   const myDoughnutChart = new Chart(donut, {
     type: 'doughnut',
     data: {
-      labels: ['Cardiology', 'Dentist', 'Terapevt'],
+      labels: ['Dentist', 'Therapist', 'Cardiology'],
       datasets: [
         {
           label: 'Patient',
-          data: [25, 20, 40],
+          data: departmentDataCharts,
           backgroundColor: ['rgb(32, 164, 182)', 'rgb(54, 162, 235)', 'rgb(226 230 236)'],
           borderWith: 100,
         },
@@ -73,7 +66,7 @@ export const initCharts = (data, dataDepartment) => {
       datasets: [
         {
           label: 'Patient',
-          data: finish,
+          data: ageDataCharts,
           backgroundColor: ['rgb(226 230 236)', 'rgb(32, 164, 182)', 'rgb(54, 162, 235)'],
         },
       ],
@@ -96,3 +89,21 @@ export const initCharts = (data, dataDepartment) => {
     // },
   })
 }
+
+// ========================= //
+
+export const dashboardActions = create('div', 'dashboard-actions')
+
+const dashboardTableWrapp1 = create('div', 'dashboard-table-wrapp')
+const dashboardTableWrapp2 = create('div', 'dashboard-table-wrapp')
+const boardGraphFirst = create('canvas', 'donut')
+const boardGraphSecond = create('canvas', 'donut')
+
+boardGraphFirst.setAttribute('id', 'myChart-1')
+boardGraphSecond.setAttribute('id', 'myChart-2')
+
+dashboardActions.append(dashboardTableWrapp1, dashboardTableWrapp2)
+dashboardTableWrapp1.append(boardGraphFirst)
+dashboardTableWrapp2.append(boardGraphSecond)
+
+// ========================= //

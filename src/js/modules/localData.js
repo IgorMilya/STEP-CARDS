@@ -6,12 +6,6 @@ export let LOCAL_DATA = []
 
 export const setLocalData = newData => {
   LOCAL_DATA.push(newData)
+}
 
-  // pushDataCharts()
-}
-export const deleteLocalData = data => {}
 export const getLocalData = () => LOCAL_DATA
-const pushDataCharts = () => {
-  console.log(LOCAL_DATA)
-  initCharts(LOCAL_DATA)
-}
