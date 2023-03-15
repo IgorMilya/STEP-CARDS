@@ -2,7 +2,7 @@ export const testAppo = () => {
   const cardValue = document.querySelector('.card-value')
 
   const appo = document.getElementsByClassName('appointment')
-  console.log('appo:', appo)
+  // console.log('appo:', appo)
 
   //   cardValue.innerHTML = appo.length
 

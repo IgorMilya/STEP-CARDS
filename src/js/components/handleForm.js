@@ -16,15 +16,15 @@ export const handleForm = () => {
 
     dropdown.forEach(item => {
       if (!item.value) {
-        valid = false
         const dropdownError = create('p', 'dropdown-error', 'Enter the apt value')
+        valid = false
+
         item.after(dropdownError)
       }
     })
+
     if (valid) {
-      dropdown.forEach(item => {
-        item.removeAttribute('disabled')
-      })
+      dropdown.forEach(item => item.removeAttribute('disabled'))
       const visitData = new FormData(e.target)
 
       for (const [key, value] of visitData.entries()) result[key] = value
@@ -45,7 +45,7 @@ export const handleForm = () => {
           await therapist.postRequest()
       }
 
-      dropdown.forEach(item => item.setAttribute('disabled', true))
+      dropdown.forEach(item => item.setAttribute('disabled', valid))
       resetValues()
       darkBlock.classList.remove('opened-modal')
     }

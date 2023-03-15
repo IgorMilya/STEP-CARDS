@@ -1,5 +1,6 @@
 import { Appointment } from '../classes/index.js'
 import { find } from '../tools/index.js'
+import { renderNoDataImg } from '../tools/renderNoDataImg.js'
 
 let LOCAL_DATA = []
 
@@ -13,6 +14,11 @@ export const deleteLocalData = delItemId => {
   fillTableList()
 }
 
+export const updateLocalDataStatus = updatedItemID => {
+  LOCAL_DATA.find(localItem => localItem.id === updatedItemID).status = 'Close'
+  fillTableList()
+}
+
 export const getLocalData = () => LOCAL_DATA
 
 const fillTableList = () => {
@@ -22,9 +28,10 @@ const fillTableList = () => {
   if (LOCAL_DATA.length) {
     LOCAL_DATA.forEach(item => {
       const appointment = new Appointment(item)
+
       appointment.addNewAppointment()
     })
   } else {
-    console.log(tableList)
+    renderNoDataImg('.table-list')
   }
 }
