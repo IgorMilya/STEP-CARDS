@@ -3,8 +3,7 @@ import { createInput } from '../../components'
 
 export class VisitTherapist extends Visit {
   constructor({ name, surname, priority, goal, description, phone, doctor, department, age }) {
-    super({ name, surname, priority, goal, description, phone, doctor, department })
-    this.age = age
+    super({ name, surname, priority, goal, description, phone, doctor, department, age })
   }
 
   showAge(div) {

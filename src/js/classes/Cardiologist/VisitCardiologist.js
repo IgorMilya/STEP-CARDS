@@ -16,11 +16,10 @@ export class VisitCardiologist extends Visit {
     disease,
     age,
   }) {
-    super({ name, surname, priority, goal, description, phone, doctor, department })
+    super({ name, surname, priority, goal, description, phone, doctor, department, age })
     this.pressure = pressure
     this.bodyIndex = bodyIndex
     this.disease = disease
-    this.age = age
   }
 
   showHealthInfo(div, pattern) {

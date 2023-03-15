@@ -3,8 +3,8 @@ import url from '../../../assets/modal-visit/Group 1718.svg'
 import { createInput } from '../../components/index.js'
 
 export class VisitDentist extends Visit {
-  constructor({ name, surname, priority, goal, description, phone, doctor, department, date }) {
-    super({ name, surname, priority, goal, description, phone, doctor, department })
+  constructor({ name, surname, priority, goal, description, phone, doctor, department, date, age }) {
+    super({ name, surname, priority, goal, description, phone, doctor, department, age })
     this.date = date
   }
 

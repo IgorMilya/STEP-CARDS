@@ -6,7 +6,7 @@ import { Appointment } from '../Appointment/Appointment.js'
 import { setLocalData } from '../../modules/localData.js'
 
 export class Visit {
-  constructor({ name, surname, priority, goal, description, phone, doctor, department }) {
+  constructor({ name, surname, priority, goal, description, phone, doctor, department, age }) {
     this.name = name
     this.surname = surname
     this.priority = priority
@@ -16,6 +16,7 @@ export class Visit {
     this.doctor = doctor
     this.department = department
     this.status = 'Open'
+    this.age = age
   }
 
   showForm(pattern) {
