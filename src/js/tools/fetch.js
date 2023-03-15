@@ -1,8 +1,9 @@
 import ky from 'ky'
 import { strFinishCovid } from '../layouts/Sidebar/sidebar.utils'
 
-export const request = async ({ url, method, token, body }) => {
+export const request = async ({ url, method, body }) => {
   const prefixUrl = 'https://ajax.test-danit.com/api/v2/cards/'
+  const token = localStorage.getItem('token')
   const headers = { Authorization: `Bearer ${token}` }
   const logOptions = { method: 'POST', prefixUrl, json: body }
   const OPTIONS = { method, prefixUrl, json: body, headers }

@@ -3,7 +3,6 @@ import { find } from '../tools/index.js'
 import { renderNoDataImg } from '../tools/renderNoDataImg.js'
 import { setLabelValue } from './appo.js'
 
-
 let LOCAL_DATA = []
 
 export const setLocalData = newData => {
@@ -17,7 +16,11 @@ export const deleteLocalData = delItemId => {
 }
 
 export const updateLocalDataStatus = updatedItemID => {
-  LOCAL_DATA.find(localItem => localItem.id === updatedItemID).status = 'Close'
+  LOCAL_DATA.find(localItem => localItem.id === updatedItemID).status = 'Closed'
+  fillTableList()
+}
+
+const updateLocalData = updateItem => {
   fillTableList()
 }
 
