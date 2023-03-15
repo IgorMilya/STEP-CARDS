@@ -3,7 +3,7 @@ import { appointmentTemplate } from './appointmentTemplate'
 import avatar1 from '../../../assets/images/dashboard/pacAv1.svg'
 import avatar2 from '../../../assets/images/dashboard/pacAv2.svg'
 import { Modal } from '../Modal/Modal.js'
-import { deleteLocalData } from '../../modules/localData.js'
+import { deleteLocalData, updateLocalDataStatus } from '../../modules/localData.js'
 
 export class Appointment {
   parentElement = find('.table-list')
@@ -55,6 +55,7 @@ export class Appointment {
         if (response) {
           status.textContent = 'Close'
           status.style.color = '#ff6b93'
+          updateLocalDataStatus(this.id)
         }
       }
 
