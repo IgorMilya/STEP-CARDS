@@ -10,6 +10,11 @@
   margin: 5px 0 13px 0;
   @include flexProperties(center, space-between, null, 30px);
 
+  span {
+    color: color(text, 'accent');
+    @include fontProperties(null, 18, 24);
+  }
+
   .header-card {
     width: 30%;
     gap: 24px;
@@ -30,8 +35,6 @@
   }
 
   .card-value {
-    color: color(text, 'accent');
-    @include fontProperties(null, 18, 24);
   }
 }
 
