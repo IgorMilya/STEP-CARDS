@@ -1,18 +1,15 @@
-export const testAppo = () => {
-  const cardValue = document.querySelector('.card-value')
+import { getLocalData } from './localData'
+
 
   const appo = document.getElementsByClassName('appointment')
-  // console.log('appo:', appo)
+ 
 
-  //   cardValue.innerHTML = appo.length
+export const setLabelValue = () => {
+  const localData = getLocalData()
+  const appointments = document.querySelector('.appointments')
+  // const patients = document.querySelector('.patients')
+  // const doctors = document.querySelector('.doctors')
+  // const closeAppointments = document.querySelector('.close-appointments')
 
-  const iconDelete = document.querySelectorAll('.icon-delete')
-
-  iconDelete.forEach(elem => {
-    elem.addEventListener('click', e => {
-      for (const app of appo) {
-        cardValue.innerHTML = appo.length
-      }
-    })
-  })
+  appointments.innerHTML = localData.length
 }

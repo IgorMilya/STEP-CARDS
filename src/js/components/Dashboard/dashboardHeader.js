@@ -10,10 +10,6 @@ const headerCards = boardHeaderContent.map(({ text, path, value, className }) =>
   const title = create('div', 'card-title', `${text}`)
   const span = create('span', className, `${value}`)
 
-  // const spanAppointment = create('span', 'card-value-appointment', `${value}`)
-  // const spanPattient = create('span', 'card-value-appointment', `${value}`)
-  // const spanDoctors = create('span', 'card-value-appointment', `${value}`)
-
   img.src = path
   img.alt = `${text} icon`
 

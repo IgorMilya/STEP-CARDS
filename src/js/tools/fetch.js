@@ -14,6 +14,8 @@ export const request = async ({ url, method, token, body }) => {
   }
 }
 
+// перенести getcoviddata в інше місце
+
 export const getCovidData = async () => {
   const { Countries, Global } = await ky.get('https://api.covid19api.com/summary').json()
 
