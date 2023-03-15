@@ -1,5 +1,6 @@
 import { Appointment } from '../classes/index.js'
 import { find } from '../tools/index.js'
+import { setLabelValue } from './appo.js'
 
 let LOCAL_DATA = []
 
@@ -16,7 +17,9 @@ export const deleteLocalData = delItemId => {
 export const getLocalData = () => LOCAL_DATA
 
 const fillTableList = () => {
+  setLabelValue()
   const tableList = find('.table-list')
+
   tableList.innerHTML = ''
 
   if (LOCAL_DATA.length) {
