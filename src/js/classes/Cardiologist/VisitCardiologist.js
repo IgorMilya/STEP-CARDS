@@ -50,7 +50,6 @@ export class VisitCardiologist extends Visit {
    'disease'
  )}
  
- ${createInput('modal-visit__extra small', 'modal-visit__gap placeholder', 'number', 'Age', ``, 'age')}
 
 `
   }

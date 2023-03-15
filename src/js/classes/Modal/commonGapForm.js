@@ -5,14 +5,17 @@ import { openDropdown } from '../../components/Dropdown/_index.js'
 export const commonGapForm = (div, pattern) => {
   div.insertAdjacentHTML(
     'beforeend',
-    `${createInput(
-      'modal-visit__extra',
-      'modal-visit__gap placeholder',
-      'text',
-      'Goal',
-      `^[${pattern} 0-9 .]+$`,
-      'goal'
-    )}
+    `
+ ${createInput('modal-visit__extra small', 'modal-visit__gap placeholder', 'number', 'Age', ``, 'age')}
+
+${createInput(
+  'modal-visit__extra',
+  'modal-visit__gap placeholder',
+  'text',
+  'Goal',
+  `^[${pattern} 0-9 .]+$`,
+  'goal'
+)}
 
     <label class='modal-visit__extra'>
        <textarea class='modal-visit__gap placeholder' name='description' id='w3review' name='w3review' rows='1' cols='50' placeholder='Description'></textarea>

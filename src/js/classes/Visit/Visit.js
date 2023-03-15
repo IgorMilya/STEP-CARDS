@@ -6,17 +6,17 @@ import { Appointment } from '../Appointment/Appointment.js'
 import { setLocalData } from '../../modules/localData.js'
 
 export class Visit {
-  constructor({ name, surname, priority, goal, description, phone, doctor, department, age }) {
-    this.name = name
-    this.surname = surname
-    this.priority = priority
-    this.goal = goal
-    this.description = description
-    this.tel = phone
-    this.doctor = doctor
-    this.department = department
+  constructor({ name, surname, priority, goal, description, tel, doctor, department, age }) {
+    !!name ? this.name = name : this.name = ''
+    !!surname ? this.surname = surname : this.surname = ''
+    !!priority ? this.priority = priority : this.priority = ''
+    !!goal ? this.goal = goal : this.goal = ''
+    !!description ? this.description = description : this.description = ''
+    !!tel ? this.tel = tel : this.tel = ''
+    !!doctor ? this.doctor = doctor : this.doctor = ''
+    !!department ? this.department = department : this.department = ''
+    !!age ? this.age = age : this.age = ''
     this.status = 'Opened'
-    this.age = age
   }
 
   showForm(pattern) {

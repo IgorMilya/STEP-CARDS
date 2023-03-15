@@ -9,11 +9,10 @@ export class VisitDentist extends Visit {
   }
 
   showCalendar(div) {
-    div.innerHTML = ` <label class='modal-visit__extra'>
+    div.innerHTML = ` <label class='modal-visit__extra small'>
                 <input class='modal-visit__gap calendar' name='date' type='date'  >
                 <div class='modal-visit__calendar-logo'> <img src='${url}' alt='calendar'></div>
             </label>
- ${createInput('modal-visit__extra', 'modal-visit__gap placeholder', 'number', 'Age', `[0-9]{3}`, 'age')}
 `
   }
 }

@@ -183,6 +183,7 @@
 .calendar {
   @include fontProperties(500, 14, 18);
   color: color(text, 'grey');
+  padding-bottom: 4px;
 }
 
 .calendar::-webkit-calendar-picker-indicator {

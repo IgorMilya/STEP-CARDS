@@ -27,7 +27,6 @@ export class Modal {
     const cancelBtn = document.querySelector('.modal-visit__button-cancel')
     cancelBtn.addEventListener('click', e => {
       e.preventDefault()
-      console.log(this.darkBlock)
       darkBlock.classList.remove('opened-modal')
       resetValues()
     })
