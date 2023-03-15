@@ -1,5 +1,6 @@
 import { find, request, create } from '../tools'
 import { setLocalData } from './localData.js'
+import { Appointment } from '../classes'
 import noDataImage from '../../assets/images/dashboard/noData.svg'
 
 export const getAllAppointments = async () => {
@@ -12,7 +13,6 @@ export const getAllAppointments = async () => {
   !allAppointments.length ? tableList.append(noDataImg) : ''
 
   allAppointments.forEach(obj => {
-
     const appointment = new Appointment(obj)
     appointment.addNewAppointment()
     setLocalData(obj)

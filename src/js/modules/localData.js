@@ -2,10 +2,8 @@ import { Appointment } from '../classes/index.js'
 import { find } from '../tools/index.js'
 
 let LOCAL_DATA = []
-const tableList = find('.table-list')
 
 export const setLocalData = newData => {
-
   LOCAL_DATA.unshift(newData)
   fillTableList()
 }
@@ -18,6 +16,7 @@ export const deleteLocalData = delItemId => {
 export const getLocalData = () => LOCAL_DATA
 
 const fillTableList = () => {
+  const tableList = find('.table-list')
   tableList.innerHTML = ''
 
   if (LOCAL_DATA.length) {
@@ -29,7 +28,3 @@ const fillTableList = () => {
     console.log(tableList)
   }
 }
-
-
-export const getLocalData = () => LOCAL_DATA
-
