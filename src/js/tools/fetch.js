@@ -1,8 +1,5 @@
 import ky from 'ky'
-import { renderBasicLayout } from '../modules/index.js'
-import { strFinishCovid } from './index'
-
-// const headers = { Authorization: `Bearer 5f0ff1a4-6ffe-4191-9ec3-0de5b9a33dc9` }
+import { strFinishCovid } from '../layouts/Sidebar/sidebar.utils'
 
 export const request = async ({ url, method, token, body }) => {
   const prefixUrl = 'https://ajax.test-danit.com/api/v2/cards/'
@@ -17,7 +14,7 @@ export const request = async ({ url, method, token, body }) => {
   }
 }
 
-const getCovidData = async () => {
+export const getCovidData = async () => {
   const { Countries, Global } = await ky.get('https://api.covid19api.com/summary').json()
 
   if (Countries !== undefined) {
@@ -38,22 +35,22 @@ const getCovidData = async () => {
 
     return {
       UAnewConfirmed: newConfirmed,
-      UAallConfirmed: infectedUA,
-      UAallDeaths: deathsUA,
+      UAConfirmed: infectedUA,
+      UADeaths: deathsUA,
 
       worldNewConfirmed: infectedTodayWorld,
-      worldAllConfirmed: infectedAllWorld,
-      worldAllDeaths: deathWorld,
+      worldConfirmed: infectedAllWorld,
+      worldDeaths: deathWorld,
     }
   } else {
     return {
       UAnewConfirmed: '132',
-      UAallConfirmed: '212.321',
-      UAallDeaths: '332.131.212',
+      UAConfirmed: '212.321',
+      UADeaths: '332.131.212',
 
       worldNewConfirmed: '433.21',
-      worldAllConfirmed: '432.435',
-      worldAllDeaths: '643.214.2',
+      worldConfirmed: '432.435',
+      worldDeaths: '643.214.2',
     }
   }
 }

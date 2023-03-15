@@ -7,11 +7,12 @@ export const handleForm = () => {
   const darkBlock = document.querySelector('.dark-block')
 
   form.addEventListener('submit', async e => {
+    e.preventDefault()
+
     const departmentValue = document.querySelector('.department-title')
     const dropdown = document.querySelectorAll('.modal-visit__dropdown')
-    let obj = {}
+    const result = {}
     let valid = true
-    e.preventDefault()
 
     dropdown.forEach(item => {
       if (!item.value) {
@@ -25,23 +26,22 @@ export const handleForm = () => {
         item.removeAttribute('disabled')
       })
       const visitData = new FormData(e.target)
-      for (let key of visitData.keys()) {
-        obj[`${key}`] = `${visitData.get(key)}`
-      }
+
+      for (const [key, value] of visitData.entries()) result[key] = value
 
       switch (departmentValue.value) {
         case 'Cardiology':
-          const cardiologist = new VisitCardiologist(obj)
+          const cardiologist = new VisitCardiologist(result)
           await cardiologist.postRequest()
 
           break
         case 'Dentist':
-          const dentist = new VisitDentist(obj)
+          const dentist = new VisitDentist(result)
           await dentist.postRequest()
 
           break
         case 'Therapist':
-          const therapist = new VisitTherapist(obj)
+          const therapist = new VisitTherapist(result)
           await therapist.postRequest()
       }
 
