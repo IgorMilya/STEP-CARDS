@@ -12,6 +12,9 @@ export const getAllAppointments = async () => {
   !allAppointments.length ? tableList.append(noDataImg) : ''
 
   allAppointments.forEach(obj => {
+
+    const appointment = new Appointment(obj)
+    appointment.addNewAppointment()
     setLocalData(obj)
   })
 }
