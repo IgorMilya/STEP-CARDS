@@ -2,8 +2,9 @@ import { create, random, find, request } from '../../tools'
 import { appointmentTemplate } from './appointmentTemplate'
 import avatar1 from '../../../assets/images/dashboard/pacAv1.svg'
 import avatar2 from '../../../assets/images/dashboard/pacAv2.svg'
-import { Modal } from '../Modal/Modal.js'
+
 import { deleteLocalData, updateLocalDataStatus } from '../../modules/localData.js'
+import { editSelectedAppointment } from './editSelectedAppointment.js'
 
 export class Appointment {
   parentElement = find('.table-list')
@@ -29,14 +30,13 @@ export class Appointment {
 
   _addEditOptions() {
     this.htmlElement.addEventListener('click', async e => {
-      const token = localStorage.getItem('token')
       const isDelete = e.target.classList.contains('icon-delete')
       const isEdit = e.target.classList.contains('icon-edit')
       const isComplete = e.target.classList.contains('icon-complete')
       const status = this.htmlElement.querySelector('.status')
 
       if (isDelete) {
-        const response = await request({ url: `${this.id}`, method: 'DELETE', token: token })
+        const response = await request({ url: `${this.id}`, method: 'DELETE' })
 
         if (response === '') {
           this.htmlElement.remove()
@@ -44,26 +44,22 @@ export class Appointment {
         }
       }
 
-      if (isComplete && status.textContent === 'Open') {
+      if (isComplete && status.textContent === 'Opened') {
         const response = await request({
           url: `${this.id}`,
           method: 'PUT',
-          token: token,
-          body: { ...this, status: 'Close' },
+          body: { ...this, status: 'Closed' },
         })
 
         if (response) {
-          status.textContent = 'Close'
+          status.textContent = 'Closed'
           status.style.color = '#ff6b93'
           updateLocalDataStatus(this.id)
         }
       }
 
       if (isEdit) {
-        // const response = await request({ url: `${this.id}`, method: 'DELETE', token: token })
-        // response === '' && this.htmlElement.remove()
-        const modal = new Modal()
-        modal.openModal()
+        editSelectedAppointment(this.id)
       }
     })
   }
