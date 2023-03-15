@@ -3,12 +3,12 @@ import { boardHeaderContent } from './dashboard.utils.js'
 
 export const dashboardHeader = create('div', 'dashboard-header')
 
-const headerCards = boardHeaderContent.map(({ text, path, value }) => {
+const headerCards = boardHeaderContent.map(({ text, path, value, className }) => {
   const card = create('div', 'header-card')
   const img = create('img', 'card-image')
   const content = create('div', 'card-content')
-  const title = create('span', 'card-title', `${text}`)
-  const span = create('span', 'card-value', `${value}`)
+  const title = create('div', 'card-title', `${text}`)
+  const span = create('span', className, `${value}`)
 
   // const spanAppointment = create('span', 'card-value-appointment', `${value}`)
   // const spanPattient = create('span', 'card-value-appointment', `${value}`)

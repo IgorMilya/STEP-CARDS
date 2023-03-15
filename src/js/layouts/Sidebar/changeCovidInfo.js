@@ -1,15 +1,13 @@
-import { covidData } from '../../tools/index.js'
 import iconUA from '../../../assets/images/covid/ukraine.png'
 import iconWorld from '../../../assets/images/covid/global.png'
+import { covidData } from '../../tools/fetch'
 
-const { UAnewConfirmed, UAallConfirmed, UAallDeaths, worldNewConfirmed, worldAllConfirmed, worldAllDeaths } =
-  covidData
-
+const { UAnewConfirmed, UAConfirmed, UADeaths, worldNewConfirmed, worldConfirmed, worldDeaths } = covidData
 export const changeCovidInfo = () => {
   const btn = document.querySelector('.covid-button')
   const covidInfo = document.querySelector('.covid-info')
 
-  const covidNewRecoverdet = document.querySelector('.covid-new-recoverdet')
+  const covidNewRecovered = document.querySelector('.covid-new-recoverdet')
   const covidInfected = document.querySelector('.covid-infected')
   const covidDeaths = document.querySelector('.covid-deaths')
   const covidIconImg = document.querySelector('.covid-icon-img')
@@ -19,16 +17,16 @@ export const changeCovidInfo = () => {
     covidInfo.classList.toggle('world')
 
     if (covidInfo.classList.contains('world')) {
-      covidNewRecoverdet.textContent = `Today indected - ${worldNewConfirmed}`
-      covidInfected.textContent = `All infected - ${worldAllConfirmed}`
-      covidDeaths.textContent = `All deaths - ${worldAllDeaths}`
+      covidNewRecovered.textContent = `Today indected - ${worldNewConfirmed}`
+      covidInfected.textContent = `All infected - ${worldConfirmed}`
+      covidDeaths.textContent = `All deaths - ${worldDeaths}`
       covidIconImg.src = iconWorld
       covidIconTitle.textContent = 'World'
       e.target.textContent = 'Show Ukraine'
     } else {
-      covidNewRecoverdet.textContent = `Today indected - ${UAnewConfirmed}`
-      covidInfected.textContent = `All infected - ${UAallConfirmed}`
-      covidDeaths.textContent = `All deaths - ${UAallDeaths}`
+      covidNewRecovered.textContent = `Today indected - ${UAnewConfirmed}`
+      covidInfected.textContent = `All infected - ${UAConfirmed}`
+      covidDeaths.textContent = `All deaths - ${UADeaths}`
       covidIconImg.src = iconUA
       covidIconTitle.textContent = 'Ukraine'
       e.target.textContent = 'Show World'

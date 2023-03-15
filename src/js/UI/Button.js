@@ -8,6 +8,7 @@ export const Button = (selector, text) => {
   return Button.outerHTML
 }
 
+//TODO: переписати
 export const logInButton = Button('log-in', 'Log In')
 
 export const headerLogInButton = Button('header-login', 'Log In')

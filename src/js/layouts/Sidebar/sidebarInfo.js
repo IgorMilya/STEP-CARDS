@@ -1,9 +1,8 @@
-import { doc } from 'prettier'
 import { covidButton } from '../../UI/Button.js'
-import { covidData } from '../../tools/index.js'
+import { covidData } from '../../tools/fetch'
 import iconUA from '../../../assets/images/covid/ukraine.png'
 
-const { UAnewConfirmed, UAallConfirmed, UAallDeaths } = covidData
+const { UAnewConfirmed, UAConfirmed, UADeaths } = covidData
 
 export const sidebarInfo = () => {
   const sidebarInfo = document.createElement('div')
@@ -21,8 +20,8 @@ export const sidebarInfo = () => {
       
      <div class="covid-info">
      <div class="covid-new-recoverdet">Today indected - ${UAnewConfirmed}</div>
-     <div class="covid-infected">All infected - ${UAallConfirmed}</div>
-     <div class="covid-deaths">All deaths - ${UAallDeaths}</div>
+     <div class="covid-infected">All infected - ${UAConfirmed}</div>
+     <div class="covid-deaths">All deaths - ${UADeaths}</div>
      <div class="covid-button">${covidButton}</div>
      </div>
      </div>
