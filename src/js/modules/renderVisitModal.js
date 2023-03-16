@@ -1,11 +1,11 @@
 import { Modal } from '../classes'
 import { handleForm } from '../components'
 
-export const renderVisitModal = (parent, visit, option, id) => {
+export const renderVisitModal = (parent, obj, option, id) => {
   const modal = new Modal()
 
   modal.renderModal(parent, option)
-  visit.showForm()
+  obj.showForm()
   modal.closeModal()
   handleForm(option, id)
 }

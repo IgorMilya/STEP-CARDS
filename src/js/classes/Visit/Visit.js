@@ -1,6 +1,6 @@
 import { createDropdown, createInput, Dropdown } from '../../components/'
 import modalImg from '../../../assets/modal-visit/modalImg.svg'
-import { request } from '../../tools'
+import { find, request } from '../../tools'
 import { Appointment } from '../Appointment/Appointment.js'
 import { setLocalData, updateLocalData } from '../../modules/localData.js'
 import { openDropdown } from '../../components/Dropdown/openDropdown.js'
@@ -32,7 +32,7 @@ export class Visit {
   }
 
   showForm() {
-    const labelWrapper = document.querySelector('.modal-visit__label-wrapper')
+    const labelWrapper = find('.modal-visit__label-wrapper')
     labelWrapper.innerHTML = `
       
          ${createInput(
@@ -131,9 +131,9 @@ ${createInput(
     </div>`
     )
 
-    const priorityWrapper = document.querySelector('.priorities')
-    const priorityTitle = document.querySelector('.priority-title')
-    const priorityList = document.querySelector('.priority-list')
+    const priorityWrapper = find('.priorities')
+    const priorityTitle = find('.priority-title')
+    const priorityList = find('.priority-list')
 
     openDropdown(priorityWrapper, priorityList)
 
