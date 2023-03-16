@@ -10,7 +10,7 @@ export const sidebarMenu = () => {
     ${sidebarList
       .map(
         ({ name, path }) =>
-          ` <li class="sidebar-item">${path} <a href="#" class="aside-link">${name}</a>
+          ` <li class="sidebar-item"><img src='${path}' alt='menu item'/> <a href="#" class="aside-link">${name}</a>
         </li>
         `
       )
@@ -21,7 +21,7 @@ export const sidebarMenu = () => {
         ${sidebarListSupport
           .map(
             ({ name, path }) =>
-              `<li class="sidebar-item">${path}<a href="#" class="aside-link">${name}</a></li>`
+              `<li class="sidebar-item"><img src='${path}' alt='menu item'/><a href="#" class="aside-link">${name}</a></li>`
           )
           .join('')}
 </ul>
