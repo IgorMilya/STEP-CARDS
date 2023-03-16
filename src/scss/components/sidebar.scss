@@ -46,21 +46,19 @@
 }
 
 .sidebar-item {
-  @include fontProperties(500, 14, 20, Montserrat);
-
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition: all 0.45s;
 
-  svg {
+  img {
     margin-right: 8px;
   }
 
   &:hover {
-    color: color(text, 'accent');
-    fill: color(text, 'accent');
-    transition: all 0.2s;
+    filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
   }
+  @include fontProperties(500, 14, 20, Montserrat);
 }
 
 // =========== COVID =============== //

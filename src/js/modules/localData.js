@@ -23,6 +23,7 @@ export const updateLocalData = updateItem => {
   const updatedArray = LOCAL_DATA.filter(item => item.id !== updateItem.id)
 
   updatedArray.unshift(updateItem)
+
   LOCAL_DATA = updatedArray
 
   fillTableList()
