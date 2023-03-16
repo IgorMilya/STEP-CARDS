@@ -4,7 +4,6 @@
 }
 
 .dark-block {
-  //display: none;
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
@@ -53,11 +52,11 @@
   }
 
   &__gap {
-    @include fontProperties(600, 14, 18);
     width: 100%;
     padding-bottom: 12px;
     border-bottom: 1px solid color(text, 'grey');
     margin-bottom: 24px;
+    @include fontProperties(600, 14, 18);
   }
 
   &__gap:focus {
@@ -65,16 +64,15 @@
   }
 
   &__dropdown-list {
-    @include fontProperties(500, 14, 18);
     display: none;
     position: absolute;
     width: 100%;
     top: 35px;
     box-shadow: 0 7px 20px rgb(40 41 61 / 15%);
-    @include fontProperties(500, 14, 18);
     color: color(text, 'grey');
     background: aliceblue;
     z-index: 1;
+    @include fontProperties(500, 14, 18);
   }
 
   &__dropdown {

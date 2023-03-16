@@ -15,10 +15,10 @@ export const userLoggedIn = async () => {
   modalActions()
 
   await getAllAppointments()
-
   const allData = getLocalData()
 
   initFilters()
   initCharts(allData)
+
   // ВАЖЛИВА ХУЙНЯ
 }

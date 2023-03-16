@@ -2,16 +2,20 @@ import fltrIcon from '../../../assets/images/dashboard/filterIcon.svg'
 import refIcon from '../../../assets/images/dashboard/rotate.svg'
 
 import { find, findAll, createEl } from '../../tools'
-import { departmentFilterLabels, priorityFilterLabels } from './dashboard.utils'
+import { departmentFilterLabels, priorityFilterLabels, statusFilterLabels } from './dashboard.utils'
 
 const filterOptions = e => {
   const appointments = findAll('.appointment')
   const selectedItem = e.target.textContent
 
   appointments.forEach(item => {
-    const requiredItemOne = item.children[1].textContent
-    const requiredItemTwo = item.children[4].textContent
-    const isCoincidence = selectedItem === requiredItemOne || selectedItem === requiredItemTwo
+    const requiredDepartment = item.children[1].textContent
+    const requiredPriority = item.children[4].textContent
+    const requiredStatus = item.children[5].textContent
+    const isCoincidence =
+      selectedItem === requiredDepartment ||
+      selectedItem === requiredPriority ||
+      selectedItem === requiredStatus
 
     !isCoincidence ? (item.style.display = 'none') : (item.style.display = 'flex')
     console.log(item.style.display === 'none')
@@ -50,4 +54,5 @@ export const initFilters = () => {
   createRefreshIcon()
   createFilter('.priority', priorityFilterLabels)
   createFilter('.department', departmentFilterLabels)
+  createFilter('.status', statusFilterLabels)
 }
