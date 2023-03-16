@@ -11,14 +11,11 @@ export const editForm = (department, fn, id) => {
 
   renderVisitModal(app, department, 'Edit', id)
 
-  // department.showForm(pattern)
 
   const modalImg = document.querySelector('.modal-visit__img')
   const newForm = document.querySelector('.new-form')
 
   modalImg.style.display = 'none'
-
-  console.log(newForm)
 
   fn.bind(department, ...[newForm])()
 

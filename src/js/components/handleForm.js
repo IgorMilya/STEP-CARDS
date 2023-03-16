@@ -1,5 +1,5 @@
 import { VisitCardiologist, VisitDentist, VisitTherapist } from '../classes'
-// import { resetValues } from './resetValues'
+
 import { create } from '../tools/index.js'
 
 export const handleForm = (value, id) => {
@@ -18,7 +18,6 @@ export const handleForm = (value, id) => {
       if (!item.value) {
         const dropdownError = create('p', 'dropdown-error', 'Enter the apt value')
         valid = false
-
         item.after(dropdownError)
       }
     })

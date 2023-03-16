@@ -1,5 +1,4 @@
 import { VisitCardiologist, VisitDentist, VisitTherapist } from '../../classes'
-// import { editForm } from '../../classes/Appointment/editForm.js'
 import { renderExtraForm } from '../../classes/Appointment/renderExtraForm.js'
 
 export const checkValue = (value, data = {}, boolean = false, id) => {

@@ -16,7 +16,6 @@ export class Modal {
     const cancelBtn = document.querySelector('.modal-visit__button-cancel')
 
     darkBlock.addEventListener('click', e => {
-      e.preventDefault()
       if (!e.composedPath().includes(modalVisit)) {
         darkBlock.remove()
       }
