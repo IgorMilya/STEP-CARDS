@@ -6,6 +6,7 @@ export const create = (el, css, text) => {
 
   return htmlElement
 }
+// TODO: delete create()
 
 export const createEl = props => {
   const { el, css, text, src, alt, title } = props

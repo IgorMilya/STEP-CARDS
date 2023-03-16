@@ -1,28 +1,23 @@
 import { getLocalData } from './localData'
-import { department } from '../utils/constants'
+import { department } from '../utils'
+import { find } from '../tools'
 
-export const valueDoctors = department.reduce((acc, curr) => {
-  return acc.concat(curr.doctor)
-}, [])
+export const valueDoctors = department.reduce((acc, curr) => acc.concat(curr.doctor), [])
 
 export const setLabelValue = () => {
   const localData = getLocalData()
 
-  const appointments = document.querySelector('.appointments')
+  const appointments = find('.appointments')
+  const patients = find('.patients')
+  const closedAppointments = find('.close-appointments')
 
-  const patients = document.querySelector('.patients')
-  const closeAppointments = document.querySelector('.close-appointments')
+  const openedAppointmentsData = localData.map(elem => elem.status)
+  const closeAppointmentsData = localData.map(elem => elem.status)
 
-  const patpatientsData = localData.map(elem => elem.status)
-  const closeAppointmentssData = localData.map(elem => elem.status)
-
-  const [openPatients] = [patpatientsData.filter(item => item === 'Opened')]
-  const [closePatients] = [closeAppointmentssData.filter(item => item === 'Closed')]
-
-  const openLength = [openPatients.length]
-  const closedLength = [closePatients.length]
+  const [openedPatients] = [openedAppointmentsData.filter(item => item === 'Opened')]
+  const [closedPatients] = [closeAppointmentsData.filter(item => item === 'Closed')]
 
   appointments.innerHTML = localData.length
-  patients.innerHTML = openLength
-  closeAppointments.innerHTML = closedLength
+  patients.innerHTML = openedPatients.length
+  closedAppointments.innerHTML = closedPatients.length
 }

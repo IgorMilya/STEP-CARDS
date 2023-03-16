@@ -1,11 +1,10 @@
-import { Modal } from '../classes'
-import { handleForm } from '../components'
+import { Modal, handleForm } from '../classes'
 
-export const renderVisitModal = (parent, visit, option, id) => {
+export const renderVisitModal = (parent, clientData, option, id) => {
   const modal = new Modal()
 
   modal.renderModal(parent, option)
-  visit.showForm()
+  clientData.showForm()
   modal.closeModal()
   handleForm(option, id)
 }

@@ -1,4 +1,4 @@
-import { create, find } from '../../tools'
+import { create } from '../../tools'
 import { tableHeaders } from './dashboard.utils'
 
 export const dashboardTable = create('div', 'dashboard-table')

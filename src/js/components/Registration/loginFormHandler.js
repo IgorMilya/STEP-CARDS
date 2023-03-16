@@ -1,8 +1,8 @@
-export const loginFormHandler = () => {
-  const button = document.querySelector('.header-login')
-  button.addEventListener('click', () => {
-    const loginForm = document.querySelector('.login-form')
+import { find } from '../../tools'
 
-    loginForm.classList.add('fade-in')
-  })
+export const loginFormHandler = () => {
+  const button = find('.header-login')
+  const loginForm = find('.login-form')
+
+  button.addEventListener('click', () => loginForm.classList.add('fade-in'))
 }

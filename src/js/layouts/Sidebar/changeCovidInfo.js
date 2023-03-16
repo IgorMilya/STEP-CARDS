@@ -1,17 +1,18 @@
 import iconUA from '../../../assets/images/covid/ukraine.png'
 import iconWorld from '../../../assets/images/covid/global.png'
-import { covidData } from '../../tools/fetch'
+import { covidData } from './getCovidData'
+import { find } from '../../tools'
 
 const { UAnewConfirmed, UAConfirmed, UADeaths, worldNewConfirmed, worldConfirmed, worldDeaths } = covidData
-export const changeCovidInfo = () => {
-  const btn = document.querySelector('.covid-button')
-  const covidInfo = document.querySelector('.covid-info')
 
-  const covidNewRecovered = document.querySelector('.covid-new-recoverdet')
-  const covidInfected = document.querySelector('.covid-infected')
-  const covidDeaths = document.querySelector('.covid-deaths')
-  const covidIconImg = document.querySelector('.covid-icon-img')
-  const covidIconTitle = document.querySelector('.covid-icon-title')
+export const changeCovidInfo = () => {
+  const btn = find('.covid-button')
+  const covidInfo = find('.covid-info')
+  const covidNewRecovered = find('.covid-new-recoverdet')
+  const covidInfected = find('.covid-infected')
+  const covidDeaths = find('.covid-deaths')
+  const covidIconImg = find('.covid-icon-img')
+  const covidIconTitle = find('.covid-icon-title')
 
   btn.addEventListener('click', e => {
     covidInfo.classList.toggle('world')
