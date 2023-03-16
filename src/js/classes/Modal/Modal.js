@@ -1,23 +1,22 @@
 import { createTemplate } from './createTemplate.js'
-import { resetValues } from '../../components/index.js'
+// import { resetValues } from '../../components/index.js'
 import { create, find } from '../../tools/index.js'
 
 export class Modal {
-  darkBlock = document.querySelector('.dark-block')
-
   constructor() {}
 
-  renderModal(parent) {
-    const modalElement = createTemplate()
+  renderModal(parent, option) {
+    const modalElement = createTemplate(option)
     parent.append(modalElement)
   }
 
   closeModal() {
+    const darkBlock = document.querySelector('.dark-block')
     const modalVisit = document.querySelector('.modal-visit')
-    this.darkBlock.addEventListener('click', e => {
+    darkBlock.addEventListener('click', e => {
       if (!e.composedPath().includes(modalVisit)) {
-        this.darkBlock.classList.remove('opened-modal')
-        resetValues()
+        darkBlock.remove()
+        // resetValues()
       }
     })
   }
@@ -27,12 +26,12 @@ export class Modal {
     const cancelBtn = document.querySelector('.modal-visit__button-cancel')
     cancelBtn.addEventListener('click', e => {
       e.preventDefault()
-      darkBlock.classList.remove('opened-modal')
-      resetValues()
+      darkBlock.remove()
+      // resetValues()
     })
   }
 
-  openModal() {
-    this.darkBlock.classList.add('opened-modal')
-  }
+  // openModal() {
+  //   this.darkBlock.classList.add('opened-modal')
+  // }
 }

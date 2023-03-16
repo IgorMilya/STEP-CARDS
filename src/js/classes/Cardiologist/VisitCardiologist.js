@@ -22,7 +22,7 @@ export class VisitCardiologist extends Visit {
     this.disease = disease
   }
 
-  showHealthInfo(div, pattern) {
+  showHealthInfo(div) {
     div.innerHTML = ` 
  ${createInput(
    'modal-visit__extra small',
@@ -48,7 +48,7 @@ export class VisitCardiologist extends Visit {
    'modal-visit__gap placeholder',
    'text',
    'Diseases of cardiovascular',
-   `^[${pattern} 0-9]+$`,
+   `^[${this.pattern} 0-9]+$`,
    'disease',
    `${this.disease}`
  )}

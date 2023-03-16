@@ -1,5 +1,5 @@
 import { VisitCardiologist, VisitDentist, VisitTherapist } from '../classes'
-import { resetValues } from './resetValues'
+// import { resetValues } from './resetValues'
 import { create } from '../tools/index.js'
 
 export const handleForm = () => {
@@ -46,8 +46,8 @@ export const handleForm = () => {
       }
 
       dropdown.forEach(item => item.setAttribute('disabled', valid))
-      resetValues()
-      darkBlock.classList.remove('opened-modal')
+      // resetValues()
+      darkBlock.remove()
     }
   })
 }

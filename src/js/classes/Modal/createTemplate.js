@@ -13,7 +13,7 @@ export const createTemplate = option => {
   </div>
   <div class='modal-visit__box-button'>
           ${cancelButton}
-          ${option === 'Edit' && saveButton}
+          ${option === 'Edit' ? '<div>Hi</div>' : saveButton}
   </div>
   
   </form>

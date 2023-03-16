@@ -28,9 +28,10 @@ export class Visit {
     this.department = department
     this.age = age
     this.status = 'Opened'
+    this.pattern = 'a-zA-Zа-яА-ЯіІїЇєЄЁё\\s'
   }
 
-  showForm(pattern) {
+  showForm() {
     const labelWrapper = document.querySelector('.modal-visit__label-wrapper')
     labelWrapper.innerHTML = `
       
@@ -39,7 +40,7 @@ export class Visit {
            'modal-visit__gap placeholder',
            'text',
            'Enter name',
-           `^[${pattern}]+$`,
+           `^[${this.pattern}]+$`,
            'name',
            `${this.name}`
          )}
@@ -48,7 +49,7 @@ export class Visit {
            'modal-visit__gap placeholder',
            'text',
            'Enter surname',
-           `^[${pattern}]+$`,
+           `^[${this.pattern}]+$`,
            'surname',
            `${this.surname}`
          )}
@@ -71,12 +72,12 @@ export class Visit {
                     
       `
 
-    Dropdown(pattern)
+    Dropdown()
 
     return labelWrapper
   }
 
-  commonGapForm = (div, pattern) => {
+  commonGapForm = div => {
     div.insertAdjacentHTML(
       'beforeend',
       `
@@ -95,7 +96,7 @@ ${createInput(
   'modal-visit__gap placeholder',
   'text',
   'Goal',
-  `^[${pattern} 0-9 .]+$`,
+  `^[${this.pattern} 0-9 .]+$`,
   'goal',
   `${this.goal}`
 )}

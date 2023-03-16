@@ -1,13 +1,15 @@
 import { Modal, Visit } from '../classes'
 import { handleForm } from '../components'
 
-export const renderVisitModal = parent => {
-  const pattern = 'a-zA-Zа-яА-ЯіІїЇєЄЁё\\s'
-
+export const renderVisitModal = (parent, visit, option) => {
   const modal = new Modal()
-  const visit = new Visit({})
-  modal.renderModal(parent)
-  visit.showForm(pattern)
+
+  modal.renderModal(parent, option)
+  visit.showForm()
+
   modal.closeModalButton()
+  // modal.openModal()
+  modal.closeModal()
+
   handleForm()
 }
