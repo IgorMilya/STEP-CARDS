@@ -1,7 +1,7 @@
 import logoImg from '../../assets/images/logo/logo-img.svg'
 import logoText from '../../assets/images/logo/logo-text.svg'
 import imgAvatar from '../../assets/images/avatar/avatar.svg'
-import iconInput from '../../assets/asideIcons/search-input.svg'
+import iconInput from '../../assets/images/sidebarIcons/search-input.svg'
 import { headerLogInButton } from '../UI'
 import { create } from '../tools'
 
