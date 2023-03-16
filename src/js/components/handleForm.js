@@ -34,12 +34,12 @@ export const handleForm = (value, id) => {
           value === 'Edit' ? await cardiologist.putRequest(id) : await cardiologist.postRequest()
 
           break
-        case 'Dentist':
+        case 'Dentistry':
           const dentist = new VisitDentist(result)
           value === 'Edit' ? await dentist.putRequest(id) : await dentist.postRequest()
 
           break
-        case 'Therapist':
+        case 'Therapy':
           const therapist = new VisitTherapist(result)
           value === 'Edit' ? await therapist.putRequest(id) : await therapist.postRequest()
       }

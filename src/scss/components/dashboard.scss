@@ -10,6 +10,15 @@
   margin: 5px 0 13px 0;
   @include flexProperties(center, space-between, null, 20px);
 
+  .card-image-wrap {
+    width: 40px;
+    height: 44px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
   div:nth-child(4) {
     min-width: 295px;
     max-width: 290px;
@@ -45,9 +54,6 @@
 
   .card-title {
     @include fontProperties(700, 14, 20);
-  }
-
-  .card-value {
   }
 }
 

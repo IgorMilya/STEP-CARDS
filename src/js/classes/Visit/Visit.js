@@ -2,7 +2,7 @@ import { createDropdown, createInput, Dropdown } from '../../components/'
 import modalImg from '../../../assets/modal-visit/modalImg.svg'
 import { request } from '../../tools'
 import { Appointment } from '../Appointment/Appointment.js'
-import { setLocalData } from '../../modules/localData.js'
+import { setLocalData, updateLocalData } from '../../modules/localData.js'
 import { openDropdown } from '../../components/Dropdown/openDropdown.js'
 import { modifyTitle } from '../../components/Dropdown/modifyTitle.js'
 
@@ -164,9 +164,7 @@ ${createInput(
     })
 
     if (!!res) {
-      const appointment = new Appointment(res)
-      appointment.addNewAppointment()
-      setLocalData(res)
+      updateLocalData(res)
     }
   }
 }

@@ -1,8 +1,8 @@
 import kit from '/src/assets/images/dashboard/kit.svg'
 import patient from '/src/assets/images/dashboard/patient.svg'
 import operation from '/src/assets/images/dashboard/operation.svg'
-// import doctors from '/src/assets/images/dashboard/doctors2.svg'
-import clinic from '/src/assets/images/dashboard/clinic.svg'
+import closeApp from '../../../assets/images/dashboard/closeAppoint.svg'
+import doctors from '../../../assets/images/dashboard/doctors.svg'
 
 import { getLocalData } from '../../modules/localData'
 import { valueDoctors } from '../../modules/setLabelValue'
@@ -12,17 +12,16 @@ const localData = getLocalData()
 const localDataLength = localData.length
 const valueDoctorsLength = valueDoctors.length
 
-
 export const boardHeaderContent = [
   { text: 'All Appointments', className: 'appointments', path: kit, value: localDataLength },
-  { text: 'Closed Appointments', className: 'close-appointments', path: clinic, value: localDataLength },
+  { text: 'Closed Appointments', className: 'close-appointments', path: closeApp, value: localDataLength },
   { text: 'Patients', className: 'patients', path: patient, value: localDataLength },
-  { text: 'Our Doctors', className: 'doctors', path: operation, value: valueDoctorsLength },
+  { text: 'Our Doctors', className: 'doctors', path: doctors, value: valueDoctorsLength },
 ]
 
 export const tableHeaders = ['Name', 'Department', 'Doctor', 'Tel', 'Priority', 'Status', 'Actions']
 
 export const priorityFilterLabels = ['High', 'Normal', 'Low']
 
-export const departmentFilterLabels = ['Cardiology', 'Dentist', 'Therapist']
-// export const departmentFilterLabels = ['Cardiology', 'Dentistry', 'Therapy']
+// export const departmentFilterLabels = ['Cardiology', 'Dentist', 'Therapist']
+export const departmentFilterLabels = ['Cardiology', 'Dentistry', 'Therapy']

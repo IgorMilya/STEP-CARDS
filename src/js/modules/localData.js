@@ -20,7 +20,11 @@ export const updateLocalDataStatus = updatedItemID => {
   fillTableList()
 }
 
-const updateLocalData = updateItem => {
+export const updateLocalData = updateItem => {
+  const updatedArray = LOCAL_DATA.filter(item => item.id !== updateItem.id)
+
+  LOCAL_DATA = updatedArray.unshift(updateItem)
+
   fillTableList()
 }
 

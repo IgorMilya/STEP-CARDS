@@ -10,14 +10,14 @@ const filterDataCharts = data => {
     age.filter(item => item >= 18 && item <= 50),
     age.filter(item => item >= 51),
   ]
-  const [dentist, terapeft, cardiology] = [
-    dataDepartment.filter(item => item === 'Dentist'),
-    dataDepartment.filter(item => item === 'Therapist'),
+  const [dentist, therapist, cardiologist] = [
+    dataDepartment.filter(item => item === 'Dentistry'),
+    dataDepartment.filter(item => item === 'Therapy'),
     dataDepartment.filter(item => item === 'Cardiology'),
   ]
 
   const arrDataAge = [before100.length, before50.length, before18.length]
-  const arrDataDepartment = [dentist.length, terapeft.length, cardiology.length]
+  const arrDataDepartment = [dentist.length, therapist.length, cardiologist.length]
 
   return [arrDataAge, arrDataDepartment]
 }
@@ -31,12 +31,12 @@ export const initCharts = data => {
   const myDoughnutChart = new Chart(donut, {
     type: 'doughnut',
     data: {
-      labels: ['Dentist', 'Therapist', 'Cardiology'],
+      labels: ['Dentistry', 'Therapy', 'Cardiology'],
       datasets: [
         {
           label: 'Patient',
           data: departmentDataCharts,
-          backgroundColor: ['rgb(32, 164, 182)', 'rgb(54, 162, 235)', 'rgb(226 230 236)'],
+          backgroundColor: ['rgb(32, 164, 182)', 'rgb(255, 107, 147)', '#ffcd56'],
           borderWith: 100,
         },
       ],
@@ -67,7 +67,7 @@ export const initCharts = data => {
         {
           label: 'Patient',
           data: ageDataCharts,
-          backgroundColor: ['rgb(226 230 236)', 'rgb(32, 164, 182)', 'rgb(54, 162, 235)'],
+          backgroundColor: ['rgb(32, 164, 182)', 'rgb(255, 107, 147)', '#ffcd56'],
         },
       ],
     },

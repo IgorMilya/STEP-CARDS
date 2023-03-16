@@ -9,7 +9,6 @@ export const editSelectedAppointment = id => {
   const selectedAppointment = localData.find(item => item.id === id)
 
   const { department } = selectedAppointment
-  console.log(selectedAppointment)
   checkValue(department, selectedAppointment, true, id)
 
   // RESPONSE
