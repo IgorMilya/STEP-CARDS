@@ -1,8 +1,8 @@
-import { find } from '../tools'
 import { renderComponent } from '../tools/renderComponent.js'
 import { Dashboard } from '../components'
 import { getAllAppointments } from './getAllAppointments'
 import { modalActions } from '../classes'
+import { initFilters } from '../components/Dashboard/filters.js'
 
 import { initCharts } from '../components/Dashboard'
 import { searchOptions } from './searchOtpions'
@@ -19,7 +19,6 @@ export const userLoggedIn = async () => {
 
   const allData = getLocalData()
 
+  initFilters()
   initCharts(allData)
-
-  // ВАЖЛИВА ХУЙНЯ
 }

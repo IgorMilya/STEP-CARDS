@@ -76,12 +76,69 @@
   border-bottom: 1px solid #dbdde0;
   @include fontProperties(600, 14, 20);
 
+  div {
+    text-align: left;
+    display: inline-block;
+  }
+
   div:nth-child(1) {
-    width: 23%;
+    width: 22%;
   }
 
   div:nth-child(2) {
     width: 15%;
+    position: relative;
+    cursor: pointer;
+
+    .filter-icon {
+      position: absolute;
+      content: '';
+      width: 11px;
+      height: 11px;
+      top: 5px;
+      left: 91px;
+    }
+
+    .filter-wrapper {
+      display: none;
+      position: absolute;
+      content: '';
+      width: 121px;
+      height: 103px;
+      top: 12px;
+      left: -10px;
+      padding-top: 15px;
+      font-size: 13px;
+      font-weight: 500;
+      //box-shadow: 1px 5px 22px 4px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      border-radius: 4px;
+      background-color: transparent;
+    }
+
+    .drop-item {
+      display: block;
+      padding: 5px;
+      border-bottom: 1px solid #dbdde0;
+      color: color(text);
+      cursor: pointer;
+      background-color: white;
+      &:hover {
+        background-color: rgba(246, 246, 246, 1);
+      }
+    }
+
+    &:hover {
+      color: color(text, 'accent');
+    }
+
+    &:hover .filter-icon {
+      filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
+    }
+
+    &:hover .filter-wrapper {
+      display: block;
+    }
   }
 
   div:nth-child(3) {
@@ -93,7 +150,54 @@
   }
 
   div:nth-child(5) {
-    width: 9%;
+    width: 10%;
+    height: 19px;
+    position: relative;
+    cursor: pointer;
+
+    .filter-icon {
+      @include position(absolute, 5px, 55px, 11px, 11px);
+    }
+
+    .filter-wrapper {
+      display: none;
+      position: absolute;
+      content: '';
+      width: 121px;
+      height: 103px;
+      top: 12px;
+      left: -10px;
+      padding-top: 15px;
+      font-size: 13px;
+      font-weight: 500;
+      //box-shadow: 1px 5px 22px 4px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      border-radius: 4px;
+      background-color: transparent;
+    }
+
+    .drop-item {
+      display: block;
+      border-bottom: 1px solid #dbdde0;
+      background-color: white;
+      color: color(text);
+
+      &:hover {
+        background-color: rgba(246, 246, 246, 1);
+      }
+    }
+
+    &:hover {
+      color: color(text, 'accent');
+    }
+
+    &:hover .filter-icon {
+      filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
+    }
+
+    &:hover .filter-wrapper {
+      display: block;
+    }
   }
 
   div:nth-child(6) {
@@ -101,12 +205,18 @@
   }
 
   div:nth-child(7) {
+    position: relative;
     width: 11%;
-  }
 
-  .text {
-    text-align: left;
-    display: inline-block;
+    .refresh-icon {
+      cursor: pointer;
+      transition: all 0.25s;
+      @include position(absolute, -61px, 54px, 20px, 20px);
+
+      &:hover {
+        filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
+      }
+    }
   }
 }
 
@@ -131,7 +241,7 @@
 
   .name {
     gap: 5px;
-    width: 23%;
+    width: 22%;
     @include flexProperties(center);
   }
 
@@ -156,7 +266,7 @@
   }
 
   .priority {
-    width: 9%;
+    width: 10%;
   }
 
   .status {
@@ -175,7 +285,7 @@
     justify-content: flex-start;
 
     .icon-container {
-      padding-top: 5px;
+      padding-top: 2px;
       width: 14px;
       height: 24px;
       cursor: pointer;
@@ -202,45 +312,6 @@
 
   &:hover {
     background-color: rgba(246, 246, 246, 0.34);
-  }
-}
-
-.table-pagination {
-  padding: 8px 8px 15px 10px;
-  display: flex;
-  gap: 4px;
-
-  div {
-    height: 32px;
-    width: 32px;
-
-    border: 1px solid #e8e8e8;
-    border-radius: 3px;
-    transition: all 0.25s;
-    cursor: pointer;
-    @include flexProperties(center, center);
-
-    &:hover {
-      background-color: color(background, 'accent');
-      color: color(text, 'white');
-    }
-  }
-
-  .prevButton {
-    img {
-      transform: rotate(180deg);
-    }
-  }
-
-  .prevButton:hover img {
-    filter: invert(92%) sepia(100%) saturate(0%) hue-rotate(202deg) brightness(106%) contrast(106%);
-  }
-
-  .nextButton:hover img {
-    filter: invert(92%) sepia(100%) saturate(0%) hue-rotate(202deg) brightness(106%) contrast(106%);
-  }
-
-  .pagination-item {
   }
 }
 
@@ -279,3 +350,5 @@
   max-width: 35%;
   margin: 10% auto;
 }
+
+//==================== FILTER ===========================
