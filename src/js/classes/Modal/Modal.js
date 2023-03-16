@@ -13,25 +13,18 @@ export class Modal {
   closeModal() {
     const darkBlock = document.querySelector('.dark-block')
     const modalVisit = document.querySelector('.modal-visit')
+    const cancelBtn = document.querySelector('.modal-visit__button-cancel')
+
     darkBlock.addEventListener('click', e => {
+      e.preventDefault()
       if (!e.composedPath().includes(modalVisit)) {
         darkBlock.remove()
-        // resetValues()
       }
     })
-  }
 
-  closeModalButton() {
-    const darkBlock = document.querySelector('.dark-block')
-    const cancelBtn = document.querySelector('.modal-visit__button-cancel')
     cancelBtn.addEventListener('click', e => {
       e.preventDefault()
       darkBlock.remove()
-      // resetValues()
     })
   }
-
-  // openModal() {
-  //   this.darkBlock.classList.add('opened-modal')
-  // }
 }

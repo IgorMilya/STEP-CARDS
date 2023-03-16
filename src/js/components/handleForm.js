@@ -2,7 +2,7 @@ import { VisitCardiologist, VisitDentist, VisitTherapist } from '../classes'
 // import { resetValues } from './resetValues'
 import { create } from '../tools/index.js'
 
-export const handleForm = () => {
+export const handleForm = (value, id) => {
   const form = document.querySelector('.modal-visit__form')
   const darkBlock = document.querySelector('.dark-block')
 
@@ -32,21 +32,20 @@ export const handleForm = () => {
       switch (departmentValue.value) {
         case 'Cardiology':
           const cardiologist = new VisitCardiologist(result)
-          await cardiologist.postRequest()
+          value === 'Edit' ? await cardiologist.putRequest(id) : await cardiologist.postRequest()
 
           break
         case 'Dentist':
           const dentist = new VisitDentist(result)
-          await dentist.postRequest()
+          value === 'Edit' ? await dentist.putRequest(id) : await dentist.postRequest()
 
           break
         case 'Therapist':
           const therapist = new VisitTherapist(result)
-          await therapist.postRequest()
+          value === 'Edit' ? await therapist.putRequest(id) : await therapist.postRequest()
       }
 
       dropdown.forEach(item => item.setAttribute('disabled', valid))
-      // resetValues()
       darkBlock.remove()
     }
   })

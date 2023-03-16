@@ -6,10 +6,10 @@
 
 import { renderVisitModal } from '../../modules/index.js'
 
-export const editForm = (department, fn) => {
+export const editForm = (department, fn, id) => {
   const app = document.getElementById('app')
 
-  renderVisitModal(app, department, 'Edit')
+  renderVisitModal(app, department, 'Edit', id)
 
   // department.showForm(pattern)
 

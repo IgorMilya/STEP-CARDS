@@ -154,4 +154,18 @@ ${createInput(
       setLocalData(res)
     }
   }
+
+  async putRequest(id) {
+    const res = await request({
+      url: `${id}`,
+      method: 'PUT',
+      body: this,
+    })
+
+    if (!!res) {
+      const appointment = new Appointment(res)
+      appointment.addNewAppointment()
+      setLocalData(res)
+    }
+  }
 }
