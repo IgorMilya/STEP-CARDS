@@ -1,13 +1,15 @@
 import { find } from '../tools'
-import { renderComponent } from '../tools/renderComponent.js'
+import { renderComponent } from '../tools/renderComponent'
 import { Dashboard } from '../components'
 import { getAllAppointments } from './getAllAppointments'
 import { modalActions } from '../classes'
 
 import { initCharts } from '../components/Dashboard'
 import { searchOptions } from './searchOtpions'
-import { changeBasicLayout } from './changeBasicLayout.js'
-import { getLocalData } from './localData.js'
+import { changeBasicLayout } from './changeBasicLayout'
+import { getLocalData } from './localData'
+import { create } from '../tools'
+import { sortStatus } from './sortStatus'
 
 export const userLoggedIn = async () => {
   changeBasicLayout()
@@ -21,5 +23,6 @@ export const userLoggedIn = async () => {
 
   initCharts(allData)
 
+  sortStatus()
   // ВАЖЛИВА ХУЙНЯ
 }

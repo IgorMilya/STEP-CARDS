@@ -1,7 +1,7 @@
 import { Appointment } from '../classes/index.js'
 import { find } from '../tools/index.js'
 import { renderNoDataImg } from '../tools/renderNoDataImg.js'
-import { setLabelValue } from './appo.js'
+import { setLabelValue } from './setLabelValue.js'
 
 let LOCAL_DATA = []
 
@@ -26,8 +26,9 @@ const updateLocalData = updateItem => {
 
 export const getLocalData = () => LOCAL_DATA
 
-const fillTableList = () => {
+export const fillTableList = () => {
   setLabelValue()
+
   const tableList = find('.table-list')
 
   tableList.innerHTML = ''
