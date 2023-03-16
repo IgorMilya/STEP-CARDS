@@ -38,6 +38,9 @@
 
   .card-content {
     @include flexProperties(null, null, column);
+    span {
+      transition: all 0.8s;
+    }
   }
 
   .card-title {
@@ -69,6 +72,13 @@
   padding: 20px 8px 18px;
   @include fontProperties(700, 20, 26);
 }
+
+.status {
+  cursor: pointer;
+}
+// .card-image {
+//   width: 44px;
+// }
 
 .table-head {
   padding: 16px 8px;
