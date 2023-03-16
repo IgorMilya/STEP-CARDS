@@ -119,28 +119,38 @@
       display: none;
       position: absolute;
       content: '';
-      width: 121px;
-      height: 103px;
-      top: 12px;
+      width: 137px;
+      height: 110px;
+      top: 18px;
       left: -10px;
       padding-top: 15px;
       font-size: 13px;
       font-weight: 500;
-      //box-shadow: 1px 5px 22px 4px rgba(0, 0, 0, 0.15);
+
       overflow: hidden;
       border-radius: 4px;
       background-color: transparent;
+
+      span:nth-child(1) {
+        border-top: 1px solid #dbdde0;
+      }
     }
 
     .drop-item {
       display: block;
+      border-radius: 4px;
       padding: 5px;
+      border-right: 1px solid #dbdde0;
       border-bottom: 1px solid #dbdde0;
+      border-left: 2px solid #dbdde0;
+      background: white;
       color: color(text);
-      cursor: pointer;
-      background-color: white;
+      transition: all 0.25s;
+
       &:hover {
-        background-color: rgba(246, 246, 246, 1);
+        color: color(text, 'accent');
+        border-left: 2px solid color(text, 'accent');
+        background: white;
       }
     }
 
@@ -179,27 +189,37 @@
       display: none;
       position: absolute;
       content: '';
-      width: 121px;
-      height: 103px;
-      top: 12px;
+      width: 137px;
+      height: 110px;
+      top: 18px;
       left: -10px;
       padding-top: 15px;
       font-size: 13px;
       font-weight: 500;
-      //box-shadow: 1px 5px 22px 4px rgba(0, 0, 0, 0.15);
+
       overflow: hidden;
       border-radius: 4px;
       background-color: transparent;
+
+      span:nth-child(1) {
+        border-top: 1px solid #dbdde0;
+      }
     }
 
     .drop-item {
       display: block;
+      border-radius: 4px;
+      border-right: 1px solid #dbdde0;
       border-bottom: 1px solid #dbdde0;
-      background-color: white;
+      border-left: 2px solid #dbdde0;
+      background: white;
       color: color(text);
+      transition: all 0.25s;
 
       &:hover {
-        background-color: rgba(246, 246, 246, 1);
+        color: color(text, 'accent');
+        border-left: 2px solid color(text, 'accent');
+        background: white;
       }
     }
 
@@ -218,6 +238,64 @@
 
   div:nth-child(6) {
     width: 9%;
+
+    height: 19px;
+    position: relative;
+    cursor: pointer;
+
+    .filter-icon {
+      @include position(absolute, 5px, 49px, 11px, 11px);
+    }
+
+    .filter-wrapper {
+      display: none;
+      position: absolute;
+      content: '';
+      width: 137px;
+      height: 110px;
+      top: 18px;
+      left: -10px;
+      padding-top: 15px;
+      font-size: 13px;
+      font-weight: 500;
+
+      overflow: hidden;
+      border-radius: 4px;
+      background-color: transparent;
+
+      span:nth-child(1) {
+        border-top: 1px solid #dbdde0;
+      }
+    }
+
+    .drop-item {
+      display: block;
+      border-radius: 4px;
+      border-right: 1px solid #dbdde0;
+      border-bottom: 1px solid #dbdde0;
+      border-left: 2px solid #dbdde0;
+      background: white;
+      color: color(text);
+      transition: all 0.25s;
+
+      &:hover {
+        color: color(text, 'accent');
+        border-left: 2px solid color(text, 'accent');
+        background: white;
+      }
+    }
+
+    &:hover {
+      color: color(text, 'accent');
+    }
+
+    &:hover .filter-icon {
+      filter: invert(53%) sepia(63%) saturate(507%) hue-rotate(139deg) brightness(89%) contrast(95%);
+    }
+
+    &:hover .filter-wrapper {
+      display: block;
+    }
   }
 
   div:nth-child(7) {
