@@ -6,11 +6,10 @@ import { modifyTitle } from './modifyTitle.js'
 import { checkValue } from './checkValue.js'
 import { openDropdown } from './openDropdown.js'
 
-export const Dropdown = pattern => {
+export const Dropdown = () => {
   const dropdown = document.querySelectorAll('.dropdown')
   const doctorTitle = document.querySelector('.doctor-title')
   const modalImg = document.querySelector('.modal-visit__img')
-  const newForm = document.querySelector('.new-form')
 
   renderDoctorsNames(department)
 
@@ -27,7 +26,7 @@ export const Dropdown = pattern => {
       const dropdownError = document.querySelectorAll('.dropdown-error')
       dropdownError.forEach(item => item.remove())
       modifyTitle({ img: modalImg, target: e.target, select: select, title: doctorTitle })
-      checkValue(select.value, newForm, pattern)
+      checkValue(select.value)
     })
   })
   showDoctor()

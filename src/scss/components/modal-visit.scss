@@ -4,7 +4,7 @@
 }
 
 .dark-block {
-  display: none;
+  //display: none;
   background: rgba(0, 0, 0, 0.5);
   position: absolute;
   top: 0;
@@ -183,6 +183,7 @@
 .calendar {
   @include fontProperties(500, 14, 18);
   color: color(text, 'grey');
+  padding-bottom: 4px;
 }
 
 .calendar::-webkit-calendar-picker-indicator {
