@@ -1,4 +1,4 @@
-import { asideList, asideListSupport } from '../layoutUtils.js'
+import { sidebarList, sidebarListSupport } from '../layoutUtils.js'
 
 export const sidebarMenu = () => {
   const sidebarMenu = document.createElement('div')
@@ -7,7 +7,7 @@ export const sidebarMenu = () => {
   sidebarMenu.innerHTML = `
   <div class="menu-title">Managment</div>
     <ul class="sidebar-list">
-    ${asideList
+    ${sidebarList
       .map(
         ({ name, path }) =>
           ` <li class="sidebar-item">${path} <a href="#" class="aside-link">${name}</a>
@@ -18,7 +18,7 @@ export const sidebarMenu = () => {
       <div class="support-line"></div>
       <div class="menu-support">Supports</div>
       <ul class="sidebar-list">
-        ${asideListSupport
+        ${sidebarListSupport
           .map(
             ({ name, path }) =>
               `<li class="sidebar-item">${path}<a href="#" class="aside-link">${name}</a></li>`

@@ -23,5 +23,4 @@ export const tableHeaders = ['Name', 'Department', 'Doctor', 'Tel', 'Priority', 
 
 export const priorityFilterLabels = ['High', 'Normal', 'Low']
 
-// export const departmentFilterLabels = ['Cardiology', 'Dentist', 'Therapist']
 export const departmentFilterLabels = ['Cardiology', 'Dentistry', 'Therapy']
