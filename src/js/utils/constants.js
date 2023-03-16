@@ -1,4 +1,4 @@
-export const API_URL = 'https://ajax.test-danit.com/api/v2/cards'
+export const API_URL = 'https://ajax.test-danit.com/api/v2/cards/'
 export const department = [
   {
     department: 'Cardiology',

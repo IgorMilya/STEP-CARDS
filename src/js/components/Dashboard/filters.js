@@ -1,4 +1,4 @@
-import fltrIcon from '../../../assets/images/dashboard/filterIcon.svg'
+import filterIcon from '../../../assets/images/dashboard/filterIcon.svg'
 import refIcon from '../../../assets/images/dashboard/rotate.svg'
 
 import { find, findAll, createEl } from '../../tools'
@@ -18,7 +18,6 @@ const filterOptions = e => {
       selectedItem === requiredStatus
 
     !isCoincidence ? (item.style.display = 'none') : (item.style.display = 'flex')
-    console.log(item.style.display === 'none')
   })
 }
 const createRefreshIcon = () => {
@@ -39,7 +38,7 @@ const createRefreshIcon = () => {
 
 const createFilter = (parentElement, textContent) => {
   const priorityContainer = find(parentElement)
-  const priorityIcon = createEl({ el: 'img', css: 'filter-icon', src: fltrIcon, alt: 'Filter icon' })
+  const priorityIcon = createEl({ el: 'img', css: 'filter-icon', src: filterIcon, alt: 'Filter icon' })
   const dropdownWrapper = createEl({ el: 'div', css: 'filter-wrapper' })
 
   const dropdownItems = textContent.map(item => createEl({ el: 'span', css: 'drop-item', text: item }))

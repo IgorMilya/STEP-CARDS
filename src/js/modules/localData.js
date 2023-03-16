@@ -1,7 +1,6 @@
-import { Appointment } from '../classes/index.js'
-import { find } from '../tools/index.js'
-import { renderNoDataImg } from '../tools/renderNoDataImg.js'
-import { setLabelValue } from './setLabelValue.js'
+import { Appointment } from '../classes'
+import { find, renderNoDataImg } from '../tools'
+import { setLabelValue } from './setLabelValue'
 
 let LOCAL_DATA = []
 
@@ -23,7 +22,8 @@ export const updateLocalDataStatus = updatedItemID => {
 export const updateLocalData = updateItem => {
   const updatedArray = LOCAL_DATA.filter(item => item.id !== updateItem.id)
 
-  LOCAL_DATA = updatedArray.unshift(updateItem)
+  updatedArray.unshift(updateItem)
+  LOCAL_DATA = updatedArray
 
   fillTableList()
 }

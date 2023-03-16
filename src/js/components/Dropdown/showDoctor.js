@@ -1,7 +1,10 @@
+import { find, findAll } from '../../tools'
+
 export const showDoctor = () => {
-  const depList = document.querySelector('.dropDepartment')
+  const depList = find('.dropDepartment')
+
   depList.addEventListener('click', e => {
-    const listItem = document.querySelectorAll('.doctor-item')
+    const listItem = findAll('.doctor-item')
     const itemTabPost = e.target.getAttribute('data-post')
 
     listItem.forEach(value => {

@@ -1,4 +1,4 @@
-import { editForm } from './editForm.js'
+import { editForm } from './editForm'
 
 export const renderExtraForm = (boolean, department, newForm, fn, id) => {
   if (!!boolean) {

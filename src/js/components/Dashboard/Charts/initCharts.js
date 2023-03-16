@@ -1,17 +1,17 @@
-// import { create } from '../../tools'
 import Chart from 'chart.js/auto'
 import { filterDataCharts } from './filterDataCharts'
 import { createElemCharts } from './createElemCharts'
+import { find } from '../../../tools'
 
-const elemCharts = createElemCharts()
+createElemCharts()
 
 export const initCharts = data => {
   const [ageDataCharts, departmentDataCharts] = filterDataCharts(data)
 
-  const donut = document.getElementById('myChart-1')
-  const donut2 = document.getElementById('myChart-2')
+  const firstChart = find('#myChart-1')
+  const secondChart = find('#myChart-2')
 
-  const myDoughnutChart = new Chart(donut, {
+  new Chart(firstChart, {
     type: 'doughnut',
     data: {
       labels: ['Dentistry', 'Therapy', 'Cardiology'],
@@ -38,7 +38,7 @@ export const initCharts = data => {
     },
   })
 
-  const myDoughnutChart2 = new Chart(donut2, {
+  new Chart(secondChart, {
     type: 'doughnut',
     data: {
       labels: ['Elderly', 'Adult', 'Child'],

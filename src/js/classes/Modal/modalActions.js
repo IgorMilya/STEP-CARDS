@@ -6,7 +6,7 @@ export const modalActions = () => {
   const openModalButton = find('.register')
 
   openModalButton.addEventListener('click', () => {
-    const app = document.getElementById('app')
+    const app = find('#app')
     const visit = new Visit({})
     renderVisitModal(app, visit)
   })

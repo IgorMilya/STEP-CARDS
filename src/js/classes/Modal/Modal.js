@@ -1,11 +1,11 @@
-import { createTemplate } from './createTemplate.js'
+import { modalTemplate } from './modalTemplate.js'
 import { find } from '../../tools/index.js'
 
 export class Modal {
   constructor() {}
 
   renderModal(parent, option) {
-    const modalElement = createTemplate(option)
+    const modalElement = modalTemplate(option)
     parent.append(modalElement)
   }
 

@@ -1,10 +1,9 @@
 import { createDropdown, createInput, Dropdown } from '../../components/'
-import modalImg from '../../../assets/modal-visit/modalImg.svg'
+import modalImg from '../../../assets/images/modal-visit/modalImg.svg'
 import { find, request } from '../../tools'
-import { Appointment } from '../Appointment/Appointment.js'
-import { setLocalData, updateLocalData } from '../../modules/localData.js'
-import { openDropdown } from '../../components/Dropdown/openDropdown.js'
-import { modifyTitle } from '../../components/Dropdown/modifyTitle.js'
+import { Appointment } from '../Appointment/Appointment'
+import { setLocalData, updateLocalData } from '../../modules/localData'
+import { priorityDropdown } from '../../components/Dropdown/'
 
 export class Visit {
   constructor({
@@ -68,8 +67,7 @@ export class Visit {
              <img src='${modalImg}' alt='Form'>
          </div>
          
-         <div class='modal-visit__label-wrapper new-form'> </div>     
-                    
+         <div class='modal-visit__label-wrapper new-form'> </div>                        
       `
 
     Dropdown()
@@ -122,7 +120,8 @@ ${createInput(
      
         <input class='modal-visit__gap modal-visit__dropdown placeholder priority-title' value='${
           this.priority
-        }' name='priority' type='text' placeholder='Priority' disabled>
+        }' 
+        name='priority' type='text' placeholder='Priority' disabled>
         <ul class='modal-visit__dropdown-list priority-list' >
              <li class='modal-visit__dropdown-item'>High</li>
              <li class='modal-visit__dropdown-item'>Normal</li>
@@ -131,15 +130,7 @@ ${createInput(
     </div>`
     )
 
-    const priorityWrapper = find('.priorities')
-    const priorityTitle = find('.priority-title')
-    const priorityList = find('.priority-list')
-
-    openDropdown(priorityWrapper, priorityList)
-
-    priorityList.addEventListener('click', e => {
-      modifyTitle({ target: e.target, select: priorityTitle })
-    })
+    priorityDropdown()
   }
 
   async postRequest() {

@@ -1,7 +1,7 @@
 import { getLocalData } from '../../modules/localData.js'
-import { checkValue } from '../../components/Dropdown/checkValue.js'
+import { checkValue } from '../../tools'
 
-export const editSelectedAppointment = id => {
+export const editAppointment = id => {
   const localData = getLocalData()
   const selectedAppointment = localData.find(item => item.id === id)
 

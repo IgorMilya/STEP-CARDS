@@ -1,12 +1,7 @@
-import { Sidebar } from './Sidebar/Sidebar.js'
+import { Sidebar } from './Sidebar/Sidebar'
+import { createEl } from '../tools'
 
-export const Main = () => {
-  const Main = document.createElement('main')
-  Main.classList.add('main')
+export const Main = createEl({ el: 'main', css: 'main' })
+const mainContent = createEl({ el: 'div', css: 'main-content' })
 
-  Main.innerHTML = `<div class="main-content"></div>`
-
-  Main.prepend(Sidebar)
-
-  return Main
-}
+Main.append(Sidebar, mainContent)

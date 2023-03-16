@@ -1,4 +1,4 @@
-import { Visit } from '../Visit/Visit.js'
+import { Visit } from '../Visit/Visit'
 import { createInput } from '../../components'
 
 export class VisitTherapist extends Visit {
