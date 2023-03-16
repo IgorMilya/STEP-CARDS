@@ -1,21 +1,22 @@
 import { VisitCardiologist, VisitDentist, VisitTherapist } from '../../classes'
-import { commonGapForm } from '../../layouts'
+import { renderExtraForm } from '../../classes/Appointment/renderExtraForm.js'
 
-export const checkValue = (value, newForm, pattern) => {
+export const checkValue = (value, data = {}, boolean = false, id) => {
+  const newForm = document.querySelector('.new-form')
+
   switch (value) {
     case 'Cardiology':
-      const cardiologist = new VisitCardiologist({})
-      cardiologist.showHealthInfo(newForm, pattern)
-      commonGapForm(newForm, pattern)
+      const cardiologist = new VisitCardiologist(data)
+      renderExtraForm(boolean, cardiologist, newForm, cardiologist.showHealthInfo, id)
+
       break
     case 'Dentist':
-      const dentist = new VisitDentist({})
-      dentist.showCalendar(newForm)
-      commonGapForm(newForm, pattern)
+      const dentist = new VisitDentist(data)
+      renderExtraForm(boolean, dentist, newForm, dentist.showCalendar, id)
+
       break
     case 'Therapist':
-      const therapist = new VisitTherapist({})
-      therapist.showAge(newForm)
-      commonGapForm(newForm, pattern)
+      const therapist = new VisitTherapist(data)
+      renderExtraForm(boolean, therapist, newForm, therapist.showEmail, id)
   }
 }
