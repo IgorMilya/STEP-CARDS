@@ -1,8 +1,8 @@
-import { VisitCardiologist, VisitDentist, VisitTherapist } from '../../classes'
-import { renderExtraForm } from '../../classes/Appointment/renderExtraForm.js'
+import { VisitCardiologist, VisitDentist, VisitTherapist, renderExtraForm } from '../classes'
+import { find } from './find'
 
 export const checkValue = (value, data = {}, boolean = false, id) => {
-  const newForm = document.querySelector('.new-form')
+  const newForm = find('.new-form')
 
   switch (value) {
     case 'Cardiology':

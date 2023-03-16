@@ -1,5 +1,5 @@
-import { covidButton } from '../../UI/Button.js'
-import { covidData } from '../../tools/fetch'
+import { covidButton } from '../../UI/Button'
+import { covidData } from './getCovidData'
 import iconUA from '../../../assets/images/covid/ukraine.png'
 
 const { UAnewConfirmed, UAConfirmed, UADeaths } = covidData
@@ -14,7 +14,7 @@ export const sidebarInfo = () => {
      <div class="covid-body">
      <div class="covid-title">Covid information</div>
       <div class="covid-icon">
-      <img class="covid-icon-img" src = '${iconUA}'>
+      <img class="covid-icon-img" src = '${iconUA}' alt='Ukraine'>
       <div class="covid-icon-title">Ukraine</div>
       </div>
       

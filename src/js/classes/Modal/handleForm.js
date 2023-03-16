@@ -1,6 +1,6 @@
-import { VisitCardiologist, VisitDentist, VisitTherapist } from '../classes'
+import { VisitCardiologist, VisitDentist, VisitTherapist } from '../index.js'
 
-import { create } from '../tools/index.js'
+import { create } from '../../tools/index.js'
 
 export const handleForm = (value, id) => {
   const form = document.querySelector('.modal-visit__form')

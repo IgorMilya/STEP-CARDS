@@ -1,19 +1,18 @@
-import { createTemplate } from './createTemplate.js'
-// import { resetValues } from '../../components/index.js'
-import { create, find } from '../../tools/index.js'
+import { modalTemplate } from './modalTemplate.js'
+import { find } from '../../tools/index.js'
 
 export class Modal {
   constructor() {}
 
   renderModal(parent, option) {
-    const modalElement = createTemplate(option)
+    const modalElement = modalTemplate(option)
     parent.append(modalElement)
   }
 
   closeModal() {
-    const darkBlock = document.querySelector('.dark-block')
-    const modalVisit = document.querySelector('.modal-visit')
-    const cancelBtn = document.querySelector('.modal-visit__button-cancel')
+    const darkBlock = find('.dark-block')
+    const modalVisit = find('.modal-visit')
+    const cancelBtn = find('.modal-visit__button-cancel')
 
     darkBlock.addEventListener('click', e => {
       if (!e.composedPath().includes(modalVisit)) {

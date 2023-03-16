@@ -1,5 +1,5 @@
-import { find } from '../tools/index.js'
-import { Button } from '../UI/index.js'
+import { find } from '../tools'
+import { Button } from '../UI'
 
 export const changeBasicLayout = () => {
   const main = find('.main-content')

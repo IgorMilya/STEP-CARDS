@@ -1,9 +1,7 @@
-import { renderComponent } from '../tools/renderComponent'
-import { Dashboard } from '../components'
-import { getAllAppointments } from './getAllAppointments'
+import { renderComponent } from '../tools'
+import { Dashboard, initFilters, initCharts } from '../components'
 import { modalActions } from '../classes'
-import { initFilters } from '../components/Dashboard/filters.js'
-import { initCharts } from '../components/Dashboard'
+import { getAllAppointments } from './getAllAppointments'
 import { searchOptions } from './searchOtpions'
 import { changeBasicLayout } from './changeBasicLayout'
 import { getLocalData } from './localData'
@@ -19,6 +17,4 @@ export const userLoggedIn = async () => {
 
   initFilters()
   initCharts(allData)
-
-  // ВАЖЛИВА ХУЙНЯ
 }

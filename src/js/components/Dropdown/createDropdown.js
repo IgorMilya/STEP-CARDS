@@ -4,14 +4,3 @@ export const createDropdown = (titleSelector, titleText, listSelector, name, val
    <ul class='modal-visit__dropdown-list ${listSelector}' > </ul>
 </div>
 `
-
-// export const createDropdown = (titleSelector, titleText, listSelector, name, dataAtr) => {
-
-// const drContainer =  create("div", "modal-visit__wrapper dropdown")
-// const drInput = createInput()
-// const ul = create("ul", "modal-visit__dropdown-list")
-// drContainer.setAtribut(data-name, '${dataAtr}')
-// drContainer.append(drInput, ul)
-
-//    return drContainer
-// }
