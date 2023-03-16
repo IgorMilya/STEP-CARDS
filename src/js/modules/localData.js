@@ -1,7 +1,6 @@
-import { Appointment } from '../classes/index.js'
-import { find } from '../tools/index.js'
-import { renderNoDataImg } from '../tools/renderNoDataImg.js'
-import { setLabelValue } from './setLabelValue.js'
+import { Appointment } from '../classes'
+import { find, renderNoDataImg } from '../tools'
+import { setLabelValue } from './setLabelValue'
 
 let LOCAL_DATA = []
 

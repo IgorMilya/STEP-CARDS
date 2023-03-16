@@ -4,7 +4,7 @@ import avatar1 from '../../../assets/images/dashboard/pacAv1.svg'
 import avatar2 from '../../../assets/images/dashboard/pacAv2.svg'
 
 import { deleteLocalData, updateLocalDataStatus } from '../../modules/localData.js'
-import { editSelectedAppointment } from './editSelectedAppointment.js'
+import { editAppointment } from './editAppointment.js'
 
 export class Appointment {
   parentElement = find('.table-list')
@@ -44,7 +44,7 @@ export class Appointment {
         }
       }
 
-      if (isComplete && status.textContent === 'Opened') {
+      if (isComplete && status?.textContent === 'Opened') {
         const response = await request({
           url: `${this.id}`,
           method: 'PUT',
@@ -59,7 +59,7 @@ export class Appointment {
       }
 
       if (isEdit) {
-        editSelectedAppointment(this.id)
+        editAppointment(this.id)
       }
     })
   }

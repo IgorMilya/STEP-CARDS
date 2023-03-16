@@ -1,7 +1,7 @@
 import { create } from '../../tools/index.js'
 import { cancelButton, saveButton } from '../../UI/Button'
 
-export const createTemplate = option => {
+export const modalTemplate = option => {
   const darkBlock = create('div', 'dark-block')
   darkBlock.innerHTML = `
 <div class='modal-visit'>

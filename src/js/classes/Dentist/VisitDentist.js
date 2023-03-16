@@ -1,6 +1,5 @@
 import { Visit } from '../Visit/Visit.js'
-import url from '../../../assets/modal-visit/Group 1718.svg'
-import { createInput } from '../../components/index.js'
+import url from '../../../assets/images/modal-visit/Group 1718.svg'
 
 export class VisitDentist extends Visit {
   constructor({ name, surname, priority, goal, description, tel, doctor, department, age, date = '' }) {

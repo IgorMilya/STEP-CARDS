@@ -1,8 +1,8 @@
-import { sidebarList, sidebarListSupport } from '../layoutUtils.js'
+import { sidebarList, sidebarListSupport } from '../layout.utils.js'
+import { createEl } from '../../tools'
 
 export const sidebarMenu = () => {
-  const sidebarMenu = document.createElement('div')
-  sidebarMenu.classList.add('sidebar-menu')
+  const sidebarMenu = createEl({ el: 'div', css: 'sidebar-menu' })
 
   sidebarMenu.innerHTML = `
   <div class="menu-title">Managment</div>
@@ -15,9 +15,9 @@ export const sidebarMenu = () => {
         `
       )
       .join('')}</ul>
-      <div class="support-line"></div>
-      <div class="menu-support">Supports</div>
-      <ul class="sidebar-list">
+     <div class="support-line"></div>
+     <div class="menu-support">Supports</div>
+     <ul class="sidebar-list">
         ${sidebarListSupport
           .map(
             ({ name, path }) =>
@@ -25,8 +25,8 @@ export const sidebarMenu = () => {
           )
           .join('')}
 </ul>
-
 `
 
+  // TODO: rewrite on fn
   return sidebarMenu
 }

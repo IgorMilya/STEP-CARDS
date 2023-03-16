@@ -1,3 +1,4 @@
-export { Header } from './Header.js'
-export { Main } from './Main.js'
-export { Sidebar } from './Sidebar/Sidebar.js'
+export { Header } from './Header'
+export { Main } from './Main'
+export { Sidebar } from './Sidebar/Sidebar'
+export { changeCovidInfo } from './Sidebar/changeCovidInfo'

@@ -1,7 +1,7 @@
 import googleIcon from '../../../assets/images/google.svg' // TODO: add alias import
 import facebookIcon from '../../../assets/images/facebook.svg'
 import { logInButton, checkboxInput } from '../../UI'
-import { validateUser } from './validateUser.js'
+import { validateUser } from './validateUser'
 import { create } from '../../tools'
 
 const isData = JSON.parse(localStorage.getItem('userData'))
@@ -24,8 +24,8 @@ const actions = create('div', 'form-head__actions')
 const decor = create('div', 'form-head__decor', 'Or')
 
 actions.innerHTML = `
-        <div><img src="${googleIcon}">Google</div>
-        <div><img src="${facebookIcon}">Facebook</div>`
+        <div><img src="${googleIcon}" alt='Google'>Google</div>
+        <div><img src="${facebookIcon}" alt='Facebook'>Facebook</div>`
 
 formBase.insertAdjacentHTML(
   'beforeend',
@@ -39,3 +39,5 @@ formBase.insertAdjacentHTML(
 
 formHeader.append(title, slogan, actions, decor)
 loginForm.append(formHeader, formBase)
+
+// TODO: переписати інпути
