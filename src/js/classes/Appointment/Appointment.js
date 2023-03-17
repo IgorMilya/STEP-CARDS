@@ -3,8 +3,8 @@ import { appointmentTemplate } from './appointmentTemplate'
 import avatar1 from '../../../assets/images/dashboard/pacAv1.svg'
 import avatar2 from '../../../assets/images/dashboard/pacAv2.svg'
 
-import { deleteLocalData, updateLocalDataStatus } from '../../modules/localData.js'
-import { editAppointment } from './editAppointment.js'
+import { deleteLocalData, updateLocalDataStatus } from '../../modules/localData'
+import { editAppointment } from './editAppointment'
 
 export class Appointment {
   parentElement = find('.table-list')
