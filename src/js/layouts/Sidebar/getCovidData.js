@@ -41,5 +41,3 @@ export const getCovidData = async () => {
     }
   }
 }
-
-export const covidData = await getCovidData()
