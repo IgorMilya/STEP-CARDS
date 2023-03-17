@@ -1,13 +1,19 @@
 import { createEl, find } from '../../tools'
-import ears from '../../../assets/images/headset-solid.svg'
-import sending from '../../../assets/images/paper-plane-solid.svg'
+import earphones from '../../../assets/images/headset-solid.svg'
+import paperPlane from '../../../assets/images/paper-plane-solid.svg'
 import { renderUserMessage } from './renderUserMessage'
 import { run } from './openAI'
 import { closeSupport } from './closeSupport'
 
 export const initBot = () => {
   const supportWrapper = createEl({ el: 'div', css: 'support-wrapper' })
-  const supportLogo = createEl({ el: 'img', css: 'support-logo', src: ears, alt: 'support logo' })
+  const supportLogo = createEl({
+    el: 'img',
+    css: 'support-logo',
+    src: earphones,
+    alt: 'support logo',
+    title: 'Support',
+  })
   const chatWrapper = createEl({ css: 'chat-wrapper' })
   supportWrapper.append(supportLogo)
 
@@ -15,7 +21,7 @@ export const initBot = () => {
     <div class='chat-context'> </div>
     <div class='chat-form'>
           <textarea class='support-textarea' rows='1' placeholder='Enter some questions'></textarea>
-          <img class='sending' src='${sending}' alt='paper-line'>
+          <img class='sending' src='${paperPlane}' alt='paper-plan'>
     </div>
     `
 
