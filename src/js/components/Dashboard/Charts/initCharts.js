@@ -19,7 +19,7 @@ export const initCharts = data => {
         {
           label: 'Patient',
           data: departmentDataCharts,
-          backgroundColor: ['rgb(32, 164, 182)', 'rgb(255, 107, 147)', '#ffcd56'],
+          backgroundColor: ['#20a4b6', '#ff6b93', '#ffcd56'],
           borderWith: 100,
         },
       ],
@@ -46,7 +46,7 @@ export const initCharts = data => {
         {
           label: 'Patient',
           data: ageDataCharts,
-          backgroundColor: ['rgb(32, 164, 182)', 'rgb(255, 107, 147)', '#ffcd56'],
+          backgroundColor: ['#20a4b6', '#ff6b93', '#ffcd56'],
         },
       ],
     },
