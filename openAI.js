@@ -1,6 +1,5 @@
 import { Configuration, OpenAIApi } from 'openai'
-import assistant from './src/assets/images/assistant.svg'
-import { renderSupportMessage } from './asd'
+import { renderSupportMessage } from './renderSupportMessage.js'
 
 const configuration = new Configuration({
   apiKey: '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',
