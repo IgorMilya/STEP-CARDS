@@ -1,4 +1,4 @@
-import { getLocalData } from '../../modules/localData.js'
+import { getLocalData } from '../../modules/localData'
 import { checkValue } from '../../tools'
 
 export const editAppointment = id => {
