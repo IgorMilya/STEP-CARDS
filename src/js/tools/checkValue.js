@@ -1,22 +1,23 @@
-import { VisitCardiologist, VisitDentist, VisitTherapist, renderExtraForm } from '../classes'
+import { VisitCardiologist, VisitDentist, VisitTherapist, Modal } from '../classes'
 import { find } from './find'
 
 export const checkValue = (value, data = {}, boolean = false, id) => {
   const newForm = find('.new-form')
+  const modal = new Modal()
 
   switch (value) {
     case 'Cardiology':
       const cardiologist = new VisitCardiologist(data)
-      renderExtraForm(boolean, cardiologist, newForm, cardiologist.showHealthInfo, id)
+      modal.renderExtraForm(boolean, cardiologist, newForm, cardiologist.showHealthInfo, id)
 
       break
     case 'Dentistry':
       const dentist = new VisitDentist(data)
-      renderExtraForm(boolean, dentist, newForm, dentist.showCalendar, id)
+      modal.renderExtraForm(boolean, dentist, newForm, dentist.showCalendar, id)
 
       break
     case 'Therapy':
       const therapist = new VisitTherapist(data)
-      renderExtraForm(boolean, therapist, newForm, therapist.showEmail, id)
+      modal.renderExtraForm(boolean, therapist, newForm, therapist.showEmail, id)
   }
 }
