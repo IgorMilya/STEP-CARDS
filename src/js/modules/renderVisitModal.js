@@ -1,4 +1,4 @@
-import { Modal, handleForm } from '../classes'
+import { Modal } from '../classes'
 
 export const renderVisitModal = (parent, clientData, option, id) => {
   const modal = new Modal()
@@ -6,5 +6,5 @@ export const renderVisitModal = (parent, clientData, option, id) => {
   modal.renderModal(parent, option)
   clientData.showForm()
   modal.closeModal()
-  handleForm(option, id)
+  modal.handleForm(option, id)
 }

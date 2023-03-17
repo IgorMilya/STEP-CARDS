@@ -1,5 +1,10 @@
-import { modalTemplate } from './modalTemplate.js'
-import { find } from '../../tools/index.js'
+import { VisitCardiologist } from '../Cardiologist/VisitCardiologist'
+import { VisitTherapist } from '../Therapist/VisitTherapist'
+import { VisitDentist } from '../Dentist/VisitDentist'
+import { modalTemplate } from './modalTemplate'
+import { createError } from './createError'
+import { editForm } from './editForm'
+import { find } from '../../tools'
 
 export class Modal {
   constructor() {}
@@ -24,5 +29,57 @@ export class Modal {
       e.preventDefault()
       darkBlock.remove()
     })
+  }
+
+  handleForm = (value, id) => {
+    const form = document.querySelector('.modal-visit__form')
+    const darkBlock = document.querySelector('.dark-block')
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault()
+
+      const departmentValue = document.querySelector('.department-title')
+      const dropdown = document.querySelectorAll('.modal-visit__dropdown')
+      const result = {}
+      let valid = true
+
+      createError(dropdown, valid)
+
+      if (valid) {
+        dropdown.forEach(item => item.removeAttribute('disabled'))
+
+        const visitData = new FormData(e.target)
+
+        for (const [key, value] of visitData.entries()) result[key] = value
+
+        switch (departmentValue.value) {
+          case 'Cardiology':
+            const cardiologist = new VisitCardiologist(result)
+            value === 'Edit' ? await cardiologist.putRequest(id) : await cardiologist.postRequest()
+
+            break
+          case 'Dentistry':
+            const dentist = new VisitDentist(result)
+            value === 'Edit' ? await dentist.putRequest(id) : await dentist.postRequest()
+
+            break
+          case 'Therapy':
+            const therapist = new VisitTherapist(result)
+            value === 'Edit' ? await therapist.putRequest(id) : await therapist.postRequest()
+        }
+
+        dropdown.forEach(item => item.setAttribute('disabled', valid))
+        darkBlock.remove()
+      }
+    })
+  }
+
+  renderExtraForm = (boolean, department, newForm, fn, id) => {
+    if (!!boolean) {
+      editForm(department, fn.bind(department), id)
+    } else {
+      fn.bind(department, ...[newForm])()
+      department.commonGapForm(newForm)
+    }
   }
 }
