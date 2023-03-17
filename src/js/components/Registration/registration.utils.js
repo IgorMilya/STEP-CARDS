@@ -6,7 +6,7 @@ const isData = JSON.parse(localStorage.getItem('userData'))
 export const registrationUtils = {
   googleIcon,
   facebookIcon,
-  toggleCheckbox: createInput({ type: 'checkbox' }),
+  toggleCheckbox: createInput({ type: 'checkbox', name: 'checkbox' }),
   loginButton: createButton('log-in', 'Log In'),
   emailInput: createInput({
     css: 'email',

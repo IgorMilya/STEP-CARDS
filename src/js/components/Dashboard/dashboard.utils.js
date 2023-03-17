@@ -19,6 +19,6 @@ export const boardHeaderContent = [
 ]
 
 export const tableHeaders = ['Name', 'Department', 'Doctor', 'Tel', 'Priority', 'Status', 'Actions']
-export const priorityFilterLabels = ['High', 'Normal', 'Low'] // перенести в папку utils
+export const priorityFilterLabels = ['High', 'Normal', 'Low']
 export const departmentFilterLabels = ['Cardiology', 'Dentistry', 'Therapy']
 export const statusFilterLabels = ['Opened', 'Closed']

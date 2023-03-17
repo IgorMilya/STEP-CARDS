@@ -1,36 +1,42 @@
-import iconUA from '../../../assets/images/covid/ukraine.png'
+import { find } from '../../tools/index.js'
+import { getCovidData } from './getCovidData'
 import iconWorld from '../../../assets/images/covid/global.png'
-import { covidData } from './getCovidData'
-import { find } from '../../tools'
+import iconUa from '../../../assets/images/covid/ukraine.png'
 
-const { UAnewConfirmed, UAConfirmed, UADeaths, worldNewConfirmed, worldConfirmed, worldDeaths } = covidData
+const renderInfo = (elements, covidInfo, icon, title) => {
+  const [newConfirmed, allConfirmed, deaths] = covidInfo
+  const { covidNewRecovered, covidInfected, covidDeaths, covidIconImg, covidIconTitle } = elements
 
-export const changeCovidInfo = () => {
-  const btn = find('.covid-button')
-  const covidInfo = find('.covid-info')
-  const covidNewRecovered = find('.covid-new-recoverdet')
-  const covidInfected = find('.covid-infected')
-  const covidDeaths = find('.covid-deaths')
-  const covidIconImg = find('.covid-icon-img')
-  const covidIconTitle = find('.covid-icon-title')
+  covidNewRecovered.textContent = `Today infected - ${newConfirmed}`
+  covidInfected.textContent = `All infected - ${allConfirmed}`
+  covidDeaths.textContent = `All deaths - ${deaths}`
+  covidIconImg.src = icon
+  covidIconTitle.textContent = title
+}
 
-  btn.addEventListener('click', e => {
-    covidInfo.classList.toggle('world')
+export const changeCovidInfo = async () => {
+  const covidInfo = Object.values(await getCovidData())
 
-    if (covidInfo.classList.contains('world')) {
-      covidNewRecovered.textContent = `Today indected - ${worldNewConfirmed}`
-      covidInfected.textContent = `All infected - ${worldConfirmed}`
-      covidDeaths.textContent = `All deaths - ${worldDeaths}`
-      covidIconImg.src = iconWorld
-      covidIconTitle.textContent = 'World'
-      e.target.textContent = 'Show Ukraine'
+  const button = find('.covid-button')
+  const elements = {
+    covidNewRecovered: find('.covid-new-recoverdet'),
+    covidInfected: find('.covid-infected'),
+    covidDeaths: find('.covid-deaths'),
+    covidIconImg: find('.covid-icon-img'),
+    covidIconTitle: find('.covid-icon-title'),
+  }
+
+  renderInfo(elements, covidInfo.slice(0, 3), iconUa, 'Ukraine')
+
+  button.addEventListener('click', e => {
+    const isWorld = e.target.textContent === 'Show World'
+
+    if (isWorld) {
+      button.textContent = 'Show Ukraine'
+      renderInfo(elements, covidInfo.slice(0, 3), iconWorld, 'World')
     } else {
-      covidNewRecovered.textContent = `Today indected - ${UAnewConfirmed}`
-      covidInfected.textContent = `All infected - ${UAConfirmed}`
-      covidDeaths.textContent = `All deaths - ${UADeaths}`
-      covidIconImg.src = iconUA
-      covidIconTitle.textContent = 'Ukraine'
-      e.target.textContent = 'Show World'
+      button.textContent = 'Show World'
+      renderInfo(elements, covidInfo.slice(3), iconUa, 'Ukraine')
     }
   })
 }

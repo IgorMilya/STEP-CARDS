@@ -1,37 +1,31 @@
-import { covidButton } from '../../UI/Button'
-import { covidData } from './getCovidData'
+import { createEl, createButton } from '../../tools'
 import iconUA from '../../../assets/images/covid/ukraine.png'
+export const sidebarInfo = createEl({ css: 'sidebar-info' })
+const sidebarCovid = createEl({ css: 'sidebar-covid' })
+const covidBody = createEl({ css: 'covid-body' })
+const covidTitle = createEl({ css: 'covid-title', text: 'Covid information' })
+const covidIcon = createEl({ css: 'covid-icon' })
+const covidIconImg = createEl({ el: 'img', css: 'covid-icon-img', src: iconUA, alt: 'Ukraine' })
+const covidIconTitle = createEl({ css: 'covid-icon-title', text: 'Ukraine' })
+const covidInfo = createEl({ css: 'covid-info' })
 
-const { UAnewConfirmed, UAConfirmed, UADeaths } = covidData
+const covidContent = [
+  createEl({ css: 'covid-new-recoverdet' }),
+  createEl({ css: 'covid-infected' }),
+  createEl({ css: 'covid-deaths' }),
+  createButton('covid-button', 'Show World'),
+]
 
-export const sidebarInfo = () => {
-  const sidebarInfo = document.createElement('div')
-  sidebarInfo.classList.add('sidebar-info')
+const sidebarFooter = createEl({ css: 'sidebar-footer' })
+const sidebarFooterTitle = createEl({ css: 'sidebar-footer-title', text: '© HendyHealth 2023' })
+const sidebarFooterText = createEl({
+  css: 'sidebar-footer-text',
+  text: 'HendyHealth is medical management for all doctors, patient & Staff',
+})
 
-  sidebarInfo.innerHTML = `
-     
-     <div class="sidebar-covid">
-     <div class="covid-body">
-     <div class="covid-title">Covid information</div>
-      <div class="covid-icon">
-      <img class="covid-icon-img" src = '${iconUA}' alt='Ukraine'>
-      <div class="covid-icon-title">Ukraine</div>
-      </div>
-      
-     <div class="covid-info">
-     <div class="covid-new-recoverdet">Today indected - ${UAnewConfirmed}</div>
-     <div class="covid-infected">All infected - ${UAConfirmed}</div>
-     <div class="covid-deaths">All deaths - ${UADeaths}</div>
-     <div class="covid-button">${covidButton}</div>
-     </div>
-     </div>
-     </div>
-     
-     <div class="sidebar-footer">
-     <div class="sidebar-footer-title"> &copy; HandyHealth 2023</div>
-     <div class="sidebar-footer-text">HandyHealth is medical management for all doctors, patient & Staff</div>
-     </div>
-     </div>`
-
-  return sidebarInfo
-}
+covidBody.append(covidTitle, covidIcon, covidInfo)
+covidIcon.append(covidIconImg, covidIconTitle)
+covidInfo.append(...covidContent)
+sidebarFooter.append(sidebarFooterTitle, sidebarFooterText)
+sidebarCovid.append(covidBody)
+sidebarInfo.append(sidebarCovid, sidebarFooter)

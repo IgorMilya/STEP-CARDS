@@ -51,9 +51,6 @@ export class VisitCardiologist extends Visit {
    `^[${this.pattern} 0-9]+$`,
    'disease',
    `${this.disease}`
- )}
- 
-
-`
+ )}`
   }
 }
