@@ -1,5 +1,5 @@
 import { renderComponent } from '../tools'
-import { Dashboard, initFilters, initCharts } from '../components'
+import { Dashboard, initFilters, initCharts, initBot } from '../components'
 import { modalActions } from '../classes'
 import { getAllAppointments } from './getAllAppointments'
 import { searchOptions } from './searchOtpions'
@@ -17,5 +17,5 @@ export const userLoggedIn = async () => {
 
   initFilters()
   initCharts(allData)
-  setTimeout(initBot(), 120000)
+  setTimeout(initBot, 120)
 }

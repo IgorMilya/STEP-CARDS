@@ -1,5 +1,5 @@
-import { createEl } from './src/js/tools/index.js'
-import assistant from './src/assets/images/assistant.svg'
+import { createEl } from '../../tools'
+import assistant from '../../../assets/images/assistant.svg'
 
 export const renderSupportMessage = text => {
   const chatBox = createEl({ css: 'chat-box' })

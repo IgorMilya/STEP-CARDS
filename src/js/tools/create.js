@@ -22,8 +22,8 @@ export const createEl = props => {
   return htmlElement
 }
 
-export const createInput = (props) => {
-  const { css, type, name, placeholder, value, title, disabled, required, pattern, label } = props
+export const createInput = props => {
+  const { css, type, name, placeholder, value, title } = props
   const input = document.createElement('input')
 
   css && input.classList.add(css)
@@ -32,15 +32,6 @@ export const createInput = (props) => {
   value && (input.value = value)
   title && (input.title = title)
   placeholder && (input.placeholder = placeholder)
-  required && (input.required = required)
-  disabled && (input.disabled = disabled)
-  pattern && (input.pattern = pattern)
-
-  if (label){
-    const labelInput = createEl({ el: 'label', css: label })
-    labelInput.append(input)
-    return labelInput
-  }
 
   return input
 }

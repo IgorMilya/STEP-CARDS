@@ -1,9 +1,10 @@
 import { createDropdown, Dropdown } from '../../components/'
 import modalImg from '../../../assets/images/modal-visit/modalImg.svg'
-import { find, request, createInput } from '../../tools'
+import { find, request } from '../../tools'
 import { Appointment } from '../Appointment/Appointment'
 import { setLocalData, updateLocalData } from '../../modules/localData'
 import { priorityDropdown } from '../../components/Dropdown/'
+import { createInput } from '../../components'
 
 export class Visit {
   constructor({
@@ -33,7 +34,6 @@ export class Visit {
   showForm() {
     const labelWrapper = find('.modal-visit__label-wrapper')
     labelWrapper.innerHTML = `
-      ${createInput()}
          ${createInput(
            'modal-visit__wrapper',
            'modal-visit__gap placeholder',
