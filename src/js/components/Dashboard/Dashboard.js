@@ -1,11 +1,11 @@
-import { create } from '../../tools'
+import { createEl } from '../../tools'
 import { dashboardTable } from './dashboardTable'
 import { dashboardHeader } from './dashboardHeader'
 import { dashboardActions } from './Charts/createElemCharts'
 
-export const Dashboard = create('div', 'dashboard')
+export const Dashboard = createEl( { css: 'dashboard' })
 
-const boardContent = create('div', 'dashboard-content')
+const boardContent = createEl({ css: 'dashboard-content' })
 
 boardContent.append(dashboardTable, dashboardActions)
 Dashboard.append(dashboardHeader, boardContent)

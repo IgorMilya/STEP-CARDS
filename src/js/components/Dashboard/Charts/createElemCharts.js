@@ -1,12 +1,12 @@
-import { create } from '../../../tools'
+import { createEl } from '../../../tools'
 
-export const dashboardActions = create('div', 'dashboard-actions')
+export const dashboardActions = createEl({ css: 'dashboard-actions' })
 
 export const createElemCharts = () => {
-  const dashboardTableWrapp1 = create('div', 'dashboard-table-wrapp')
-  const dashboardTableWrapp2 = create('div', 'dashboard-table-wrapp')
-  const boardGraphFirst = create('canvas', 'donut')
-  const boardGraphSecond = create('canvas', 'donut')
+  const dashboardTableWrapp1 = createEl({ css: 'dashboard-table-wrapp' })
+  const dashboardTableWrapp2 = createEl({ css: 'dashboard-table-wrapp' })
+  const boardGraphFirst = createEl({ el: 'canvas', css: 'donut' })
+  const boardGraphSecond = createEl({ el: 'canvas', css: 'donut' })
 
   boardGraphFirst.setAttribute('id', 'myChart-1')
   boardGraphSecond.setAttribute('id', 'myChart-2')

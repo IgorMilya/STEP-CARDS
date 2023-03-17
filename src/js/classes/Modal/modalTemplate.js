@@ -1,8 +1,7 @@
-import { create } from '../../tools/index.js'
-import { cancelButton, saveButton } from '../../UI/Button'
+import { createEl, createButton } from '../../tools'
 
 export const modalTemplate = option => {
-  const darkBlock = create('div', 'dark-block')
+  const darkBlock = createEl({ css: 'dark-block' })
   darkBlock.innerHTML = `
 <div class='modal-visit'>
   <div class='visit-container'>
@@ -12,8 +11,12 @@ export const modalTemplate = option => {
   
   </div>
   <div class='modal-visit__box-button'>
-          ${cancelButton}
-          ${option === 'Edit' ? '<button>Edit</button>' : saveButton}
+          ${createButton('modal-visit__button-cancel', 'Cancel').outerHTML}
+          ${
+            option === 'Edit'
+              ? createButton('modal-visit__button-save', 'Edit').outerHTML
+              : createButton('modal-visit__button-save', 'Save').outerHTML
+          }
   </div>
   
   </form>

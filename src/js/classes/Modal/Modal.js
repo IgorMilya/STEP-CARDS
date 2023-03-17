@@ -4,7 +4,7 @@ import { VisitDentist } from '../Dentist/VisitDentist'
 import { modalTemplate } from './modalTemplate'
 import { createError } from './createError'
 import { editForm } from './editForm'
-import { find } from '../../tools'
+import { find, findAll } from '../../tools'
 
 export class Modal {
   constructor() {}
@@ -32,14 +32,14 @@ export class Modal {
   }
 
   handleForm = (value, id) => {
-    const form = document.querySelector('.modal-visit__form')
-    const darkBlock = document.querySelector('.dark-block')
+    const form = find('.modal-visit__form')
+    const darkBlock = find('.dark-block')
 
     form.addEventListener('submit', async e => {
       e.preventDefault()
 
-      const departmentValue = document.querySelector('.department-title')
-      const dropdown = document.querySelectorAll('.modal-visit__dropdown')
+      const departmentValue = find('.department-title')
+      const dropdown = findAll('.modal-visit__dropdown')
       const result = {}
       let valid = true
 

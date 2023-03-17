@@ -1,43 +1,29 @@
 import ky from 'ky'
-import { strFinishCovid } from './sidebar.utils'
+import { covidLocalData, strFinishCovid } from './sidebar.utils'
 
 export const getCovidData = async () => {
   const { Countries, Global } = await ky.get('https://api.covid19api.com/summary').json()
 
-  if (Countries !== undefined) {
-    const [{ NewConfirmed: newConfirmed, TotalConfirmed: allConfirmed, TotalDeaths: allDeaths }] =
-      Countries.filter(elem => elem.Country === 'Ukraine')
-
+  if (!Countries) {
+    return covidLocalData
+  } else {
+    const UACovidInfo = Countries.filter(elem => elem.Country === 'Ukraine')
+    const [{ NewConfirmed: newConfirmed, TotalConfirmed: allConfirmed, TotalDeaths: allDeaths }] = UACovidInfo
     const {
       NewConfirmed: newConfirmedWorld,
       TotalConfirmed: allWorldConfirmed,
       TotalDeaths: allWorldDeaths,
     } = Global
 
-    const infectedUA = strFinishCovid(allConfirmed)
-    const deathsUA = strFinishCovid(allDeaths)
-    const infectedTodayWorld = strFinishCovid(newConfirmedWorld)
-    const infectedAllWorld = strFinishCovid(allWorldConfirmed)
-    const deathWorld = strFinishCovid(allWorldDeaths)
-
-    return {
-      UAnewConfirmed: newConfirmed,
-      UAConfirmed: infectedUA,
-      UADeaths: deathsUA,
-
-      worldNewConfirmed: infectedTodayWorld,
-      worldConfirmed: infectedAllWorld,
-      worldDeaths: deathWorld,
+    const covidData = {
+      UAnew: newConfirmed,
+      UAConfirmed: strFinishCovid(allConfirmed),
+      UADeaths: strFinishCovid(allDeaths),
+      worldNew: strFinishCovid(newConfirmedWorld),
+      worldConfirmed: strFinishCovid(allWorldConfirmed),
+      worldDeaths: strFinishCovid(allWorldDeaths),
     }
-  } else {
-    return {
-      UAnewConfirmed: '132',
-      UAConfirmed: '212.321',
-      UADeaths: '332.131.212',
 
-      worldNewConfirmed: '433.21',
-      worldConfirmed: '432.435',
-      worldDeaths: '643.214.2',
-    }
+    return covidData
   }
 }
