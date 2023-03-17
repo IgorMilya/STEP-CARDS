@@ -1,4 +1,4 @@
-import { Visit } from '../Visit/Visit.js'
+import { Visit } from '../Visit/Visit'
 import url from '../../../assets/images/modal-visit/Group 1718.svg'
 
 export class VisitDentist extends Visit {
