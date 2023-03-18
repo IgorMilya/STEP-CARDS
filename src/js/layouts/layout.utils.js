@@ -1,4 +1,4 @@
-import dashbord from '../../assets/images/sidebarIcons/sidebar-dashbord.svg'
+import dashboard from '../../assets/images/sidebarIcons/sidebar-dashbord.svg'
 import appointments from '../../assets/images/sidebarIcons/sidebar-appointments.svg'
 import doctors from '../../assets/images/sidebarIcons/sidebar-doctors.svg'
 import patient from '../../assets/images/sidebarIcons/sidebar-patient.svg'
@@ -7,8 +7,8 @@ import settings from '../../assets/images/sidebarIcons/sidebar-support.svg'
 
 export const sidebarList = [
   {
-    name: 'Dashbord',
-    path: dashbord,
+    name: 'Dashboard',
+    path: dashboard,
   },
   {
     name: 'Appointments',

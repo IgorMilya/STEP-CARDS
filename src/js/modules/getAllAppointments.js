@@ -1,8 +1,6 @@
-import { request } from '../tools'
+import { request, renderNoDataImg } from '../tools'
 import { setLocalData } from './localData'
 import { Appointment } from '../classes'
-
-import { renderNoDataImg } from '../tools'
 
 export const getAllAppointments = async () => {
   const allAppointments = await request({ url: '', method: 'GET' })

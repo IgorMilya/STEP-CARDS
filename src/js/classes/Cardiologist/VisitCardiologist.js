@@ -1,5 +1,5 @@
 import { Visit } from '../Visit/Visit'
-import { createInput } from '../../components'
+import { input } from '../../UI'
 
 export class VisitCardiologist extends Visit {
   constructor({
@@ -24,7 +24,7 @@ export class VisitCardiologist extends Visit {
 
   showHealthInfo(div) {
     div.innerHTML = ` 
- ${createInput(
+ ${input(
    'modal-visit__extra small',
    'modal-visit__gap placeholder',
    'text',
@@ -33,7 +33,7 @@ export class VisitCardiologist extends Visit {
    'pressure',
    `${this.pressure}`
  )}
- ${createInput(
+ ${input(
    'modal-visit__extra small',
    'modal-visit__gap placeholder',
    'text',
@@ -43,7 +43,7 @@ export class VisitCardiologist extends Visit {
    `${this.bodyIndex}`
  )}
 
- ${createInput(
+ ${input(
    'modal-visit__extra small',
    'modal-visit__gap placeholder',
    'text',

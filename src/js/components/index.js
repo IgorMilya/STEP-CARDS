@@ -1,6 +1,6 @@
 export { Registration, loginForm } from './Registration'
 export { Dashboard, initCharts, initFilters } from './Dashboard'
-export { Dropdown, createDropdown } from './Dropdown'
-export { createInput } from './Input/createInput'
+export { Dropdown, createDropdown, priorityDropdown } from './Dropdown'
+export { input } from '../UI/Input'
 export { loginFormHandler } from './Registration'
 export { initBot } from './Support/initBot'
