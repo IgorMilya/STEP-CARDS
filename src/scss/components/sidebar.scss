@@ -32,17 +32,20 @@
 }
 
 .menu-support {
-  @include fontProperties(400, 14, 20, Montserrat);
   color: color(text, 'grey');
   margin-bottom: 20px;
   padding-left: 24px;
+  @include fontProperties(400, 14, 20, Montserrat);
 }
 
 .sidebar-list {
-  @include flexProperties(normal, flex-start, column);
-  gap: 20px;
   fill: color(text, 'grey');
   padding-left: 24px;
+  @include flexProperties(normal, flex-start, column, 20px);
+
+  img {
+    width: 16px;
+  }
 }
 
 .sidebar-item {
@@ -74,11 +77,10 @@
   border-radius: 10px;
   margin: 0 20px 0 18px;
   padding: 0 20px;
-  gap: 14px;
   background-image: url('../assets/images/covid/covid-bg.jpg');
-  background-size: 240px 335px;
+  background-size: 238px 379px;
   font-size: 15px;
-  @include flexProperties(normal, flex-start, column);
+  @include flexProperties(normal, flex-start, column, 14px);
 }
 
 .covid-title {
@@ -103,11 +105,11 @@
 }
 
 .covid-info {
-  @include flexProperties(normal, flex-start, column);
-  gap: 10px;
   margin-top: 5px;
+  @include flexProperties(normal, flex-start, column, 10px);
+
   .covid-button {
-    margin-top: 20px;
+    margin-top: 14px;
     text-align: center;
   }
 }
@@ -119,11 +121,11 @@
 }
 
 .sidebar-footer-title {
-  @include fontProperties(500, 18, 20, Montserrat);
   margin-bottom: 6px;
+  @include fontProperties(500, 18, 20, Montserrat);
 }
 
 .sidebar-footer-text {
-  @include fontProperties(400, 12, 20, Montserrat);
   color: color(text, 'grey');
+  @include fontProperties(400, 12, 20, Montserrat);
 }

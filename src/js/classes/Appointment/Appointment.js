@@ -1,8 +1,7 @@
-import { create, random, find, request } from '../../tools'
-import { appointmentTemplate } from './appointmentTemplate'
 import avatar1 from '../../../assets/images/dashboard/pacAv1.svg'
 import avatar2 from '../../../assets/images/dashboard/pacAv2.svg'
-
+import { create, random, find, request } from '../../tools'
+import { appointmentTemplate } from './appointmentTemplate'
 import { deleteLocalData, updateLocalDataStatus } from '../../modules/localData'
 import { editAppointment } from './editAppointment'
 

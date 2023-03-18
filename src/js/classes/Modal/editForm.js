@@ -1,5 +1,5 @@
-import { renderVisitModal } from '../../modules/index.js'
-import { find } from '../../tools/index.js'
+import { renderVisitModal } from '../../modules'
+import { find } from '../../tools'
 
 export const editForm = (department, fn, id) => {
   const app = find('#app')

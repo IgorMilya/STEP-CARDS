@@ -1,6 +1,10 @@
 .header-logo-link {
   gap: 5px;
   @include flexProperties(center);
+
+  img:nth-child(1) {
+    margin-bottom: 7px;
+  }
 }
 
 .header-logo-wrapp {
