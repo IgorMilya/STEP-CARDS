@@ -1,5 +1,5 @@
 import { createEl } from '../../tools'
-import client from '../../../assets/images/client.svg'
+import client from '../../../assets/images/support/client.svg'
 
 export const renderUserMessage = text => {
   const chatBox = createEl({ css: 'chat-box' })

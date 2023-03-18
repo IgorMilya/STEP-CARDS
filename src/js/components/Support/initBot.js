@@ -1,6 +1,6 @@
 import { createEl, find } from '../../tools'
-import earphones from '../../../assets/images/headset-solid.svg'
-import paperPlane from '../../../assets/images/paper-plane-solid.svg'
+import earphones from '../../../assets/images/support/headset-solid.svg'
+import paperPlane from '../../../assets/images/support/paper-plane-solid.svg'
 import { renderUserMessage } from './renderUserMessage'
 import { run } from './openAI'
 import { closeSupport } from './closeSupport'
