@@ -14,7 +14,7 @@ export class VisitTherapist extends Visit {
    'modal-visit__gap placeholder',
    'email',
    'Email',
-   `.+@gmail\\.com`,
+   `^\\S+@\\S+\\.\\S+$`,
    'email',
    `${this.email}`
  )}
