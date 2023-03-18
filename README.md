@@ -30,7 +30,7 @@ The application is designed to be user-friendly and intuitive. The user interfac
 
 [**Ihor Milevskyi**](https://github.com/IgorMilya)
 
-- Implemented a modal window where you can make an appointment with a doctor. Added input data validation for all visit creation options. In addition, I created the "Edit" function (button) with which you can edit your appointment.
+- Implemented a modal window where you can check in for a doctor’s appointment. Moreover, added input data validation for all visit creation options. In addition, I've created the "Edit" function (button) with which you can edit your appointment and accomplished a live search filter.
 
 [**Ivan Basiuk**](https://github.com/IvanBasss)
 
