@@ -10,7 +10,7 @@ export async function run(value, context) {
   const completion = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
     messages: [{ role: 'assistant', content: value }],
-    max_tokens: 20,
+    max_tokens: 100,
   })
 
   context.prepend(renderSupportMessage(completion.data.choices[0].message.content))
