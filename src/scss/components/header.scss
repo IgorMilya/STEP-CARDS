@@ -1,6 +1,5 @@
 .header-logo-link {
-  gap: 5px;
-  @include flexProperties(center);
+  @include flexProperties(center, null, null, 5px);
 
   img:nth-child(1) {
     margin-bottom: 7px;
@@ -8,10 +7,9 @@
 }
 
 .header-logo-wrapp {
-  gap: 100px;
   background-color: #fff;
   border-radius: 0 5px 0 0;
-  @include flexProperties(center);
+  @include flexProperties(center, null, null, 100px);
 
   &.active {
     z-index: 2;
@@ -65,8 +63,7 @@
 }
 
 .header-actions {
-  gap: 30px;
-  @include flexProperties(center);
+  @include flexProperties(center, null, null, 30px);
 }
 
 .header-avatar {

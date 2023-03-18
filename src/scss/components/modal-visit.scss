@@ -13,8 +13,6 @@
 }
 
 .modal-visit {
-  width: 663px;
-  height: 530px;
   padding-bottom: 31px;
   background-color: color(background, 'secondary');
   box-shadow: 0 7px 20px rgba(40, 41, 61, 0.08);
@@ -22,17 +20,19 @@
   position: absolute;
   left: 50%;
   top: 50%;
+  width: 663px;
+  height: 530px;
   transform: translate(-50%, -50%);
 
   &__title {
-    @include fontProperties(700, 22, 26);
     color: color(text, 'accent');
     margin: 17px 0 23px;
+    @include fontProperties(700, 22, 26);
   }
 
   &__form {
-    @include flexProperties(center, end);
     flex-wrap: wrap;
+    @include flexProperties(center, end);
   }
 
   &__wrapper {
@@ -72,6 +72,7 @@
     color: color(text, 'grey');
     background: aliceblue;
     z-index: 1;
+    border-radius: 0 0 3px 3px;
     @include fontProperties(500, 14, 18);
   }
 
@@ -81,6 +82,7 @@
 
   &__dropdown-item {
     padding: 16px 0 16px 10px;
+    border-left: 2px solid transparent;
     cursor: pointer;
   }
 
@@ -103,18 +105,18 @@
   }
 
   &__button-save {
-    @include fontProperties(500, 14, 18);
     color: color(text, 'white');
-    padding: 8px 16px;
     border-radius: 4px;
+    padding: 8px 16px;
+    @include fontProperties(500, 14, 18);
   }
 
   &__button-cancel {
-    @include fontProperties(500, 14, 18);
     color: color(text, 'white');
-    padding: 8px;
     border-radius: 4px;
+    padding: 8px;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #ffffff;
+    @include fontProperties(500, 14, 18);
   }
 
   &__extra {
@@ -128,9 +130,6 @@
     top: 1px;
     right: 3px;
     cursor: pointer;
-  }
-
-  &__box-button {
   }
 }
 
@@ -174,14 +173,15 @@
   display: block;
 }
 
-.doctor-item {
+.doctor-item,
+.hide {
   display: none;
 }
 
 .calendar {
-  @include fontProperties(500, 14, 18);
   color: color(text, 'grey');
   padding-bottom: 4px;
+  @include fontProperties(500, 14, 18);
 }
 
 .calendar::-webkit-calendar-picker-indicator {
@@ -189,10 +189,6 @@
   opacity: 0;
   z-index: 2;
   cursor: pointer;
-}
-
-.hide {
-  display: none;
 }
 
 .small {

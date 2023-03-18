@@ -39,13 +39,11 @@
   &__actions {
     color: $mainColor;
     margin-bottom: 20px;
-    gap: 23px;
     @include fontProperties(600, 16, 20);
-    @include flexProperties(center, center, null);
+    @include flexProperties(center, center, null, 23px);
 
     div {
-      padding: 11px;
-      padding-left: 4px;
+      padding: 11px 11px 11px 4px;
       min-width: 180px;
       text-align: center;
       border: 1px solid #e0e1e3;
@@ -91,9 +89,8 @@
 // ============= form-base ==============
 
 .form {
-  gap: 26px;
   position: relative;
-  @include flexProperties(center, null, column);
+  @include flexProperties(center, null, column, 26px);
 
   input {
     min-height: 43px;
@@ -115,8 +112,6 @@
     }
   }
 }
-
-// toggle
 
 .switch {
   position: relative;
@@ -147,25 +142,18 @@
   @include position(absolute, 0, 0, null, null);
 
   &:before {
-    position: absolute;
-    content: '';
-    height: 17px;
-    width: 17px;
-    left: -3px;
     bottom: -3px;
-    background-color: #20a4b6;
     transition: 0.4s;
     border-radius: 50%;
+    background-color: #20a4b6;
+    @include position(absolute, null, -3px, 17px, 17px);
   }
 }
 
 .login-error {
   display: none;
-  position: absolute;
-  content: '';
-  top: 138px;
-  left: 184px;
   color: color(text, 'error');
+  @include position(absolute, 138px, 184px, null, null);
   @include fontProperties(600, 10, 15);
 }
 
@@ -186,6 +174,6 @@ input:checked + .slider:before {
   to {
     background-color: #fff;
     height: 537px;
-    box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
+    box-shadow: 0 7px 20px rgba(40, 41, 61, 0.08);
   }
 }
