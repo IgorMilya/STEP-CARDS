@@ -1,4 +1,3 @@
-
 # HendyHealth
 
 [**HendyHealth**](https://banzay700.github.io/step__FORKIO/) is a program designed for clinic administrators to register new visitors. The program allows the user to add, delete, and edit records of patients or visitors to the clinic. All data recorded in the application is stored in a database on the server.
@@ -31,7 +30,7 @@ The application is designed to be user-friendly and intuitive. The user interfac
 
 [**Ihor Milevskyi**](https://github.com/IgorMilya)
 
--  
+- In this project, I've implemented modal window where you can check in for a doctor’s appointment. Moreover, I've created an "Edit" function (button) with which you will be able to edit your appointment. In addition, I've accomplished a live search filter and support chat based on Chat GPT
 
 [**Ivan Basiuk**](https://github.com/IvanBasss)
 
