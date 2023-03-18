@@ -12,9 +12,14 @@ const localDataLength = localData.length
 const valueDoctorsLength = valueDoctors.length
 
 export const boardHeaderContent = [
-  { text: 'All Appointments', className: 'appointments', path: kit, value: localDataLength },
-  { text: 'Closed Appointments', className: 'close-appointments', path: closeApp, value: localDataLength },
-  { text: 'Patients', className: 'patients', path: patient, value: localDataLength },
+  { text: 'All Appointments', className: 'appointments', path: kit, value: localDataLength || '0' },
+  {
+    text: 'Closed Appointments',
+    className: 'close-appointments',
+    path: closeApp,
+    value: localDataLength || '0',
+  },
+  { text: 'Patients', className: 'patients', path: patient, value: localDataLength || '0' },
   { text: 'Our Doctors', className: 'doctors', path: doctors, value: valueDoctorsLength },
 ]
 

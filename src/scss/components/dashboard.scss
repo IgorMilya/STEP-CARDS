@@ -83,9 +83,6 @@
 .status {
   cursor: pointer;
 }
-// .card-image {
-//   width: 44px;
-// }
 
 .table-head {
   padding: 16px 8px;
@@ -108,29 +105,18 @@
     cursor: pointer;
 
     .filter-icon {
-      position: absolute;
-      content: '';
-      width: 11px;
-      height: 11px;
-      top: 5px;
-      left: 91px;
+      @include position(absolute, 5px, 91px, 11px, 11px);
     }
 
     .filter-wrapper {
       display: none;
-      position: absolute;
-      content: '';
-      width: 137px;
-      height: 110px;
-      top: 18px;
-      left: -10px;
       padding-top: 15px;
       font-size: 13px;
       font-weight: 500;
-
       overflow: hidden;
       border-radius: 4px;
       background-color: transparent;
+      @include position(absolute, 18px, -10px, 137px, 110px);
 
       span:nth-child(1) {
         border-top: 1px solid #dbdde0;
@@ -188,19 +174,13 @@
 
     .filter-wrapper {
       display: none;
-      position: absolute;
-      content: '';
-      width: 137px;
-      height: 110px;
-      top: 18px;
-      left: -10px;
       padding-top: 15px;
       font-size: 13px;
       font-weight: 500;
-
       overflow: hidden;
       border-radius: 4px;
       background-color: transparent;
+      @include position(absolute, 18px, -10px, 137px, 110px);
 
       span:nth-child(1) {
         border-top: 1px solid #dbdde0;
@@ -239,7 +219,6 @@
 
   div:nth-child(6) {
     width: 9%;
-
     height: 19px;
     position: relative;
     cursor: pointer;
@@ -250,19 +229,13 @@
 
     .filter-wrapper {
       display: none;
-      position: absolute;
-      content: '';
-      width: 137px;
-      height: 110px;
-      top: 18px;
-      left: -10px;
       padding-top: 15px;
       font-size: 13px;
       font-weight: 500;
-
       overflow: hidden;
       border-radius: 4px;
       background-color: transparent;
+      @include position(absolute, 18px, -10px, 137px, 110px);
 
       span:nth-child(1) {
         border-top: 1px solid #dbdde0;
