@@ -10,11 +10,10 @@
   margin-bottom: 31px;
 }
 
-.info-card {
-  // width: 251px;
-  // height: 88px;
+.info-card,
+.body-table {
   background: #ffffff;
-  box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+  box-shadow: 0 12px 26px rgba(16, 30, 115, 0.06);
   border-radius: 8px;
 }
 
@@ -25,29 +24,20 @@
 }
 
 .body-bord {
-  // width: 818px;
-  // height: 532px;
   background: #ffffff;
-  box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
+  box-shadow: 0 12px 26px rgba(16, 30, 115, 0.06);
   border-radius: 8px;
   margin-right: 30px;
 }
 
 .body-tables {
-  gap: 10px;
-  @include flexProperties(center, center, column);
+  @include flexProperties(center, center, column, 10px);
 }
 
 .body-table {
-  // width: 245px;
-  // height: 261px;
-  background: #ffffff;
-  box-shadow: 0px 12px 26px rgba(16, 30, 115, 0.06);
-  border-radius: 8px;
   margin-right: 30px;
 }
 
 .fade-out {
   display: block;
-  //transform: translateY(0);
 }

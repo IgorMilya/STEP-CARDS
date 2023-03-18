@@ -91,8 +91,7 @@
 
 .covid-icon {
   width: 200px;
-  gap: 5px;
-  @include flexProperties(center, flex-start);
+  @include flexProperties(center, flex-start, null, 5px);
 }
 
 .covid-icon {
