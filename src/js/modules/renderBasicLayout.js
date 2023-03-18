@@ -1,7 +1,6 @@
-import { Header, Main } from '../layouts'
+import { Header, Main, changeCovidInfo } from '../layouts'
 import { renderComponent } from '../tools'
 import { Registration, loginFormHandler } from '../components'
-import { changeCovidInfo } from '../layouts/Sidebar/changeCovidInfo.js'
 
 export const renderBasicLayout = () => {
   const app = document.getElementById('app')

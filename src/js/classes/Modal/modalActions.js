@@ -1,6 +1,6 @@
-import { find } from '../../tools/index.js'
-import { renderVisitModal } from '../../modules/index.js'
-import { Visit } from '../Visit/Visit.js'
+import { find } from '../../tools'
+import { renderVisitModal } from '../../modules'
+import { Visit } from '../Visit/Visit'
 
 export const modalActions = () => {
   const openModalButton = find('.register')

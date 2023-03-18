@@ -1,6 +1,6 @@
 import googleIcon from '../../../assets/images/google.svg'
 import facebookIcon from '../../../assets/images/facebook.svg'
-import { createButton, createInput } from '../../tools/create.js'
+import { createButton, createInput } from '../../tools'
 
 const isData = JSON.parse(localStorage.getItem('userData'))
 export const registrationUtils = {

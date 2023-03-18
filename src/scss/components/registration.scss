@@ -159,6 +159,16 @@
   }
 }
 
+.login-error {
+  display: none;
+  position: absolute;
+  content: '';
+  top: 138px;
+  left: 184px;
+  color: color(text, 'error');
+  @include fontProperties(600, 10, 15);
+}
+
 input:checked + .slider {
   background-color: #9ed2d7;
 }

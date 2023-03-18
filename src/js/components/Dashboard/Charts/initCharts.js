@@ -1,13 +1,14 @@
 import Chart from 'chart.js/auto'
 import { filterDataCharts } from './filterDataCharts'
 import { createElemCharts } from './createElemCharts'
+import { chartsOptions } from './charts.utils'
 import { find } from '../../../tools'
 
 createElemCharts()
 
 export const initCharts = data => {
   const [ageDataCharts, departmentDataCharts] = filterDataCharts(data)
-
+  const { departmentChartOption, ageChartOption } = chartsOptions
   const firstChart = find('#myChart-1')
   const secondChart = find('#myChart-2')
 
@@ -24,18 +25,7 @@ export const initCharts = data => {
         },
       ],
     },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
-        },
-        title: {
-          display: true,
-          text: 'Patients by Department',
-        },
-      },
-    },
+    options: departmentChartOption,
   })
 
   new Chart(secondChart, {
@@ -50,17 +40,6 @@ export const initCharts = data => {
         },
       ],
     },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom',
-        },
-        title: {
-          display: true,
-          text: 'Patients by Age',
-        },
-      },
-    },
+    options: ageChartOption,
   })
 }
