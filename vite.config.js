@@ -6,7 +6,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         chunkFileNames: 'js/[name]-[hash].js',
-        entryFileNames: 'js/[name]-[hash].js',
+        entryFileNames: '[name]-[hash].js',
 
         assetFileNames: ({ name }) => {
           if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
@@ -14,10 +14,10 @@ export default defineConfig({
           }
 
           if (/\.css$/.test(name ?? '')) {
-            return 'css/[name]-[hash][extname]'
+            return '[name]-[hash][extname]'
           }
 
-          return 'js/[name]-[hash][extname]'
+          return '[name]-[hash][extname]'
         },
       },
     },

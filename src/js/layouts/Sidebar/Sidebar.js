@@ -1,9 +1,9 @@
 import { sidebarInfo } from './sidebarInfo'
 import { sidebarMenu } from './sidebarMenu'
-import { create } from '../../tools'
+import { createEl } from '../../tools'
 
-export const Sidebar = create('div', 'sidebar')
-const sidebarContent = create('div', 'sidebar-content')
+export const Sidebar = createEl({ css: 'sidebar' })
+const sidebarContent = createEl({ css: 'sidebar-content' })
 
 sidebarContent.append(sidebarMenu(), sidebarInfo)
 

@@ -6,10 +6,10 @@ export const department = [
   },
   {
     department: 'Dentistry',
-    doctor: ['Robert Fox', 'Dr. Esther Howard', 'Marshall Cook'],
+    doctor: ['Dr. Robert Fox', 'Dr. Esther Howard', 'Dr. Marshall Cook'],
   },
   {
     department: 'Therapy',
-    doctor: ['Stephanie Cook', 'Marion James', 'Teresa Holland'],
+    doctor: ['Dr. Stephanie Cook', 'Dr. Marion James', 'Dr. Teresa Holland'],
   },
 ]

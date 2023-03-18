@@ -1,5 +1,4 @@
-import { find } from '../tools'
-import { Button } from '../UI'
+import { find, createButton } from '../tools'
 
 export const changeBasicLayout = () => {
   const main = find('.main-content')
@@ -9,7 +8,7 @@ export const changeBasicLayout = () => {
   const headerContent = find('.header-content')
   const headerBtnWrapper = find('.header-button')
   const headerAvatar = find('.header-avatar')
-  const newPatientBtn = Button('register', 'New Patient')
+  const newPatientBtn = createButton('register', 'New Patient').outerHTML
   main.innerHTML = ''
 
   sideBar.classList.add('fade-out')

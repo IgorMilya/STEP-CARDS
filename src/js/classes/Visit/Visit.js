@@ -1,9 +1,9 @@
-import { createDropdown, createInput, Dropdown } from '../../components/'
 import modalImg from '../../../assets/images/modal-visit/modalImg.svg'
+import { createDropdown, Dropdown, priorityDropdown } from '../../components'
+import { setLocalData, updateLocalData } from '../../modules'
 import { find, request } from '../../tools'
+import { input } from '../../UI'
 import { Appointment } from '../Appointment/Appointment'
-import { setLocalData, updateLocalData } from '../../modules/localData'
-import { priorityDropdown } from '../../components/Dropdown/'
 
 export class Visit {
   constructor({
@@ -34,7 +34,7 @@ export class Visit {
     const labelWrapper = find('.modal-visit__label-wrapper')
     labelWrapper.innerHTML = `
       
-         ${createInput(
+         ${input(
            'modal-visit__wrapper',
            'modal-visit__gap placeholder',
            'text',
@@ -43,7 +43,7 @@ export class Visit {
            'name',
            `${this.name}`
          )}
-         ${createInput(
+         ${input(
            'modal-visit__wrapper',
            'modal-visit__gap placeholder',
            'text',
@@ -79,7 +79,7 @@ export class Visit {
     div.insertAdjacentHTML(
       'beforeend',
       `
- ${createInput(
+ ${input(
    'modal-visit__extra small',
    'modal-visit__gap placeholder',
    'number',
@@ -89,7 +89,7 @@ export class Visit {
    `${this.age}`
  )}
 
-${createInput(
+${input(
   'modal-visit__extra',
   'modal-visit__gap placeholder',
   'text',
@@ -106,7 +106,7 @@ ${createInput(
     </label>
        
        
-    ${createInput(
+    ${input(
       'modal-visit__extra small',
       'modal-visit__gap placeholder',
       'number',

@@ -1,5 +1,5 @@
 import { Visit } from '../Visit/Visit'
-import { createInput } from '../../components'
+import { input } from '../../UI'
 
 export class VisitTherapist extends Visit {
   constructor({ name, surname, priority, goal, description, tel, doctor, department, age, email = '' }) {
@@ -9,7 +9,7 @@ export class VisitTherapist extends Visit {
 
   showEmail(div) {
     div.innerHTML = ` 
- ${createInput(
+ ${input(
    'modal-visit__extra small',
    'modal-visit__gap placeholder',
    'email',

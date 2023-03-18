@@ -1,6 +1,6 @@
-import { loginForm } from './index'
-import { create, createEl } from '../../tools'
 import regImg from '../../../assets/images/hero.svg'
+import { loginForm } from './index'
+import { createEl } from '../../tools'
 
 export const Registration = createEl({ css: 'registration' })
 

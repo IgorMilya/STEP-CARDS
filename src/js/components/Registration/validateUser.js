@@ -1,5 +1,5 @@
 import { userLoggedIn } from '../../modules'
-import { request } from '../../tools'
+import { request, find } from '../../tools'
 
 export const validateUser = async e => {
   e.preventDefault()
@@ -8,6 +8,19 @@ export const validateUser = async e => {
   const isRemember = !!dataFrom.get('checkbox')
   const userData = { email: dataFrom.get('text'), password: dataFrom.get('password') }
   const response = await request({ url: 'login', method: 'LOGIN', body: userData })
+  const errorHandler = find('.login-error')
+  const emailInput = find('.email')
+  const passwordInput = find('.password')
+
+  if (!response) {
+    errorHandler.style.display = 'block'
+    emailInput.value = ''
+    passwordInput.value = ''
+
+    setTimeout(() => (errorHandler.style.display = 'none'), 4500)
+
+    return
+  }
 
   if (!!response && isRemember) {
     window.localStorage.setItem('token', response)
