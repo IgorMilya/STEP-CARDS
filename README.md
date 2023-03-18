@@ -1,4 +1,4 @@
-# HendyHealth
+# [**HendyHealth**](https://banzay700.github.io/step__FORKIO/)
 
 [**HendyHealth**](https://banzay700.github.io/step__FORKIO/) is a program designed for clinic administrators to register new visitors. The program allows the user to add, delete, and edit records of patients or visitors to the clinic. All data recorded in the application is stored in a database on the server.
 
@@ -30,14 +30,14 @@ The application is designed to be user-friendly and intuitive. The user interfac
 
 [**Ihor Milevskyi**](https://github.com/IgorMilya)
 
-- In this project, I've implemented modal window where you can check in for a doctor’s appointment. Moreover, I've created an "Edit" function (button) with which you will be able to edit your appointment. In addition, I've accomplished a live search filter and support chat based on Chat GPT
+- Implemented a modal window where you can check in for a doctor’s appointment. Moreover, added input data validation for all visit creation options. In addition, I've created the "Edit" function (button) with which you can edit your appointment and accomplished a live search filter.
 
 [**Ivan Basiuk**](https://github.com/IvanBasss)
 
--  
+-  Сreated a basic layout using js. Wrote a sidebar section with a Covid information block that uses the API. Used the Chart.js library to draw charts on the page. Created functions for counting records in dashboard cards. Assisted in writing dashboard filtering functions.
 
 [**Oleksand Lotko**](https://github.com/Banzay700)
 
-- 
+- Developed the registration page, registration form, and additional user authentication. Wrote a dashboard section with the ability to add and delete records. Added functionality for filtering appointments. Integrated the npm package "ky" to work with API requests.
 
 

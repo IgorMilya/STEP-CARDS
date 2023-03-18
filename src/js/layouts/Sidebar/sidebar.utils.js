@@ -6,5 +6,5 @@ export const covidLocalData = {
   UADeaths: '332.131.212',
   worldNewConfirmed: '433.21',
   worldConfirmed: '432.435',
-  worldDeaths: '643.214.2',
+  worldDeaths: '643.214.234',
 }

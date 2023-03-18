@@ -15,29 +15,23 @@
   min-width: 369px;
 }
 
-.header-login {
-  height: 46px;
-  width: 162px;
-}
-
+.header-login,
 .register {
   height: 46px;
   width: 162px;
 }
 
-.save {
+.save,
+.cancel {
   width: 66px;
   height: 34px;
 }
 
 .cancel {
-  width: 66px;
-  height: 34px;
   background-color: #cccccc;
 }
 
 .covid-button-show {
   width: 180px;
   height: 45px;
-  padding: 0;
 }
