@@ -9,14 +9,14 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "sass": "^1.58.3",
     "prettier": "^2.8.4",
+    "sass": "^1.58.3",
     "vite": "^4.1.0"
   },
   "dependencies": {
+    "chart.js": "^4.2.1",
     "ky": "^0.33.2",
     "openai": "^3.2.1",
-    "chart.js": "^4.2.1",
     "smooth-scrollbar": "^8.8.1"
   }
 }
