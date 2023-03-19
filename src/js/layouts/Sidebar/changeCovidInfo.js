@@ -30,13 +30,13 @@ export const changeCovidInfo = async () => {
 
   button.addEventListener('click', e => {
     const isWorld = e.target.textContent === 'Show World'
-
+    console.log(isWorld)
     if (isWorld) {
       button.textContent = 'Show Ukraine'
-      renderInfo(elements, covidInfo.slice(0, 3), iconWorld, 'World')
+      renderInfo(elements, covidInfo.slice(3), iconWorld, 'World')
     } else {
       button.textContent = 'Show World'
-      renderInfo(elements, covidInfo.slice(3), iconUa, 'Ukraine')
+      renderInfo(elements, covidInfo.slice(0, 3), iconUa, 'Ukraine')
     }
   })
 }
