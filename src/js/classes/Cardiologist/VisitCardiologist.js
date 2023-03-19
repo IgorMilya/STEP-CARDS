@@ -1,4 +1,4 @@
-import { Visit } from '../Visit/Visit.js'
+import { Visit } from '../Visit/Visit'
 import { input } from '../../UI'
 
 export class VisitCardiologist extends Visit {

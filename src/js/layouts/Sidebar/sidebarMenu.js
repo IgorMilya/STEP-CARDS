@@ -2,7 +2,7 @@ import { sidebarList, sidebarListSupport } from '../layout.utils'
 import { createEl } from '../../tools'
 
 const sidebarItems = itemList => {
-  const itemsManagement = itemList.map(({ name, path }) => {
+  return itemList.map(({ name, path }) => {
     const sidebarItem = createEl({ el: 'li', css: 'sidebar-item' })
     const sidebarItemImg = createEl({ el: 'img', src: path, alt: 'icons' })
     const sidebarItemLink = createEl({ el: 'a', css: 'aside-link', text: name })
@@ -11,8 +11,6 @@ const sidebarItems = itemList => {
 
     return sidebarItem
   })
-
-  return itemsManagement
 }
 
 export const sidebarMenu = () => {
