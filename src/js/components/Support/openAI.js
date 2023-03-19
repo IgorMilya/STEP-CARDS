@@ -2,8 +2,9 @@ import { Configuration, OpenAIApi } from 'openai'
 import { renderSupportMessage } from './renderSupportMessage.js'
 
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 })
+
 const openai = new OpenAIApi(configuration)
 
 export async function run(value, context) {

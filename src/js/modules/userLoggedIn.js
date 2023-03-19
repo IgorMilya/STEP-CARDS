@@ -17,5 +17,5 @@ export const userLoggedIn = async () => {
 
   initFilters()
   initCharts(allData)
-  setTimeout(initBot, 60000)
+  setTimeout(initBot, 6000)
 }
