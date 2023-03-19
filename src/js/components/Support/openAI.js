@@ -2,7 +2,7 @@ import { Configuration, OpenAIApi } from 'openai'
 import { renderSupportMessage } from './renderSupportMessage.js'
 
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: import.meta.env.VITE_OPENAI_KEY,
 })
 
 const openai = new OpenAIApi(configuration)
