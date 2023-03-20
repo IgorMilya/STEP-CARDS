@@ -1,6 +1,6 @@
-# [**HendyHealth**](https://banzay700.github.io/StepProject-HendyHealth/)
+# [**HendyHealth**](https://banzay700.gitlab.io/step-cards)
 
-[**HendyHealth**](https://banzay700.github.io/StepProject-HendyHealth/) is a program designed for clinic administrators to register new visitors. The program allows the user to add, delete, and edit records of patients or visitors to the clinic. All data recorded in the application is stored in a database on the server.
+[**HendyHealth**](https://banzay700.gitlab.io/step-cards) is a program designed for clinic administrators to register new visitors. The program allows the user to add, delete, and edit records of patients or visitors to the clinic. All data recorded in the application is stored in a database on the server.
 
 The application is designed to be user-friendly and intuitive. The user interface is clean and well organized, with all the necessary functions and features easily accessible from the main dashboard.
 
@@ -30,7 +30,7 @@ The application is designed to be user-friendly and intuitive. The user interfac
 
 [**Ihor Milevskyi**](https://github.com/IgorMilya)
 
-- Implemented a modal window where you can check in for a doctor’s appointment. Moreover, added input data validation for all visit creation options. In addition, I've created the "Edit" function (button) with which you can edit your appointment and accomplished a live search filter.
+- Implemented a modal window where you can check in for a doctor’s appointment. Moreover, added input data validation for all visit creation options. In addition, I've created the "Edit" function (button) with which you can edit your appointment, a live search filter and accomplished support chat based on Chat GPT.
 
 [**Ivan Basiuk**](https://github.com/IvanBasss)
 
